@@ -1,0 +1,9 @@
+node_modules
+.yarn
+.build
+.next
+.netlify
+out
+src/lib/datocms/__generated__
+*.log
+*.lock
