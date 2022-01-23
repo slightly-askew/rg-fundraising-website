@@ -38,6 +38,98 @@
       "namespace": [
         "posts"
       ]
+    },
+    {
+      "label": "Page Content",
+      "name": "pages",
+      "path": "content/pages",
+      "fields": [
+        {
+          "label": "SEO Data",
+          "name": "seo_data",
+          "type": "object",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Meta Title",
+              "name": "meta_title",
+              "namespace": [
+                "pages",
+                "seo_data",
+                "meta_title"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Meta Description",
+              "name": "meta_description",
+              "namespace": [
+                "pages",
+                "seo_data",
+                "meta_description"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Canonical URL",
+              "name": "meta_description",
+              "namespace": [
+                "pages",
+                "seo_data",
+                "meta_description"
+              ]
+            }
+          ],
+          "namespace": [
+            "pages",
+            "seo_data"
+          ]
+        },
+        {
+          "label": "Hero Section",
+          "name": "hero",
+          "type": "object",
+          "fields": [
+            {
+              "type": "string",
+              "label": "Main Heading",
+              "name": "hero_heading",
+              "namespace": [
+                "pages",
+                "hero",
+                "hero_heading"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Meta Description",
+              "name": "hero_description",
+              "namespace": [
+                "pages",
+                "hero",
+                "hero_description"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Canonical URL",
+              "name": "meta_description",
+              "namespace": [
+                "pages",
+                "hero",
+                "meta_description"
+              ]
+            }
+          ],
+          "namespace": [
+            "pages",
+            "hero"
+          ]
+        }
+      ],
+      "namespace": [
+        "pages"
+      ]
     }
   ]
 }

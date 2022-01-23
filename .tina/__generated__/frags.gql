@@ -2,3 +2,18 @@ fragment PostsParts on Posts {
   title
   body
 }
+
+fragment PagesParts on Pages {
+  seo_data {
+    __typename
+    meta_title
+    meta_description
+    meta_description
+  }
+  hero {
+    __typename
+    hero_heading
+    hero_description
+    meta_description
+  }
+}

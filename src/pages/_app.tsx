@@ -2,8 +2,9 @@ import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 import { globalStyles } from '../theme/global'
 import { TinaEditProvider } from 'tinacms/dist/edit-state'
-const TinaCMS = dynamic(() => import('tinacms'), { ssr: false })
 import { LazyMotion, domAnimation } from 'framer-motion'
+
+const TinaCMS = dynamic(() => import('tinacms'), { ssr: false })
 
 const App = ({ Component, pageProps }: AppProps) => {
   globalStyles()

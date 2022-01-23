@@ -3,7 +3,8 @@
     "type": "DocumentConnection",
     "resolveType": "multiCollectionDocumentList",
     "collections": [
-      "posts"
+      "posts",
+      "pages"
     ]
   },
   "Node": {
@@ -27,5 +28,17 @@
     "type": "PostsConnection",
     "resolveType": "collectionDocumentList",
     "collection": "posts"
+  },
+  "PagesDocument": {
+    "type": "PagesDocument",
+    "resolveType": "collectionDocument",
+    "collection": "pages",
+    "createPagesDocument": "create",
+    "updatePagesDocument": "update"
+  },
+  "PagesConnection": {
+    "type": "PagesConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "pages"
   }
 }
