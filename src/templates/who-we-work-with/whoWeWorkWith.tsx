@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import MaxWidthWrapper from '@layout/max-width-wrapper'
-import VisuallyHidden from '@atoms/visually-hidden'
+import MaxWidthWrapper from '@components/max-width-wrapper'
+import VisuallyHidden from '@components/visually-hidden'
 
 export interface WhoWeWorkWithProps {}
 

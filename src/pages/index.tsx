@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Layout from '@layout'
-import Hero from '@sections/hero'
-import OurServices from '@sections/our-services'
-import PoweredByData from '@sections/powered-by-data'
-import WhyRg from '@sections/why-rg'
-import MeetTheTeam from '@sections/meet-the-team'
-import WhoWeWorkWith from '@sections/who-we-work-with'
-import CallToAction from '@sections/call-to-action'
+import Layout from 'src/layout'
+import Hero from '@templates/hero'
+import OurServices from '@templates/our-services'
+import PoweredByData from '@templates/powered-by-data'
+import WhyRg from '@templates/why-rg'
+import MeetTheTeam from '@templates/meet-the-team'
+import WhoWeWorkWith from '@templates/who-we-work-with'
+import CallToAction from '@templates/call-to-action'
 
 const Home: NextPage = () => {
   return (

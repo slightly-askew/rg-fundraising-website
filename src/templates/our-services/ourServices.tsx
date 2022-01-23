@@ -1,4 +1,4 @@
-import MaxWidthWrapper from '@layout/max-width-wrapper'
+import MaxWidthWrapper from '@components/max-width-wrapper'
 
 export interface OurServicesProps {}
 
