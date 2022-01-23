@@ -1,8 +1,8 @@
 import { styled } from '@theme'
 import React from 'react'
-import Header from '../sections/header'
-import Footer from '../sections/footer'
-import MaxWidthWrapper from '@layout/max-width-wrapper'
+import Header from '@templates/header'
+import Footer from '@templates/footer'
+import MaxWidthWrapper from '@components/max-width-wrapper'
 
 export interface LayoutProps {
   children: React.ReactNode

@@ -1,5 +1,5 @@
-import Button from '@atoms/button'
-import MaxWidthWrapper from '@layout/max-width-wrapper'
+import Button from '@components/button'
+import MaxWidthWrapper from '@components/max-width-wrapper'
 
 export interface CallToActionProps {}
 

@@ -1,6 +1,6 @@
 import { styled } from '@theme'
-import MaxWidthWrapper from '@layout/max-width-wrapper'
-import Button from '@atoms/button'
+import MaxWidthWrapper from '@components/max-width-wrapper'
+import Button from '@components/button'
 
 export interface HeaderProps {}
 
