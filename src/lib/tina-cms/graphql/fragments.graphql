@@ -1,0 +1,5 @@
+fragment SeoData on PagesSeo_data {
+  meta_title
+  meta_description
+  meta_canonical
+}

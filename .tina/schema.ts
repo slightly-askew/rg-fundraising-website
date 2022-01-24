@@ -46,7 +46,7 @@ export default defineSchema({
             {
               type: 'string',
               label: 'Canonical URL',
-              name: 'meta_description',
+              name: 'meta_canonical',
             },
           ],
         },
@@ -57,18 +57,18 @@ export default defineSchema({
           fields: [
             {
               type: 'string',
-              label: 'Main Heading',
+              label: 'Heading',
               name: 'hero_heading',
             },
             {
               type: 'string',
-              label: 'Meta Description',
+              label: 'Intro text',
               name: 'hero_description',
             },
             {
               type: 'string',
-              label: 'Canonical URL',
-              name: 'meta_description',
+              label: 'Button text',
+              name: 'hero_button_text',
             },
           ],
         },

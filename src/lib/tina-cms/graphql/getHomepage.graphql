@@ -1,0 +1,17 @@
+query getHomepage($relativePath: String!) {
+  getPagesDocument(relativePath: $relativePath) {
+    id
+    data {
+      seo_data {
+        ...SeoData
+      }
+      hero {
+        hero_heading
+        hero_description
+        hero_button_text
+      }
+    }
+    values
+    dataJSON
+  }
+}

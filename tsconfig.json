@@ -21,9 +21,12 @@
       "@templates/*": ["src/templates/*"],
       "@layout": ["src/layout"],
       "@layout/*": ["src/layout/*"],
-      "@components/*": ["src/components/*"]
+      "@lib": ["src/lib"],
+      "@lib/*": ["src/lib/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".tina/*.ts"],
   "exclude": ["node_modules"]
 }

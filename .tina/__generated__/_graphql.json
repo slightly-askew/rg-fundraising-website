@@ -1576,7 +1576,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "meta_description"
+            "value": "meta_canonical"
           },
           "arguments": [],
           "type": {
@@ -1632,7 +1632,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "meta_description"
+            "value": "hero_button_text"
           },
           "arguments": [],
           "type": {
@@ -2468,7 +2468,7 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "meta_description"
+            "value": "meta_canonical"
           },
           "type": {
             "kind": "NamedType",
@@ -2519,7 +2519,7 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "meta_description"
+            "value": "hero_button_text"
           },
           "type": {
             "kind": "NamedType",

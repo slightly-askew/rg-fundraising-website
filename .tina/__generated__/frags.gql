@@ -8,12 +8,12 @@ fragment PagesParts on Pages {
     __typename
     meta_title
     meta_description
-    meta_description
+    meta_canonical
   }
   hero {
     __typename
     hero_heading
     hero_description
-    meta_description
+    hero_button_text
   }
 }

@@ -72,11 +72,11 @@
             {
               "type": "string",
               "label": "Canonical URL",
-              "name": "meta_description",
+              "name": "meta_canonical",
               "namespace": [
                 "pages",
                 "seo_data",
-                "meta_description"
+                "meta_canonical"
               ]
             }
           ],
@@ -92,7 +92,7 @@
           "fields": [
             {
               "type": "string",
-              "label": "Main Heading",
+              "label": "Heading",
               "name": "hero_heading",
               "namespace": [
                 "pages",
@@ -102,7 +102,7 @@
             },
             {
               "type": "string",
-              "label": "Meta Description",
+              "label": "Intro text",
               "name": "hero_description",
               "namespace": [
                 "pages",
@@ -112,12 +112,12 @@
             },
             {
               "type": "string",
-              "label": "Canonical URL",
-              "name": "meta_description",
+              "label": "Button text",
+              "name": "hero_button_text",
               "namespace": [
                 "pages",
                 "hero",
-                "meta_description"
+                "hero_button_text"
               ]
             }
           ],

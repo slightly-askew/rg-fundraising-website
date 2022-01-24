@@ -1,4 +1,7 @@
 import type { NextPage } from 'next'
+import { gql, staticRequest } from 'tinacms'
+import { Awaited } from '@utils/types'
+import { request } from '@lib/tina-cms/request'
 import Head from 'next/head'
 import Layout from 'src/layout'
 import Hero from '@templates/hero'
@@ -8,20 +11,31 @@ import WhyRg from '@templates/why-rg'
 import MeetTheTeam from '@templates/meet-the-team'
 import WhoWeWorkWith from '@templates/who-we-work-with'
 import CallToAction from '@templates/call-to-action'
+import { GetHomepageQuery } from '@lib/tina-cms/__generated__/types'
 
-const Home: NextPage = () => {
+type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
+
+function Home({ data }: StaticProps) {
+  const {
+    getPagesDocument: { data: content },
+  } = data
   return (
     <>
       <Head>
-        <title>RG Fundraising</title>
+        <title>{content.seo_data?.meta_title}</title>
         <meta
           name="description"
-          content="Your regular giving fundraising team"
+          //@ts-expect-error possible null value
+          content={content.seo_data?.meta_description}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Hero />
+        <Hero
+          heading={content.hero?.hero_heading}
+          description={content.hero?.hero_description}
+          button_text={content.hero?.hero_button_text}
+        />
         <OurServices />
         <PoweredByData />
         <WhyRg />
@@ -31,6 +45,23 @@ const Home: NextPage = () => {
       </Layout>
     </>
   )
+}
+
+export const getStaticProps = async () => {
+  const variables = {
+    relativePath: 'home.md',
+  }
+
+  const pageData = await request<GetHomepageQuery>({
+    query: 'getHomepage',
+    variables,
+  })
+
+  return {
+    props: {
+      ...pageData,
+    },
+  }
 }
 
 export default Home
