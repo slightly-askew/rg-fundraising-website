@@ -27,5 +27,31 @@ fragment PagesParts on Pages {
         avatar
       }
     }
+    ... on PagesContent_sectionsOur_services {
+      heading
+      description
+      team_members {
+        __typename
+        service_title
+        service_description
+      }
+    }
+    ... on PagesContent_sectionsPowered_by_data {
+      heading
+      content
+    }
+    ... on PagesContent_sectionsWho_we_work_with {
+      heading
+      content
+      charities {
+        __typename
+        charity_name
+        charity_logo
+      }
+    }
+    ... on PagesContent_sectionsWhy_rg {
+      heading
+      content
+    }
   }
 }

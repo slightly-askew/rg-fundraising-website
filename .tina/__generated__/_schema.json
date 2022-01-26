@@ -234,6 +234,250 @@
                 "content_sections",
                 "meet_the_team"
               ]
+            },
+            {
+              "name": "our_services",
+              "label": "Our Services",
+              "ui": {
+                "defaultItem": {
+                  "heading": "What Services do we provide?",
+                  "description": "RG Fundraising provides donor aquisition, donor retention and consultancy services for some of the best brands in the world."
+                }
+              },
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Heading",
+                  "name": "heading",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "our_services",
+                    "heading"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Description",
+                  "name": "description",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "our_services",
+                    "description"
+                  ]
+                },
+                {
+                  "label": "Team Members",
+                  "name": "team_members",
+                  "type": "object",
+                  "list": true,
+                  "ui": {
+                    "defaultItem": {
+                      "service_title": "Donor Aquisition",
+                      "service_description": "Face-to-Face"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "type": "string",
+                      "label": "Service Title",
+                      "name": "service_title",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "our_services",
+                        "team_members",
+                        "service_title"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "label": "Service Description",
+                      "name": "service_description",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "our_services",
+                        "team_members",
+                        "service_description"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "our_services",
+                    "team_members"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "content_sections",
+                "our_services"
+              ]
+            },
+            {
+              "name": "powered_by_data",
+              "label": "Powered By Data",
+              "ui": {
+                "defaultItem": {
+                  "heading": "Powered by Data",
+                  "content": "Start writing..."
+                }
+              },
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "powered_by_data",
+                    "heading"
+                  ]
+                },
+                {
+                  "name": "content",
+                  "label": "Content",
+                  "type": "rich-text",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "powered_by_data",
+                    "content"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "content_sections",
+                "powered_by_data"
+              ]
+            },
+            {
+              "name": "who_we_work_with",
+              "label": "Who We Work With",
+              "ui": {
+                "defaultItem": {
+                  "heading": "Who do we work with?",
+                  "content": "We work with some of the best brands in Australia."
+                }
+              },
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "who_we_work_with",
+                    "heading"
+                  ]
+                },
+                {
+                  "name": "content",
+                  "label": "Content",
+                  "type": "rich-text",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "who_we_work_with",
+                    "content"
+                  ]
+                },
+                {
+                  "name": "charities",
+                  "label": "Charities",
+                  "type": "object",
+                  "list": true,
+                  "ui": {
+                    "defaultItem": {
+                      "charity_name": "Royal Flying Doctor Service",
+                      "charity_logo": "https://res.cloudinary.com/dalhx2c9c/image/upload/v1643229054/charity_placeholder_jxgkfq.svg"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "name": "charity_name",
+                      "label": "Charity Name",
+                      "type": "string",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "who_we_work_with",
+                        "charities",
+                        "charity_name"
+                      ]
+                    },
+                    {
+                      "name": "charity_logo",
+                      "label": "Charity Logo",
+                      "type": "image",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "who_we_work_with",
+                        "charities",
+                        "charity_logo"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "who_we_work_with",
+                    "charities"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "content_sections",
+                "who_we_work_with"
+              ]
+            },
+            {
+              "name": "why_rg",
+              "label": "Why RG Fundraising",
+              "ui": {
+                "defaultItem": {
+                  "heading": "Why RG Fundraising?",
+                  "content": "Start writing..."
+                }
+              },
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "why_rg",
+                    "heading"
+                  ]
+                },
+                {
+                  "name": "content",
+                  "label": "Content",
+                  "type": "rich-text",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "why_rg",
+                    "content"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "content_sections",
+                "why_rg"
+              ]
             }
           ],
           "namespace": [

@@ -1,5 +1,12 @@
 import { defineSchema } from '@tinacms/cli'
-import { callToActionBlock, meetTheTeamBlock } from './blocks'
+import {
+  callToActionBlock,
+  meetTheTeamBlock,
+  ourServicesBlock,
+  poweredByDataBlock,
+  whoWeWorkWithBlock,
+  whyRgBlock,
+} from './blocks'
 
 export default defineSchema({
   collections: [
@@ -57,7 +64,14 @@ export default defineSchema({
           list: true,
           name: 'content_sections',
           label: 'Content Sections',
-          templates: [callToActionBlock, meetTheTeamBlock],
+          templates: [
+            callToActionBlock,
+            meetTheTeamBlock,
+            ourServicesBlock,
+            poweredByDataBlock,
+            whoWeWorkWithBlock,
+            whyRgBlock,
+          ],
         },
       ],
     },

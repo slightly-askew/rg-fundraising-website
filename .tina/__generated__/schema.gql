@@ -106,7 +106,39 @@ type PagesContent_sectionsMeet_the_team {
   team_members: [PagesContent_sectionsMeet_the_teamTeam_members]
 }
 
-union PagesContent_sections = PagesContent_sectionsCall_to_action | PagesContent_sectionsMeet_the_team
+type PagesContent_sectionsOur_servicesTeam_members {
+  service_title: String
+  service_description: String
+}
+
+type PagesContent_sectionsOur_services {
+  heading: String
+  description: String
+  team_members: [PagesContent_sectionsOur_servicesTeam_members]
+}
+
+type PagesContent_sectionsPowered_by_data {
+  heading: String
+  content: JSON
+}
+
+type PagesContent_sectionsWho_we_work_withCharities {
+  charity_name: String
+  charity_logo: String
+}
+
+type PagesContent_sectionsWho_we_work_with {
+  heading: String
+  content: JSON
+  charities: [PagesContent_sectionsWho_we_work_withCharities]
+}
+
+type PagesContent_sectionsWhy_rg {
+  heading: String
+  content: JSON
+}
+
+union PagesContent_sections = PagesContent_sectionsCall_to_action | PagesContent_sectionsMeet_the_team | PagesContent_sectionsOur_services | PagesContent_sectionsPowered_by_data | PagesContent_sectionsWho_we_work_with | PagesContent_sectionsWhy_rg
 
 type Pages {
   seo_data: PagesSeo_data
@@ -175,9 +207,45 @@ input PagesContent_sectionsMeet_the_teamMutation {
   team_members: [PagesContent_sectionsMeet_the_teamTeam_membersMutation]
 }
 
+input PagesContent_sectionsOur_servicesTeam_membersMutation {
+  service_title: String
+  service_description: String
+}
+
+input PagesContent_sectionsOur_servicesMutation {
+  heading: String
+  description: String
+  team_members: [PagesContent_sectionsOur_servicesTeam_membersMutation]
+}
+
+input PagesContent_sectionsPowered_by_dataMutation {
+  heading: String
+  content: JSON
+}
+
+input PagesContent_sectionsWho_we_work_withCharitiesMutation {
+  charity_name: String
+  charity_logo: String
+}
+
+input PagesContent_sectionsWho_we_work_withMutation {
+  heading: String
+  content: JSON
+  charities: [PagesContent_sectionsWho_we_work_withCharitiesMutation]
+}
+
+input PagesContent_sectionsWhy_rgMutation {
+  heading: String
+  content: JSON
+}
+
 input PagesContent_sectionsMutation {
   call_to_action: PagesContent_sectionsCall_to_actionMutation
   meet_the_team: PagesContent_sectionsMeet_the_teamMutation
+  our_services: PagesContent_sectionsOur_servicesMutation
+  powered_by_data: PagesContent_sectionsPowered_by_dataMutation
+  who_we_work_with: PagesContent_sectionsWho_we_work_withMutation
+  why_rg: PagesContent_sectionsWhy_rgMutation
 }
 
 input PagesMutation {

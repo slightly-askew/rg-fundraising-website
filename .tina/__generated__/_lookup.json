@@ -21,7 +21,11 @@
     "resolveType": "unionData",
     "typeMap": {
       "call_to_action": "PagesContent_sectionsCall_to_action",
-      "meet_the_team": "PagesContent_sectionsMeet_the_team"
+      "meet_the_team": "PagesContent_sectionsMeet_the_team",
+      "our_services": "PagesContent_sectionsOur_services",
+      "powered_by_data": "PagesContent_sectionsPowered_by_data",
+      "who_we_work_with": "PagesContent_sectionsWho_we_work_with",
+      "why_rg": "PagesContent_sectionsWhy_rg"
     }
   },
   "PagesDocument": {

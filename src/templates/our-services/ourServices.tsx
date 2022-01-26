@@ -8,7 +8,7 @@ function OurServices({}) {
       <MaxWidthWrapper>
         <h1>What Services do we provide?</h1>
         <p>
-          RG Funraising providers donor aquisition, donor retention and
+          RG Fundraising providers donor aquisition, donor retention and
           consultancy services for some of the best brands in the world.
         </p>
         <ul>
