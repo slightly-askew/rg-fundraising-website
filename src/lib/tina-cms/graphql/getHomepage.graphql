@@ -10,6 +10,9 @@ query getHomepage($relativePath: String!) {
         hero_description
         hero_button_text
       }
+      content_sections {
+        __typename
+      }
     }
     values
     dataJSON
