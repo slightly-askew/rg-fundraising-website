@@ -1,14 +1,17 @@
 import Button from '@components/button'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 
-export interface CallToActionProps {}
+export interface CallToActionProps {
+  heading?: string | null | undefined
+  buttonText?: string | null | undefined
+}
 
-function CallToAction({}) {
+function CallToAction({ heading, buttonText }: CallToActionProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>What are you waiting for?</h1>
-        <Button>Get in Touch</Button>
+        <h1>{heading}</h1>
+        <Button>{buttonText}</Button>
       </MaxWidthWrapper>
     </section>
   )

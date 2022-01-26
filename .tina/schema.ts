@@ -1,4 +1,5 @@
 import { defineSchema } from '@tinacms/cli'
+import { callToActionBlock, meetTheTeamBlock } from './blocks'
 
 export default defineSchema({
   collections: [
@@ -50,6 +51,13 @@ export default defineSchema({
               name: 'hero_button_text',
             },
           ],
+        },
+        {
+          type: 'object',
+          list: true,
+          name: 'content_sections',
+          label: 'Content Sections',
+          templates: [callToActionBlock, meetTheTeamBlock],
         },
       ],
     },

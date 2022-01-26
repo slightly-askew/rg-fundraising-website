@@ -158,10 +158,33 @@ export type PagesHero = {
   hero_button_text?: Maybe<Scalars['String']>;
 };
 
+export type PagesContent_SectionsCall_To_Action = {
+  __typename?: 'PagesContent_sectionsCall_to_action';
+  heading?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type PagesContent_SectionsMeet_The_TeamTeam_Members = {
+  __typename?: 'PagesContent_sectionsMeet_the_teamTeam_members';
+  name?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+  avatar?: Maybe<Scalars['String']>;
+};
+
+export type PagesContent_SectionsMeet_The_Team = {
+  __typename?: 'PagesContent_sectionsMeet_the_team';
+  heading?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  team_members?: Maybe<Array<Maybe<PagesContent_SectionsMeet_The_TeamTeam_Members>>>;
+};
+
+export type PagesContent_Sections = PagesContent_SectionsCall_To_Action | PagesContent_SectionsMeet_The_Team;
+
 export type Pages = {
   __typename?: 'Pages';
   seo_data?: Maybe<PagesSeo_Data>;
   hero?: Maybe<PagesHero>;
+  content_sections?: Maybe<Array<Maybe<PagesContent_Sections>>>;
 };
 
 export type PagesDocument = Node & Document & {
@@ -245,24 +268,47 @@ export type PagesHeroMutation = {
   hero_button_text?: InputMaybe<Scalars['String']>;
 };
 
+export type PagesContent_SectionsCall_To_ActionMutation = {
+  heading?: InputMaybe<Scalars['String']>;
+  button_text?: InputMaybe<Scalars['String']>;
+};
+
+export type PagesContent_SectionsMeet_The_TeamTeam_MembersMutation = {
+  name?: InputMaybe<Scalars['String']>;
+  position?: InputMaybe<Scalars['String']>;
+  avatar?: InputMaybe<Scalars['String']>;
+};
+
+export type PagesContent_SectionsMeet_The_TeamMutation = {
+  heading?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  team_members?: InputMaybe<Array<InputMaybe<PagesContent_SectionsMeet_The_TeamTeam_MembersMutation>>>;
+};
+
+export type PagesContent_SectionsMutation = {
+  call_to_action?: InputMaybe<PagesContent_SectionsCall_To_ActionMutation>;
+  meet_the_team?: InputMaybe<PagesContent_SectionsMeet_The_TeamMutation>;
+};
+
 export type PagesMutation = {
   seo_data?: InputMaybe<PagesSeo_DataMutation>;
   hero?: InputMaybe<PagesHeroMutation>;
+  content_sections?: InputMaybe<Array<InputMaybe<PagesContent_SectionsMutation>>>;
 };
 
-export type PagesPartsFragment = { __typename?: 'Pages', seo_data?: { __typename: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined };
+export type PagesPartsFragment = { __typename?: 'Pages', seo_data?: { __typename: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined> | null | undefined };
 
 export type GetPagesDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetPagesDocumentQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', seo_data?: { __typename: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
+export type GetPagesDocumentQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', seo_data?: { __typename: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined> | null | undefined } } };
 
 export type GetPagesListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPagesListQuery = { __typename?: 'Query', getPagesList: { __typename?: 'PagesConnection', totalCount: number, edges?: Array<{ __typename?: 'PagesConnectionEdges', node?: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', seo_data?: { __typename: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetPagesListQuery = { __typename?: 'Query', getPagesList: { __typename?: 'PagesConnection', totalCount: number, edges?: Array<{ __typename?: 'PagesConnectionEdges', node?: { __typename?: 'PagesDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Pages', seo_data?: { __typename: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export const PagesPartsFragmentDoc = gql`
     fragment PagesParts on Pages {
@@ -277,6 +323,23 @@ export const PagesPartsFragmentDoc = gql`
     hero_heading
     hero_description
     hero_button_text
+  }
+  content_sections {
+    __typename
+    ... on PagesContent_sectionsCall_to_action {
+      heading
+      button_text
+    }
+    ... on PagesContent_sectionsMeet_the_team {
+      heading
+      description
+      team_members {
+        __typename
+        name
+        position
+        avatar
+      }
+    }
   }
 }
     `;

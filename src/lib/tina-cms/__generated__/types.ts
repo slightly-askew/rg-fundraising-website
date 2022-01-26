@@ -66,20 +66,17 @@ export type DocumentConnectionEdges = {
 
 export type DocumentMutation = {
   pages?: InputMaybe<PagesMutation>;
-  posts?: InputMaybe<PostsMutation>;
 };
 
-export type DocumentNode = PagesDocument | PostsDocument;
+export type DocumentNode = PagesDocument;
 
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
   createDocument: DocumentNode;
   createPagesDocument: PagesDocument;
-  createPostsDocument: PostsDocument;
   updateDocument: DocumentNode;
   updatePagesDocument: PagesDocument;
-  updatePostsDocument: PostsDocument;
 };
 
 
@@ -103,12 +100,6 @@ export type MutationCreatePagesDocumentArgs = {
 };
 
 
-export type MutationCreatePostsDocumentArgs = {
-  params: PostsMutation;
-  relativePath: Scalars['String'];
-};
-
-
 export type MutationUpdateDocumentArgs = {
   collection?: InputMaybe<Scalars['String']>;
   params: DocumentMutation;
@@ -118,12 +109,6 @@ export type MutationUpdateDocumentArgs = {
 
 export type MutationUpdatePagesDocumentArgs = {
   params: PagesMutation;
-  relativePath: Scalars['String'];
-};
-
-
-export type MutationUpdatePostsDocumentArgs = {
-  params: PostsMutation;
   relativePath: Scalars['String'];
 };
 
@@ -199,40 +184,6 @@ export type PagesSeo_DataMutation = {
   meta_title?: InputMaybe<Scalars['String']>;
 };
 
-export type Posts = {
-  __typename?: 'Posts';
-  body?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-export type PostsConnection = Connection & {
-  __typename?: 'PostsConnection';
-  edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
-  pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
-};
-
-export type PostsConnectionEdges = {
-  __typename?: 'PostsConnectionEdges';
-  cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PostsDocument>;
-};
-
-export type PostsDocument = Document & Node & {
-  __typename?: 'PostsDocument';
-  data: Posts;
-  dataJSON: Scalars['JSON'];
-  form: Scalars['JSON'];
-  id: Scalars['ID'];
-  sys: SystemInfo;
-  values: Scalars['JSON'];
-};
-
-export type PostsMutation = {
-  body?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-};
-
 export type Query = {
   __typename?: 'Query';
   getCollection: Collection;
@@ -242,8 +193,6 @@ export type Query = {
   getDocumentList: DocumentConnection;
   getPagesDocument: PagesDocument;
   getPagesList: PagesConnection;
-  getPostsDocument: PostsDocument;
-  getPostsList: PostsConnection;
   node: Node;
 };
 
@@ -273,19 +222,6 @@ export type QueryGetPagesDocumentArgs = {
 
 
 export type QueryGetPagesListArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type QueryGetPostsDocumentArgs = {
-  relativePath?: InputMaybe<Scalars['String']>;
-};
-
-
-export type QueryGetPostsListArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;

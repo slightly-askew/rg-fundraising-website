@@ -16,6 +16,14 @@
     "createDocument": "create",
     "updateDocument": "update"
   },
+  "PagesContent_sections": {
+    "type": "PagesContent_sections",
+    "resolveType": "unionData",
+    "typeMap": {
+      "call_to_action": "PagesContent_sectionsCall_to_action",
+      "meet_the_team": "PagesContent_sectionsMeet_the_team"
+    }
+  },
   "PagesDocument": {
     "type": "PagesDocument",
     "resolveType": "collectionDocument",

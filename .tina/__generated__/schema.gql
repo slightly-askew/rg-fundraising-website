@@ -89,9 +89,29 @@ type PagesHero {
   hero_button_text: String
 }
 
+type PagesContent_sectionsCall_to_action {
+  heading: String
+  button_text: String
+}
+
+type PagesContent_sectionsMeet_the_teamTeam_members {
+  name: String
+  position: String
+  avatar: String
+}
+
+type PagesContent_sectionsMeet_the_team {
+  heading: String
+  description: String
+  team_members: [PagesContent_sectionsMeet_the_teamTeam_members]
+}
+
+union PagesContent_sections = PagesContent_sectionsCall_to_action | PagesContent_sectionsMeet_the_team
+
 type Pages {
   seo_data: PagesSeo_data
   hero: PagesHero
+  content_sections: [PagesContent_sections]
 }
 
 type PagesDocument implements Node & Document {
@@ -138,9 +158,32 @@ input PagesHeroMutation {
   hero_button_text: String
 }
 
+input PagesContent_sectionsCall_to_actionMutation {
+  heading: String
+  button_text: String
+}
+
+input PagesContent_sectionsMeet_the_teamTeam_membersMutation {
+  name: String
+  position: String
+  avatar: String
+}
+
+input PagesContent_sectionsMeet_the_teamMutation {
+  heading: String
+  description: String
+  team_members: [PagesContent_sectionsMeet_the_teamTeam_membersMutation]
+}
+
+input PagesContent_sectionsMutation {
+  call_to_action: PagesContent_sectionsCall_to_actionMutation
+  meet_the_team: PagesContent_sectionsMeet_the_teamMutation
+}
+
 input PagesMutation {
   seo_data: PagesSeo_dataMutation
   hero: PagesHeroMutation
+  content_sections: [PagesContent_sectionsMutation]
 }
 
 schema {

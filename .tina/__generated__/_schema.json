@@ -93,6 +93,153 @@
             "pages",
             "hero"
           ]
+        },
+        {
+          "type": "object",
+          "list": true,
+          "name": "content_sections",
+          "label": "Content Sections",
+          "templates": [
+            {
+              "name": "call_to_action",
+              "label": "Call To Action",
+              "ui": {
+                "defaultItem": {
+                  "heading": "What are you waiting for?",
+                  "button_text": "Get in touch"
+                }
+              },
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Heading",
+                  "name": "heading",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "call_to_action",
+                    "heading"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Button Text",
+                  "name": "button_text",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "call_to_action",
+                    "button_text"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "content_sections",
+                "call_to_action"
+              ]
+            },
+            {
+              "name": "meet_the_team",
+              "label": "Meet The Team",
+              "ui": {
+                "defaultItem": {
+                  "heading": "What are you waiting for?",
+                  "description": "We are always expanding but the current team is below."
+                }
+              },
+              "fields": [
+                {
+                  "type": "string",
+                  "label": "Heading",
+                  "name": "heading",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "meet_the_team",
+                    "heading"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Description",
+                  "name": "description",
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "meet_the_team",
+                    "description"
+                  ]
+                },
+                {
+                  "label": "Team Members",
+                  "name": "team_members",
+                  "type": "object",
+                  "list": true,
+                  "ui": {
+                    "defaultItem": {
+                      "name": "Matt Keating",
+                      "position": "Director",
+                      "avatar": "https://res.cloudinary.com/dalhx2c9c/image/upload/v1643163683/blankAvatar_psas7x.jpg"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "type": "string",
+                      "label": "Name",
+                      "name": "name",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "meet_the_team",
+                        "team_members",
+                        "name"
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "label": "Position",
+                      "name": "position",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "meet_the_team",
+                        "team_members",
+                        "position"
+                      ]
+                    },
+                    {
+                      "name": "avatar",
+                      "type": "image",
+                      "label": "Avatar",
+                      "namespace": [
+                        "pages",
+                        "content_sections",
+                        "meet_the_team",
+                        "team_members",
+                        "avatar"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "pages",
+                    "content_sections",
+                    "meet_the_team",
+                    "team_members"
+                  ]
+                }
+              ],
+              "namespace": [
+                "pages",
+                "content_sections",
+                "meet_the_team"
+              ]
+            }
+          ],
+          "namespace": [
+            "pages",
+            "content_sections"
+          ]
         }
       ],
       "namespace": [
