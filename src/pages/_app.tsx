@@ -20,6 +20,11 @@ const App = ({ Component, pageProps }: AppProps) => {
             isLocalClient={Boolean(
               Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT ?? true)
             )}
+            cmsCallback={(cms) => {
+              import('react-tinacms-editor').then((field) => {
+                cms.plugins.add(field.MarkdownFieldPlugin)
+              })
+            }}
             {...pageProps}
           >
             {(livePageProps: any) => <Component {...livePageProps} />}

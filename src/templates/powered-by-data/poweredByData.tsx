@@ -1,24 +1,17 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
+import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
-export interface PoweredByDataProps {}
+export interface PoweredByDataProps {
+  heading: string | null | undefined
+  content: TinaMarkdownContent
+}
 
-function PoweredByData({}) {
+function PoweredByData({ heading, content }: PoweredByDataProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>Powered By Data</h1>
-        <p>
-          Data has become the most valuable resource in the world, and
-          we&apos;re powered by it.
-        </p>
-        <p>
-          All our data is anonymised, transparent and available to analyse when
-          you want.
-        </p>
-        <p>
-          If that&apos;s not your thing though, we will summarise the insights
-          each week.
-        </p>
+        <h1>{heading}</h1>
+        <TinaMarkdown content={content} />
       </MaxWidthWrapper>
     </section>
   )

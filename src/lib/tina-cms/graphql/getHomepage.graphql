@@ -12,6 +12,12 @@ query getHomepage($relativePath: String!) {
       }
       content_sections {
         __typename
+        ...MeetTheTeam
+        ...WhoWeWorkWith
+        ...OurServices
+        ...PoweredByData
+        ...WhyRg
+        ...CallToAction
       }
     }
     values

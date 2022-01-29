@@ -3,3 +3,42 @@ fragment SeoData on PagesSeo_data {
   meta_description
   meta_canonical
 }
+
+fragment MeetTheTeam on PagesContent_sectionsMeet_the_team {
+  heading
+  description
+  team_members {
+    name
+    position
+    avatar
+  }
+}
+
+fragment WhoWeWorkWith on PagesContent_sectionsWho_we_work_with {
+  heading
+  content
+  charities {
+    charity_name
+    charity_logo
+  }
+}
+
+fragment OurServices on PagesContent_sectionsOur_services {
+  heading
+  description
+}
+
+fragment PoweredByData on PagesContent_sectionsPowered_by_data {
+  heading
+  content
+}
+
+fragment WhyRg on PagesContent_sectionsWhy_rg {
+  heading
+  content
+}
+
+fragment CallToAction on PagesContent_sectionsCall_to_action {
+  heading
+  button_text
+}

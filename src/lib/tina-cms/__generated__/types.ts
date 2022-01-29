@@ -372,18 +372,75 @@ export type SystemInfoBreadcrumbsArgs = {
 
 export type SeoDataFragment = { __typename?: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined };
 
+export type MeetTheTeamFragment = { __typename?: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined };
+
+export type WhoWeWorkWithFragment = { __typename?: 'PagesContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PagesContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined };
+
+export type OurServicesFragment = { __typename?: 'PagesContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined };
+
+export type PoweredByDataFragment = { __typename?: 'PagesContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined };
+
+export type WhyRgFragment = { __typename?: 'PagesContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined };
+
+export type CallToActionFragment = { __typename?: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined };
+
 export type GetHomepageQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetHomepageQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Pages', seo_data?: { __typename?: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'PagesContent_sectionsCall_to_action' } | { __typename: 'PagesContent_sectionsMeet_the_team' } | { __typename: 'PagesContent_sectionsOur_services' } | { __typename: 'PagesContent_sectionsPowered_by_data' } | { __typename: 'PagesContent_sectionsWho_we_work_with' } | { __typename: 'PagesContent_sectionsWhy_rg' } | null | undefined> | null | undefined } } };
+export type GetHomepageQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Pages', seo_data?: { __typename?: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined } | { __typename: 'PagesContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PagesContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PagesContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
 
 export const SeoDataFragmentDoc = gql`
     fragment SeoData on PagesSeo_data {
   meta_title
   meta_description
   meta_canonical
+}
+    `;
+export const MeetTheTeamFragmentDoc = gql`
+    fragment MeetTheTeam on PagesContent_sectionsMeet_the_team {
+  heading
+  description
+  team_members {
+    name
+    position
+    avatar
+  }
+}
+    `;
+export const WhoWeWorkWithFragmentDoc = gql`
+    fragment WhoWeWorkWith on PagesContent_sectionsWho_we_work_with {
+  heading
+  content
+  charities {
+    charity_name
+    charity_logo
+  }
+}
+    `;
+export const OurServicesFragmentDoc = gql`
+    fragment OurServices on PagesContent_sectionsOur_services {
+  heading
+  description
+}
+    `;
+export const PoweredByDataFragmentDoc = gql`
+    fragment PoweredByData on PagesContent_sectionsPowered_by_data {
+  heading
+  content
+}
+    `;
+export const WhyRgFragmentDoc = gql`
+    fragment WhyRg on PagesContent_sectionsWhy_rg {
+  heading
+  content
+}
+    `;
+export const CallToActionFragmentDoc = gql`
+    fragment CallToAction on PagesContent_sectionsCall_to_action {
+  heading
+  button_text
 }
     `;
 export const GetHomepageDocument = gql`
@@ -401,13 +458,25 @@ export const GetHomepageDocument = gql`
       }
       content_sections {
         __typename
+        ...MeetTheTeam
+        ...WhoWeWorkWith
+        ...OurServices
+        ...PoweredByData
+        ...WhyRg
+        ...CallToAction
       }
     }
     values
     dataJSON
   }
 }
-    ${SeoDataFragmentDoc}`;
+    ${SeoDataFragmentDoc}
+${MeetTheTeamFragmentDoc}
+${WhoWeWorkWithFragmentDoc}
+${OurServicesFragmentDoc}
+${PoweredByDataFragmentDoc}
+${WhyRgFragmentDoc}
+${CallToActionFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 

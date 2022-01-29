@@ -3,10 +3,10 @@ import { Awaited } from '@utils/types'
 import request from '@lib/tina-cms'
 import Layout from 'src/layout'
 import Hero from '@templates/hero'
+import BlockRenderer from '@templates/BlockRenderer'
 import OurServices from '@templates/our-services'
 import PoweredByData from '@templates/powered-by-data'
 import WhyRg from '@templates/why-rg'
-import MeetTheTeam from '@templates/meet-the-team'
 import WhoWeWorkWith from '@templates/who-we-work-with'
 import CallToAction from '@templates/call-to-action'
 import { GetHomepageQuery } from '@lib/tina-cms/__generated__/types'
@@ -17,6 +17,7 @@ function Home({ data }: StaticProps) {
   const {
     getPagesDocument: { data: content },
   } = data
+  console.log(JSON.stringify(content, null, 4))
   return (
     <>
       <Head>
@@ -34,12 +35,8 @@ function Home({ data }: StaticProps) {
           description={content.hero?.hero_description}
           button_text={content.hero?.hero_button_text}
         />
-        <OurServices />
-        <PoweredByData />
-        <WhyRg />
-        <MeetTheTeam />
-        <WhoWeWorkWith />
-        <CallToAction />
+        {/*@ts-expect-error difficult to type property */}
+        <BlockRenderer content_sections={content.content_sections} />
       </Layout>
     </>
   )

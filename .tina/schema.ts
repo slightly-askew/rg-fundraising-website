@@ -65,11 +65,17 @@ export default defineSchema({
           name: 'content_sections',
           label: 'Content Sections',
           templates: [
+            //@ts-expect-error
             callToActionBlock,
+            //@ts-expect-error
             meetTheTeamBlock,
+            //@ts-expect-error
             ourServicesBlock,
+            //@ts-expect-error
             poweredByDataBlock,
+            //@ts-expect-error
             whoWeWorkWithBlock,
+            //@ts-expect-error
             whyRgBlock,
           ],
         },

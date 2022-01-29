@@ -35,8 +35,12 @@ content_sections:
     team_members:
       - name: Matt Keating
         position: Director
+        avatar: >-
+          https://res.cloudinary.com/dalhx2c9c/image/upload/v1643163683/blankAvatar_psas7x.jpg
       - name: Mike Ager
         position: Director
+        avatar: >-
+          https://res.cloudinary.com/dalhx2c9c/image/upload/v1643163683/blankAvatar_psas7x.jpg
       - name: James Prout
         position: Director
       - name: Cindy Harper
