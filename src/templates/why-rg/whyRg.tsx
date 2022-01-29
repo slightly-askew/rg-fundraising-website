@@ -1,20 +1,17 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
+import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
-export interface WhyRgProps {}
+export interface WhyRgProps {
+  heading: string | null | undefined
+  content: TinaMarkdownContent
+}
 
-function WhyRg({}) {
+function WhyRg({ heading, content }: WhyRgProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>Why RG Fundraising?</h1>
-        <p>
-          With over 50-years experience, for both agencies and charities,
-          we&apos;re uniquely positioned to be the experts in the sector.
-        </p>
-        <p>
-          We believe in building long-term, committex partnerships with some of
-          the best fundraisers and charities in the industry.
-        </p>
+        <h1>{heading}</h1>
+        <TinaMarkdown content={content} />
       </MaxWidthWrapper>
     </section>
   )

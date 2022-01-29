@@ -1,0 +1,43 @@
+{
+  "DocumentConnection": {
+    "type": "DocumentConnection",
+    "resolveType": "multiCollectionDocumentList",
+    "collections": [
+      "pages"
+    ]
+  },
+  "Node": {
+    "type": "Node",
+    "resolveType": "nodeDocument"
+  },
+  "DocumentNode": {
+    "type": "DocumentNode",
+    "resolveType": "multiCollectionDocument",
+    "createDocument": "create",
+    "updateDocument": "update"
+  },
+  "PagesContent_sections": {
+    "type": "PagesContent_sections",
+    "resolveType": "unionData",
+    "typeMap": {
+      "call_to_action": "PagesContent_sectionsCall_to_action",
+      "meet_the_team": "PagesContent_sectionsMeet_the_team",
+      "our_services": "PagesContent_sectionsOur_services",
+      "powered_by_data": "PagesContent_sectionsPowered_by_data",
+      "who_we_work_with": "PagesContent_sectionsWho_we_work_with",
+      "why_rg": "PagesContent_sectionsWhy_rg"
+    }
+  },
+  "PagesDocument": {
+    "type": "PagesDocument",
+    "resolveType": "collectionDocument",
+    "collection": "pages",
+    "createPagesDocument": "create",
+    "updatePagesDocument": "update"
+  },
+  "PagesConnection": {
+    "type": "PagesConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "pages"
+  }
+}

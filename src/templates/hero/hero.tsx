@@ -1,18 +1,19 @@
 import Button from '@components/button'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 
-export interface HeroProps {}
+export interface HeroProps {
+  heading?: string | null | undefined
+  description?: string | null | undefined
+  button_text?: string | null | undefined
+}
 
-function Hero({}) {
+function Hero({ heading, description, button_text }: HeroProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>Your Regular Giving Fundraising Team</h1>
-        <p>
-          Work with the best-quality findraiser in Australia and see results,
-          fast.
-        </p>
-        <Button>Get in Touch</Button>
+        <h1>{heading}</h1>
+        <p>{description}</p>
+        <Button>{button_text}</Button>
       </MaxWidthWrapper>
     </section>
   )

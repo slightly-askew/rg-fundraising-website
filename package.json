@@ -5,16 +5,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tina-dev": "yarn tinacms server:start -c \"next dev\"",
+    "tina-build": "yarn tinacms server:start -c \"next build\"",
+    "tina-start": "yarn tinacms server:start -c \"next start\"",
+    "gen:gql": "graphql-codegen --config codegen.yml",
+    "pretina-dev": "yarn gen:gql"
   },
   "dependencies": {
     "@stitches/react": "^1.2.6",
+    "@tinacms/auth": "^0.50.2",
+    "@tinacms/cli": "^0.60.0",
     "framer-motion": "^5.5.5",
+    "graphql-tag": "^2.12.6",
     "next": "12.0.7",
+    "next-tinacms-cloudinary": "^3.5.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-tinacms-editor": "^0.53.0",
+    "styled-components": "^5.3.3",
+    "tinacms": "^0.64.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.4.0",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.4.2",
+    "@graphql-codegen/typescript-graphql-files-modules": "2.1.1",
+    "@graphql-codegen/typescript-graphql-request": "^4.3.3",
+    "@graphql-codegen/typescript-operations": "2.2.2",
     "@netlify/plugin-nextjs": "^4.1.1",
     "@types/node": "17.0.5",
     "@types/react": "17.0.38",

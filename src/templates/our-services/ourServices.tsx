@@ -1,14 +1,16 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
 
-export interface OurServicesProps {}
+export interface OurServicesProps {
+  heading: string | null | undefined
+}
 
-function OurServices({}) {
+function OurServices({ heading }: OurServicesProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>What Services do we provide?</h1>
+        <h1>{heading}</h1>
         <p>
-          RG Funraising providers donor aquisition, donor retention and
+          RG Fundraising providers donor aquisition, donor retention and
           consultancy services for some of the best brands in the world.
         </p>
         <ul>

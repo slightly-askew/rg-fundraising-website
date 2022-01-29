@@ -4,6 +4,6 @@ node_modules
 .next
 .netlify
 out
-src/lib/datocms/__generated__
+src/lib/tina-cms/__generated__
 *.log
 *.lock
