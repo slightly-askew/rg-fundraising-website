@@ -35,13 +35,13 @@ export type Collection = {
 export type CollectionDocumentsArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
 };
 
 /** A relay-compliant pagination connection */
 export type Connection = {
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
 };
 
 export type Document = {
@@ -55,7 +55,7 @@ export type DocumentConnection = Connection & {
   __typename?: 'DocumentConnection';
   edges?: Maybe<Array<Maybe<DocumentConnectionEdges>>>;
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
 };
 
 export type DocumentConnectionEdges = {
@@ -65,18 +65,201 @@ export type DocumentConnectionEdges = {
 };
 
 export type DocumentMutation = {
-  pages?: InputMaybe<PagesMutation>;
+  homepage?: InputMaybe<HomepageMutation>;
+  privacy?: InputMaybe<PrivacyMutation>;
 };
 
-export type DocumentNode = PagesDocument;
+export type DocumentNode = HomepageDocument | PrivacyDocument;
+
+export type Homepage = {
+  __typename?: 'Homepage';
+  content_sections?: Maybe<Array<Maybe<HomepageContent_Sections>>>;
+  hero?: Maybe<HomepageHero>;
+  seo_data?: Maybe<HomepageSeo_Data>;
+};
+
+export type HomepageConnection = Connection & {
+  __typename?: 'HomepageConnection';
+  edges?: Maybe<Array<Maybe<HomepageConnectionEdges>>>;
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Float'];
+};
+
+export type HomepageConnectionEdges = {
+  __typename?: 'HomepageConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<HomepageDocument>;
+};
+
+export type HomepageContent_Sections = HomepageContent_SectionsCall_To_Action | HomepageContent_SectionsMeet_The_Team | HomepageContent_SectionsOur_Services | HomepageContent_SectionsPowered_By_Data | HomepageContent_SectionsWho_We_Work_With | HomepageContent_SectionsWhy_Rg;
+
+export type HomepageContent_SectionsCall_To_Action = {
+  __typename?: 'HomepageContent_sectionsCall_to_action';
+  button_text?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsCall_To_ActionMutation = {
+  button_text?: InputMaybe<Scalars['String']>;
+  heading?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsMeet_The_Team = {
+  __typename?: 'HomepageContent_sectionsMeet_the_team';
+  description?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  team_members?: Maybe<Array<Maybe<HomepageContent_SectionsMeet_The_TeamTeam_Members>>>;
+};
+
+export type HomepageContent_SectionsMeet_The_TeamMutation = {
+  description?: InputMaybe<Scalars['String']>;
+  heading?: InputMaybe<Scalars['String']>;
+  team_members?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsMeet_The_TeamTeam_MembersMutation>>>;
+};
+
+export type HomepageContent_SectionsMeet_The_TeamTeam_Members = {
+  __typename?: 'HomepageContent_sectionsMeet_the_teamTeam_members';
+  avatar?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsMeet_The_TeamTeam_MembersMutation = {
+  avatar?: InputMaybe<Scalars['String']>;
+  name?: InputMaybe<Scalars['String']>;
+  position?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsMutation = {
+  call_to_action?: InputMaybe<HomepageContent_SectionsCall_To_ActionMutation>;
+  meet_the_team?: InputMaybe<HomepageContent_SectionsMeet_The_TeamMutation>;
+  our_services?: InputMaybe<HomepageContent_SectionsOur_ServicesMutation>;
+  powered_by_data?: InputMaybe<HomepageContent_SectionsPowered_By_DataMutation>;
+  who_we_work_with?: InputMaybe<HomepageContent_SectionsWho_We_Work_WithMutation>;
+  why_rg?: InputMaybe<HomepageContent_SectionsWhy_RgMutation>;
+};
+
+export type HomepageContent_SectionsOur_Services = {
+  __typename?: 'HomepageContent_sectionsOur_services';
+  description?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  team_members?: Maybe<Array<Maybe<HomepageContent_SectionsOur_ServicesTeam_Members>>>;
+};
+
+export type HomepageContent_SectionsOur_ServicesMutation = {
+  description?: InputMaybe<Scalars['String']>;
+  heading?: InputMaybe<Scalars['String']>;
+  team_members?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsOur_ServicesTeam_MembersMutation>>>;
+};
+
+export type HomepageContent_SectionsOur_ServicesTeam_Members = {
+  __typename?: 'HomepageContent_sectionsOur_servicesTeam_members';
+  service_description?: Maybe<Scalars['String']>;
+  service_title?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsOur_ServicesTeam_MembersMutation = {
+  service_description?: InputMaybe<Scalars['String']>;
+  service_title?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsPowered_By_Data = {
+  __typename?: 'HomepageContent_sectionsPowered_by_data';
+  content?: Maybe<Scalars['JSON']>;
+  heading?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsPowered_By_DataMutation = {
+  content?: InputMaybe<Scalars['JSON']>;
+  heading?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsWho_We_Work_With = {
+  __typename?: 'HomepageContent_sectionsWho_we_work_with';
+  charities?: Maybe<Array<Maybe<HomepageContent_SectionsWho_We_Work_WithCharities>>>;
+  content?: Maybe<Scalars['JSON']>;
+  heading?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsWho_We_Work_WithCharities = {
+  __typename?: 'HomepageContent_sectionsWho_we_work_withCharities';
+  charity_logo?: Maybe<Scalars['String']>;
+  charity_name?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsWho_We_Work_WithCharitiesMutation = {
+  charity_logo?: InputMaybe<Scalars['String']>;
+  charity_name?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsWho_We_Work_WithMutation = {
+  charities?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsWho_We_Work_WithCharitiesMutation>>>;
+  content?: InputMaybe<Scalars['JSON']>;
+  heading?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsWhy_Rg = {
+  __typename?: 'HomepageContent_sectionsWhy_rg';
+  content?: Maybe<Scalars['JSON']>;
+  heading?: Maybe<Scalars['String']>;
+};
+
+export type HomepageContent_SectionsWhy_RgMutation = {
+  content?: InputMaybe<Scalars['JSON']>;
+  heading?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageDocument = Document & Node & {
+  __typename?: 'HomepageDocument';
+  data: Homepage;
+  dataJSON: Scalars['JSON'];
+  form: Scalars['JSON'];
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  values: Scalars['JSON'];
+};
+
+export type HomepageHero = {
+  __typename?: 'HomepageHero';
+  hero_button_text?: Maybe<Scalars['String']>;
+  hero_description?: Maybe<Scalars['String']>;
+  hero_heading?: Maybe<Scalars['String']>;
+};
+
+export type HomepageHeroMutation = {
+  hero_button_text?: InputMaybe<Scalars['String']>;
+  hero_description?: InputMaybe<Scalars['String']>;
+  hero_heading?: InputMaybe<Scalars['String']>;
+};
+
+export type HomepageMutation = {
+  content_sections?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsMutation>>>;
+  hero?: InputMaybe<HomepageHeroMutation>;
+  seo_data?: InputMaybe<HomepageSeo_DataMutation>;
+};
+
+export type HomepageSeo_Data = {
+  __typename?: 'HomepageSeo_data';
+  meta_canonical?: Maybe<Scalars['String']>;
+  meta_description?: Maybe<Scalars['String']>;
+  meta_title?: Maybe<Scalars['String']>;
+};
+
+export type HomepageSeo_DataMutation = {
+  meta_canonical?: InputMaybe<Scalars['String']>;
+  meta_description?: InputMaybe<Scalars['String']>;
+  meta_title?: InputMaybe<Scalars['String']>;
+};
 
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
   createDocument: DocumentNode;
-  createPagesDocument: PagesDocument;
+  createHomepageDocument: HomepageDocument;
+  createPrivacyDocument: PrivacyDocument;
   updateDocument: DocumentNode;
-  updatePagesDocument: PagesDocument;
+  updateHomepageDocument: HomepageDocument;
+  updatePrivacyDocument: PrivacyDocument;
 };
 
 
@@ -94,8 +277,14 @@ export type MutationCreateDocumentArgs = {
 };
 
 
-export type MutationCreatePagesDocumentArgs = {
-  params: PagesMutation;
+export type MutationCreateHomepageDocumentArgs = {
+  params: HomepageMutation;
+  relativePath: Scalars['String'];
+};
+
+
+export type MutationCreatePrivacyDocumentArgs = {
+  params: PrivacyMutation;
   relativePath: Scalars['String'];
 };
 
@@ -107,8 +296,14 @@ export type MutationUpdateDocumentArgs = {
 };
 
 
-export type MutationUpdatePagesDocumentArgs = {
-  params: PagesMutation;
+export type MutationUpdateHomepageDocumentArgs = {
+  params: HomepageMutation;
+  relativePath: Scalars['String'];
+};
+
+
+export type MutationUpdatePrivacyDocumentArgs = {
+  params: PrivacyMutation;
   relativePath: Scalars['String'];
 };
 
@@ -124,147 +319,29 @@ export type PageInfo = {
   startCursor: Scalars['String'];
 };
 
-export type Pages = {
-  __typename?: 'Pages';
-  content_sections?: Maybe<Array<Maybe<PagesContent_Sections>>>;
-  hero?: Maybe<PagesHero>;
-  seo_data?: Maybe<PagesSeo_Data>;
+export type Privacy = {
+  __typename?: 'Privacy';
+  body?: Maybe<Scalars['JSON']>;
+  hero?: Maybe<PrivacyHero>;
+  seo_data?: Maybe<PrivacySeo_Data>;
 };
 
-export type PagesConnection = Connection & {
-  __typename?: 'PagesConnection';
-  edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
+export type PrivacyConnection = Connection & {
+  __typename?: 'PrivacyConnection';
+  edges?: Maybe<Array<Maybe<PrivacyConnectionEdges>>>;
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
 };
 
-export type PagesConnectionEdges = {
-  __typename?: 'PagesConnectionEdges';
+export type PrivacyConnectionEdges = {
+  __typename?: 'PrivacyConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PagesDocument>;
+  node?: Maybe<PrivacyDocument>;
 };
 
-export type PagesContent_Sections = PagesContent_SectionsCall_To_Action | PagesContent_SectionsMeet_The_Team | PagesContent_SectionsOur_Services | PagesContent_SectionsPowered_By_Data | PagesContent_SectionsWho_We_Work_With | PagesContent_SectionsWhy_Rg;
-
-export type PagesContent_SectionsCall_To_Action = {
-  __typename?: 'PagesContent_sectionsCall_to_action';
-  button_text?: Maybe<Scalars['String']>;
-  heading?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsCall_To_ActionMutation = {
-  button_text?: InputMaybe<Scalars['String']>;
-  heading?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsMeet_The_Team = {
-  __typename?: 'PagesContent_sectionsMeet_the_team';
-  description?: Maybe<Scalars['String']>;
-  heading?: Maybe<Scalars['String']>;
-  team_members?: Maybe<Array<Maybe<PagesContent_SectionsMeet_The_TeamTeam_Members>>>;
-};
-
-export type PagesContent_SectionsMeet_The_TeamMutation = {
-  description?: InputMaybe<Scalars['String']>;
-  heading?: InputMaybe<Scalars['String']>;
-  team_members?: InputMaybe<Array<InputMaybe<PagesContent_SectionsMeet_The_TeamTeam_MembersMutation>>>;
-};
-
-export type PagesContent_SectionsMeet_The_TeamTeam_Members = {
-  __typename?: 'PagesContent_sectionsMeet_the_teamTeam_members';
-  avatar?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  position?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsMeet_The_TeamTeam_MembersMutation = {
-  avatar?: InputMaybe<Scalars['String']>;
-  name?: InputMaybe<Scalars['String']>;
-  position?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsMutation = {
-  call_to_action?: InputMaybe<PagesContent_SectionsCall_To_ActionMutation>;
-  meet_the_team?: InputMaybe<PagesContent_SectionsMeet_The_TeamMutation>;
-  our_services?: InputMaybe<PagesContent_SectionsOur_ServicesMutation>;
-  powered_by_data?: InputMaybe<PagesContent_SectionsPowered_By_DataMutation>;
-  who_we_work_with?: InputMaybe<PagesContent_SectionsWho_We_Work_WithMutation>;
-  why_rg?: InputMaybe<PagesContent_SectionsWhy_RgMutation>;
-};
-
-export type PagesContent_SectionsOur_Services = {
-  __typename?: 'PagesContent_sectionsOur_services';
-  description?: Maybe<Scalars['String']>;
-  heading?: Maybe<Scalars['String']>;
-  team_members?: Maybe<Array<Maybe<PagesContent_SectionsOur_ServicesTeam_Members>>>;
-};
-
-export type PagesContent_SectionsOur_ServicesMutation = {
-  description?: InputMaybe<Scalars['String']>;
-  heading?: InputMaybe<Scalars['String']>;
-  team_members?: InputMaybe<Array<InputMaybe<PagesContent_SectionsOur_ServicesTeam_MembersMutation>>>;
-};
-
-export type PagesContent_SectionsOur_ServicesTeam_Members = {
-  __typename?: 'PagesContent_sectionsOur_servicesTeam_members';
-  service_description?: Maybe<Scalars['String']>;
-  service_title?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsOur_ServicesTeam_MembersMutation = {
-  service_description?: InputMaybe<Scalars['String']>;
-  service_title?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsPowered_By_Data = {
-  __typename?: 'PagesContent_sectionsPowered_by_data';
-  content?: Maybe<Scalars['JSON']>;
-  heading?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsPowered_By_DataMutation = {
-  content?: InputMaybe<Scalars['JSON']>;
-  heading?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsWho_We_Work_With = {
-  __typename?: 'PagesContent_sectionsWho_we_work_with';
-  charities?: Maybe<Array<Maybe<PagesContent_SectionsWho_We_Work_WithCharities>>>;
-  content?: Maybe<Scalars['JSON']>;
-  heading?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsWho_We_Work_WithCharities = {
-  __typename?: 'PagesContent_sectionsWho_we_work_withCharities';
-  charity_logo?: Maybe<Scalars['String']>;
-  charity_name?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsWho_We_Work_WithCharitiesMutation = {
-  charity_logo?: InputMaybe<Scalars['String']>;
-  charity_name?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsWho_We_Work_WithMutation = {
-  charities?: InputMaybe<Array<InputMaybe<PagesContent_SectionsWho_We_Work_WithCharitiesMutation>>>;
-  content?: InputMaybe<Scalars['JSON']>;
-  heading?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsWhy_Rg = {
-  __typename?: 'PagesContent_sectionsWhy_rg';
-  content?: Maybe<Scalars['JSON']>;
-  heading?: Maybe<Scalars['String']>;
-};
-
-export type PagesContent_SectionsWhy_RgMutation = {
-  content?: InputMaybe<Scalars['JSON']>;
-  heading?: InputMaybe<Scalars['String']>;
-};
-
-export type PagesDocument = Document & Node & {
-  __typename?: 'PagesDocument';
-  data: Pages;
+export type PrivacyDocument = Document & Node & {
+  __typename?: 'PrivacyDocument';
+  data: Privacy;
   dataJSON: Scalars['JSON'];
   form: Scalars['JSON'];
   id: Scalars['ID'];
@@ -272,33 +349,33 @@ export type PagesDocument = Document & Node & {
   values: Scalars['JSON'];
 };
 
-export type PagesHero = {
-  __typename?: 'PagesHero';
+export type PrivacyHero = {
+  __typename?: 'PrivacyHero';
   hero_button_text?: Maybe<Scalars['String']>;
   hero_description?: Maybe<Scalars['String']>;
   hero_heading?: Maybe<Scalars['String']>;
 };
 
-export type PagesHeroMutation = {
+export type PrivacyHeroMutation = {
   hero_button_text?: InputMaybe<Scalars['String']>;
   hero_description?: InputMaybe<Scalars['String']>;
   hero_heading?: InputMaybe<Scalars['String']>;
 };
 
-export type PagesMutation = {
-  content_sections?: InputMaybe<Array<InputMaybe<PagesContent_SectionsMutation>>>;
-  hero?: InputMaybe<PagesHeroMutation>;
-  seo_data?: InputMaybe<PagesSeo_DataMutation>;
+export type PrivacyMutation = {
+  body?: InputMaybe<Scalars['JSON']>;
+  hero?: InputMaybe<PrivacyHeroMutation>;
+  seo_data?: InputMaybe<PrivacySeo_DataMutation>;
 };
 
-export type PagesSeo_Data = {
-  __typename?: 'PagesSeo_data';
+export type PrivacySeo_Data = {
+  __typename?: 'PrivacySeo_data';
   meta_canonical?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_title?: Maybe<Scalars['String']>;
 };
 
-export type PagesSeo_DataMutation = {
+export type PrivacySeo_DataMutation = {
   meta_canonical?: InputMaybe<Scalars['String']>;
   meta_description?: InputMaybe<Scalars['String']>;
   meta_title?: InputMaybe<Scalars['String']>;
@@ -311,8 +388,10 @@ export type Query = {
   getDocument: DocumentNode;
   getDocumentFields: Scalars['JSON'];
   getDocumentList: DocumentConnection;
-  getPagesDocument: PagesDocument;
-  getPagesList: PagesConnection;
+  getHomepageDocument: HomepageDocument;
+  getHomepageList: HomepageConnection;
+  getPrivacyDocument: PrivacyDocument;
+  getPrivacyList: PrivacyConnection;
   node: Node;
 };
 
@@ -331,21 +410,34 @@ export type QueryGetDocumentArgs = {
 export type QueryGetDocumentListArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
 };
 
 
-export type QueryGetPagesDocumentArgs = {
+export type QueryGetHomepageDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetPagesListArgs = {
+export type QueryGetHomepageListArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
+};
+
+
+export type QueryGetPrivacyDocumentArgs = {
+  relativePath?: InputMaybe<Scalars['String']>;
+};
+
+
+export type QueryGetPrivacyListArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
 };
 
 
@@ -370,36 +462,34 @@ export type SystemInfoBreadcrumbsArgs = {
   excludeExtension?: InputMaybe<Scalars['Boolean']>;
 };
 
-export type SeoDataFragment = { __typename?: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined };
+export type MeetTheTeamFragment = { __typename?: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined };
 
-export type MeetTheTeamFragment = { __typename?: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined };
+export type WhoWeWorkWithFragment = { __typename?: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined };
 
-export type WhoWeWorkWithFragment = { __typename?: 'PagesContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PagesContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined };
+export type OurServicesFragment = { __typename?: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined };
 
-export type OurServicesFragment = { __typename?: 'PagesContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined };
+export type PoweredByDataFragment = { __typename?: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined };
 
-export type PoweredByDataFragment = { __typename?: 'PagesContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined };
+export type WhyRgFragment = { __typename?: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined };
 
-export type WhyRgFragment = { __typename?: 'PagesContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined };
-
-export type CallToActionFragment = { __typename?: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined };
+export type CallToActionFragment = { __typename?: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined };
 
 export type GetHomepageQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetHomepageQuery = { __typename?: 'Query', getPagesDocument: { __typename?: 'PagesDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Pages', seo_data?: { __typename?: 'PagesSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PagesHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'PagesContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PagesContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'PagesContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined } | { __typename: 'PagesContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PagesContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PagesContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PagesContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
+export type GetHomepageQuery = { __typename?: 'Query', getHomepageDocument: { __typename?: 'HomepageDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Homepage', seo_data?: { __typename?: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
 
-export const SeoDataFragmentDoc = gql`
-    fragment SeoData on PagesSeo_data {
-  meta_title
-  meta_description
-  meta_canonical
-}
-    `;
+export type GetPrivacyPageQueryVariables = Exact<{
+  relativePath: Scalars['String'];
+}>;
+
+
+export type GetPrivacyPageQuery = { __typename?: 'Query', getPrivacyDocument: { __typename?: 'PrivacyDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Privacy', body?: any | null | undefined, seo_data?: { __typename?: 'PrivacySeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PrivacyHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
+
 export const MeetTheTeamFragmentDoc = gql`
-    fragment MeetTheTeam on PagesContent_sectionsMeet_the_team {
+    fragment MeetTheTeam on HomepageContent_sectionsMeet_the_team {
   heading
   description
   team_members {
@@ -410,7 +500,7 @@ export const MeetTheTeamFragmentDoc = gql`
 }
     `;
 export const WhoWeWorkWithFragmentDoc = gql`
-    fragment WhoWeWorkWith on PagesContent_sectionsWho_we_work_with {
+    fragment WhoWeWorkWith on HomepageContent_sectionsWho_we_work_with {
   heading
   content
   charities {
@@ -420,36 +510,38 @@ export const WhoWeWorkWithFragmentDoc = gql`
 }
     `;
 export const OurServicesFragmentDoc = gql`
-    fragment OurServices on PagesContent_sectionsOur_services {
+    fragment OurServices on HomepageContent_sectionsOur_services {
   heading
   description
 }
     `;
 export const PoweredByDataFragmentDoc = gql`
-    fragment PoweredByData on PagesContent_sectionsPowered_by_data {
+    fragment PoweredByData on HomepageContent_sectionsPowered_by_data {
   heading
   content
 }
     `;
 export const WhyRgFragmentDoc = gql`
-    fragment WhyRg on PagesContent_sectionsWhy_rg {
+    fragment WhyRg on HomepageContent_sectionsWhy_rg {
   heading
   content
 }
     `;
 export const CallToActionFragmentDoc = gql`
-    fragment CallToAction on PagesContent_sectionsCall_to_action {
+    fragment CallToAction on HomepageContent_sectionsCall_to_action {
   heading
   button_text
 }
     `;
 export const GetHomepageDocument = gql`
     query getHomepage($relativePath: String!) {
-  getPagesDocument(relativePath: $relativePath) {
+  getHomepageDocument(relativePath: $relativePath) {
     id
     data {
       seo_data {
-        ...SeoData
+        meta_title
+        meta_description
+        meta_canonical
       }
       hero {
         hero_heading
@@ -470,13 +562,34 @@ export const GetHomepageDocument = gql`
     dataJSON
   }
 }
-    ${SeoDataFragmentDoc}
-${MeetTheTeamFragmentDoc}
+    ${MeetTheTeamFragmentDoc}
 ${WhoWeWorkWithFragmentDoc}
 ${OurServicesFragmentDoc}
 ${PoweredByDataFragmentDoc}
 ${WhyRgFragmentDoc}
 ${CallToActionFragmentDoc}`;
+export const GetPrivacyPageDocument = gql`
+    query getPrivacyPage($relativePath: String!) {
+  getPrivacyDocument(relativePath: $relativePath) {
+    id
+    data {
+      seo_data {
+        meta_title
+        meta_description
+        meta_canonical
+      }
+      hero {
+        hero_heading
+        hero_description
+        hero_button_text
+      }
+      body
+    }
+    values
+    dataJSON
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -487,6 +600,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     getHomepage(variables: GetHomepageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetHomepageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetHomepageQuery>(GetHomepageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getHomepage');
+    },
+    getPrivacyPage(variables: GetPrivacyPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPrivacyPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetPrivacyPageQuery>(GetPrivacyPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPrivacyPage');
     }
   };
 }

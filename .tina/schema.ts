@@ -7,17 +7,49 @@ import {
   whoWeWorkWithBlock,
   whyRgBlock,
 } from './blocks'
+import { heroSectionField, seoDataField } from './fields'
 
 export default defineSchema({
   collections: [
     {
-      label: 'Page Content',
-      name: 'pages',
-      path: 'content/pages',
+      label: 'Homepage Content',
+      name: 'homepage',
+      path: 'content',
+      fields: [
+        //@ts-expect-error unexplainable type issues when using a variable
+        { ...seoDataField },
+        //@ts-expect-error unexplainable type issues when using a variable
+        { ...heroSectionField },
+        {
+          type: 'object',
+          list: true,
+          name: 'content_sections',
+          label: 'Content Sections',
+          templates: [
+            //@ts-expect-error unexplainable type issues when using a variable
+            callToActionBlock,
+            //@ts-expect-error unexplainable type issues when using a variable
+            meetTheTeamBlock,
+            //@ts-expect-error unexplainable type issues when using a variable
+            ourServicesBlock,
+            //@ts-expect-error unexplainable type issues when using a variable
+            poweredByDataBlock,
+            //@ts-expect-error unexplainable type issues when using a variable
+            whoWeWorkWithBlock,
+            //@ts-expect-error unexplainable type issues when using a variable
+            whyRgBlock,
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Privacy Policy',
+      name: 'privacy',
+      path: 'content/legal',
       fields: [
         {
           label: 'SEO Data',
-          name: 'seo_data',
+          name: 'privacy_seo_data',
           type: 'object',
           fields: [
             {
@@ -37,9 +69,10 @@ export default defineSchema({
             },
           ],
         },
+
         {
           label: 'Hero Section',
-          name: 'hero',
+          name: 'privacy_hero',
           type: 'object',
           fields: [
             {
@@ -60,31 +93,12 @@ export default defineSchema({
           ],
         },
         {
-          type: 'object',
-          list: true,
-          name: 'content_sections',
-          label: 'Content Sections',
-          templates: [
-            //@ts-expect-error
-            callToActionBlock,
-            //@ts-expect-error
-            meetTheTeamBlock,
-            //@ts-expect-error
-            ourServicesBlock,
-            //@ts-expect-error
-            poweredByDataBlock,
-            //@ts-expect-error
-            whoWeWorkWithBlock,
-            //@ts-expect-error
-            whyRgBlock,
-          ],
+          type: 'rich-text',
+          label: 'Body Content',
+          name: 'body',
+          isBody: true,
         },
       ],
     },
   ],
 })
-
-const HomePageForm = {
-  label: 'Home Page',
-  fields: [{}],
-}

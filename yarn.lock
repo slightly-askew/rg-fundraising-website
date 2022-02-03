@@ -2150,9 +2150,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tinacms/cli@npm:^0.60.0":
-  version: 0.60.0
-  resolution: "@tinacms/cli@npm:0.60.0"
+"@tinacms/cli@npm:^0.60.3":
+  version: 0.60.3
+  resolution: "@tinacms/cli@npm:0.60.3"
   dependencies:
     "@graphql-codegen/core": ^2.1.0
     "@graphql-codegen/plugin-helpers": latest
@@ -2162,8 +2162,8 @@ __metadata:
     "@graphql-codegen/visitor-plugin-common": ^2.4.0
     "@graphql-tools/graphql-file-loader": ^7.2.0
     "@graphql-tools/load": ^7.3.2
-    "@tinacms/datalayer": 0.0.1
-    "@tinacms/graphql": 0.59.4
+    "@tinacms/datalayer": 0.0.2
+    "@tinacms/graphql": 0.59.6
     ajv: ^6.12.3
     altair-express-middleware: 4.0.6
     auto-bind: ^4.0.0
@@ -2189,13 +2189,13 @@ __metadata:
     yup: ^0.32.9
   bin:
     tinacms: bin/tinacms
-  checksum: 91c186a514fb745f8fe2fb95ca081dfd65c1336ff2f3c9a2cac7acc5a7574f30f2024382a98fcf365b090b1b4deb839ab0b4a39fc2d5f6f76fdc311aea86e7cb
+  checksum: f92cf7c3de59d3bb24708c16f4f078a1846e043bd31a65f03d7b28ff5fb37fe195efeec59ad2385bc3edf7374d24f8bc9e1a8e4de4fbc191bcbc3fb468f24312
   languageName: node
   linkType: hard
 
-"@tinacms/datalayer@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@tinacms/datalayer@npm:0.0.1"
+"@tinacms/datalayer@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@tinacms/datalayer@npm:0.0.2"
   dependencies:
     "@octokit/auth-app": ^2.6.0
     "@octokit/graphql": ^4.5.6
@@ -2213,13 +2213,13 @@ __metadata:
     normalize-path: ^3.0.0
     prettier: ^2.2.1
     yup: ^0.32.9
-  checksum: d46ed70040af4b8e4b6333fa8e8585e2b8142e3320103ba9963c3ad37dd4a624dcefcd3afd978da46e2ef0ab73195a090324ee53ad7f040b9e485a0479e4d93a
+  checksum: dd98ca40bb59d732e32fa52a64ca8346130c0b9ce8340090d45bb45a470c3ee271cdb4436eebd0770c974065f157bd123b8b761a03cd120aa2dff2d44a92bf81
   languageName: node
   linkType: hard
 
-"@tinacms/graphql@npm:0.59.4":
-  version: 0.59.4
-  resolution: "@tinacms/graphql@npm:0.59.4"
+"@tinacms/graphql@npm:0.59.6":
+  version: 0.59.6
+  resolution: "@tinacms/graphql@npm:0.59.6"
   dependencies:
     body-parser: ^1.19.0
     cors: ^2.8.5
@@ -2261,18 +2261,7 @@ __metadata:
     vfile: ^4.2.0
     ws: ^7.3.1
     yup: ^0.32.9
-  checksum: 4bd319c63ba6794521db7e64c17a16c127ece554aac24e812e095f1e45899f092b6d198327da074205e81a18dc432ea77a14f34f11ebde152ad7a2fa771f6d7f
-  languageName: node
-  linkType: hard
-
-"@tinacms/sharedctx@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@tinacms/sharedctx@npm:0.0.1"
-  peerDependencies:
-    react: ">=16.14"
-    react-dom: ">=16.14"
-    react-is: ">=16.14.0"
-  checksum: db3dc95c5fbd8d4d83be68485b7cb92b93ff89c907127d93eaf361a171f3139ebcf5e13ed486398e803af36d610b79c5576a480cb13283133a3837a163b3cb09
+  checksum: c810ec213f6cb5a42ad90727d466c61ce383edfbba90c668a788209519033e734d6ae3842114571960b164d007e49a477eddb965da3849f6a664cbd1a5bd3058
   languageName: node
   linkType: hard
 
@@ -2287,11 +2276,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tinacms/toolkit@npm:0.56.8":
-  version: 0.56.8
-  resolution: "@tinacms/toolkit@npm:0.56.8"
+"@tinacms/toolkit@npm:0.56.10":
+  version: 0.56.10
+  resolution: "@tinacms/toolkit@npm:0.56.10"
   dependencies:
+    "@headlessui/react": ^1.4.2
     "@sambego/storybook-styles": ^1.0.0
+    "@tinacms/sharedctx": 0.1.0
     "@types/atob": ^2.1.2
     "@types/cors": ^2.8.12
     "@types/express": ^4.17.13
@@ -2326,7 +2317,7 @@ __metadata:
     react-dom: ">=16.14"
     react-is: ">=16.14.0"
     styled-components: ">=4.1"
-  checksum: 5d8726df0f8e5935fa1b17f040dde1e2a9c95a5a0bcb1fc882f82cd704f847ea9801bec0c64542a5b7fdb20e14b5eca181c9baf99a05ec4d582a50db76c30909
+  checksum: 0bbdcec9c64c9d60116c47341d81e692ab983f3df0568a9faea3830e851e0a6fe266952bff0538f9e60d07e6dfe44dabe886e631d2b166c61d6bc5697eb064a8
   languageName: node
   linkType: hard
 
@@ -12958,7 +12949,7 @@ __metadata:
     "@netlify/plugin-nextjs": ^4.1.1
     "@stitches/react": ^1.2.6
     "@tinacms/auth": ^0.50.2
-    "@tinacms/cli": ^0.60.0
+    "@tinacms/cli": ^0.60.3
     "@types/node": 17.0.5
     "@types/react": 17.0.38
     eslint: 8.5.0
@@ -12972,7 +12963,7 @@ __metadata:
     react-dom: 17.0.2
     react-tinacms-editor: ^0.53.0
     styled-components: ^5.3.3
-    tinacms: ^0.64.2
+    tinacms: ^0.66.0
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -15688,14 +15679,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinacms@npm:^0.64.2":
-  version: 0.64.2
-  resolution: "tinacms@npm:0.64.2"
+"tinacms@npm:^0.66.0":
+  version: 0.66.0
+  resolution: "tinacms@npm:0.66.0"
   dependencies:
     "@headlessui/react": ^1.4.1
     "@heroicons/react": ^1.0.4
-    "@tinacms/sharedctx": 0.0.1
-    "@tinacms/toolkit": 0.56.8
+    "@tinacms/sharedctx": 0.1.0
+    "@tinacms/toolkit": 0.56.10
     crypto-js: ^4.0.0
     final-form: 4.20.1
     graphql: ^15.1.0
@@ -15710,7 +15701,7 @@ __metadata:
     react-dom: ">=16.14.0"
     react-is: ^16.13.1 || <18.0.0
     styled-components: "*"
-  checksum: bffc7605bf360350eb6301c07ca6e99fc44ca8ba891b44e15872575386fe0bf89c1614c75c15bf5e0e47d998b994c0ed97e053b5b0fdeace3c79135f1df38337
+  checksum: 57d76f850338d44d411c418c17b580bbe030cd0fb506d6c7de989bee89936b8b3475e316f683f745a5fa140ae0a0b0bae1f93a39fd8cad61e70779706e5a1d4e
   languageName: node
   linkType: hard
 

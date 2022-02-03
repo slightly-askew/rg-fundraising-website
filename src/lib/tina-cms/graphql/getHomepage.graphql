@@ -1,9 +1,11 @@
 query getHomepage($relativePath: String!) {
-  getPagesDocument(relativePath: $relativePath) {
+  getHomepageDocument(relativePath: $relativePath) {
     id
     data {
       seo_data {
-        ...SeoData
+        meta_title
+        meta_description
+        meta_canonical
       }
       hero {
         hero_heading

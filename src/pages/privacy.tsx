@@ -3,22 +3,23 @@ import { Awaited } from '@utils/types'
 import request from '@lib/tina-cms'
 import Layout from 'src/layout'
 import Hero from '@templates/hero'
-import BlockRenderer from '@templates/BlockRenderer'
-import { GetHomepageQuery } from '@lib/tina-cms/__generated__/types'
+import { GetPrivacyPageQuery } from '@lib/tina-cms/__generated__/types'
+import MaxWidthWrapper from '@components/max-width-wrapper'
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { useTina } from 'tinacms/dist/edit-state'
 
 type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
 
-function Home(props: StaticProps) {
+function PrivacyPage(props: StaticProps) {
+  console.log(props.query)
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
     data: props.data,
   })
   const {
-    getHomepageDocument: { data: content },
+    getPrivacyDocument: { data: content },
   } = data
-  console.log(JSON.stringify(content, null, 4))
   return (
     <>
       <Head>
@@ -36,8 +37,9 @@ function Home(props: StaticProps) {
           description={content.hero?.hero_description}
           button_text={content.hero?.hero_button_text}
         />
-        {/*@ts-expect-error difficult to type property */}
-        <BlockRenderer content_sections={content.content_sections} />
+        <MaxWidthWrapper>
+          <TinaMarkdown content={content.body} />
+        </MaxWidthWrapper>
       </Layout>
     </>
   )
@@ -45,11 +47,11 @@ function Home(props: StaticProps) {
 
 export const getStaticProps = async () => {
   const variables = {
-    relativePath: 'home.mdx',
+    relativePath: 'privacy.mdx',
   }
 
-  const pageData = await request<GetHomepageQuery>({
-    query: 'getHomepage',
+  const pageData = await request<GetPrivacyPageQuery>({
+    query: 'getPrivacyPage',
     variables,
   })
 
@@ -60,4 +62,4 @@ export const getStaticProps = async () => {
   }
 }
 
-export default Home
+export default PrivacyPage

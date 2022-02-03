@@ -34,12 +34,8 @@ export async function request<T>({
   const querySymbol =
     query.charAt(0).toUpperCase() + query.slice(1) + 'Document'
 
-  console.log(querySymbol)
-
   //@ts-expect-error doesn't match querysymbol to known export
   const queryString = getGqlString(types[querySymbol])
-
-  console.log(queryString)
 
   const sdk = types.getSdk(client)
   //@ts-expect-error need to narrow type to Promise<T>

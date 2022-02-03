@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import VisuallyHidden from '@components/visually-hidden'
-import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import { TinaMarkdown, type TinaMarkdownContent } from 'tinacms/dist/rich-text'
 
 export interface WhoWeWorkWithProps {
   heading: string | null | undefined

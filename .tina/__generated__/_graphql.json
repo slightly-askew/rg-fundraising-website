@@ -427,7 +427,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Int"
+                "value": "Float"
               }
             }
           }
@@ -625,7 +625,7 @@
                 "kind": "NamedType",
                 "name": {
                   "kind": "Name",
-                  "value": "Int"
+                  "value": "Float"
                 }
               }
             },
@@ -639,7 +639,7 @@
                 "kind": "NamedType",
                 "name": {
                   "kind": "Name",
-                  "value": "Int"
+                  "value": "Float"
                 }
               }
             }
@@ -677,7 +677,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPagesDocument"
+            "value": "getHomepageDocument"
           },
           "arguments": [
             {
@@ -701,7 +701,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesDocument"
+                "value": "HomepageDocument"
               }
             }
           }
@@ -710,7 +710,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPagesList"
+            "value": "getHomepageList"
           },
           "arguments": [
             {
@@ -751,7 +751,7 @@
                 "kind": "NamedType",
                 "name": {
                   "kind": "Name",
-                  "value": "Int"
+                  "value": "Float"
                 }
               }
             },
@@ -765,7 +765,7 @@
                 "kind": "NamedType",
                 "name": {
                   "kind": "Name",
-                  "value": "Int"
+                  "value": "Float"
                 }
               }
             }
@@ -776,7 +776,115 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesConnection"
+                "value": "HomepageConnection"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "getPrivacyDocument"
+          },
+          "arguments": [
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "relativePath"
+              },
+              "type": {
+                "kind": "NamedType",
+                "name": {
+                  "kind": "Name",
+                  "value": "String"
+                }
+              }
+            }
+          ],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "PrivacyDocument"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "getPrivacyList"
+          },
+          "arguments": [
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "before"
+              },
+              "type": {
+                "kind": "NamedType",
+                "name": {
+                  "kind": "Name",
+                  "value": "String"
+                }
+              }
+            },
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "after"
+              },
+              "type": {
+                "kind": "NamedType",
+                "name": {
+                  "kind": "Name",
+                  "value": "String"
+                }
+              }
+            },
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "first"
+              },
+              "type": {
+                "kind": "NamedType",
+                "name": {
+                  "kind": "Name",
+                  "value": "Float"
+                }
+              }
+            },
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "last"
+              },
+              "type": {
+                "kind": "NamedType",
+                "name": {
+                  "kind": "Name",
+                  "value": "Float"
+                }
+              }
+            }
+          ],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "PrivacyConnection"
               }
             }
           }
@@ -869,7 +977,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Int"
+                "value": "Float"
               }
             }
           }
@@ -1083,7 +1191,7 @@
                 "kind": "NamedType",
                 "name": {
                   "kind": "Name",
-                  "value": "Int"
+                  "value": "Float"
                 }
               }
             },
@@ -1097,7 +1205,7 @@
                 "kind": "NamedType",
                 "name": {
                   "kind": "Name",
-                  "value": "Int"
+                  "value": "Float"
                 }
               }
             }
@@ -1127,7 +1235,14 @@
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesDocument"
+            "value": "HomepageDocument"
+          }
+        },
+        {
+          "kind": "NamedType",
+          "name": {
+            "kind": "Name",
+            "value": "PrivacyDocument"
           }
         }
       ]
@@ -1138,7 +1253,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesSeo_data"
+        "value": "HomepageSeo_data"
       },
       "fields": [
         {
@@ -1194,7 +1309,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesHero"
+        "value": "HomepageHero"
       },
       "fields": [
         {
@@ -1250,7 +1365,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsCall_to_action"
+        "value": "HomepageContent_sectionsCall_to_action"
       },
       "fields": [
         {
@@ -1291,7 +1406,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsMeet_the_teamTeam_members"
+        "value": "HomepageContent_sectionsMeet_the_teamTeam_members"
       },
       "fields": [
         {
@@ -1347,7 +1462,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsMeet_the_team"
+        "value": "HomepageContent_sectionsMeet_the_team"
       },
       "fields": [
         {
@@ -1393,7 +1508,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsMeet_the_teamTeam_members"
+                "value": "HomepageContent_sectionsMeet_the_teamTeam_members"
               }
             }
           }
@@ -1406,7 +1521,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsOur_servicesTeam_members"
+        "value": "HomepageContent_sectionsOur_servicesTeam_members"
       },
       "fields": [
         {
@@ -1447,7 +1562,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsOur_services"
+        "value": "HomepageContent_sectionsOur_services"
       },
       "fields": [
         {
@@ -1493,7 +1608,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsOur_servicesTeam_members"
+                "value": "HomepageContent_sectionsOur_servicesTeam_members"
               }
             }
           }
@@ -1506,7 +1621,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsPowered_by_data"
+        "value": "HomepageContent_sectionsPowered_by_data"
       },
       "fields": [
         {
@@ -1547,7 +1662,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsWho_we_work_withCharities"
+        "value": "HomepageContent_sectionsWho_we_work_withCharities"
       },
       "fields": [
         {
@@ -1588,7 +1703,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsWho_we_work_with"
+        "value": "HomepageContent_sectionsWho_we_work_with"
       },
       "fields": [
         {
@@ -1634,7 +1749,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsWho_we_work_withCharities"
+                "value": "HomepageContent_sectionsWho_we_work_withCharities"
               }
             }
           }
@@ -1647,7 +1762,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsWhy_rg"
+        "value": "HomepageContent_sectionsWhy_rg"
       },
       "fields": [
         {
@@ -1686,7 +1801,7 @@
       "kind": "UnionTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sections"
+        "value": "HomepageContent_sections"
       },
       "directives": [],
       "types": [
@@ -1694,42 +1809,42 @@
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesContent_sectionsCall_to_action"
+            "value": "HomepageContent_sectionsCall_to_action"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesContent_sectionsMeet_the_team"
+            "value": "HomepageContent_sectionsMeet_the_team"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesContent_sectionsOur_services"
+            "value": "HomepageContent_sectionsOur_services"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesContent_sectionsPowered_by_data"
+            "value": "HomepageContent_sectionsPowered_by_data"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesContent_sectionsWho_we_work_with"
+            "value": "HomepageContent_sectionsWho_we_work_with"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PagesContent_sectionsWhy_rg"
+            "value": "HomepageContent_sectionsWhy_rg"
           }
         }
       ]
@@ -1740,7 +1855,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "Pages"
+        "value": "Homepage"
       },
       "fields": [
         {
@@ -1754,7 +1869,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesSeo_data"
+              "value": "HomepageSeo_data"
             }
           }
         },
@@ -1769,7 +1884,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesHero"
+              "value": "HomepageHero"
             }
           }
         },
@@ -1786,7 +1901,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sections"
+                "value": "HomepageContent_sections"
               }
             }
           }
@@ -1814,7 +1929,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesDocument"
+        "value": "HomepageDocument"
       },
       "fields": [
         {
@@ -1866,7 +1981,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Pages"
+                "value": "Homepage"
               }
             }
           }
@@ -1933,7 +2048,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesConnectionEdges"
+        "value": "HomepageConnectionEdges"
       },
       "fields": [
         {
@@ -1962,7 +2077,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesDocument"
+              "value": "HomepageDocument"
             }
           }
         }
@@ -1982,7 +2097,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PagesConnection"
+        "value": "HomepageConnection"
       },
       "fields": [
         {
@@ -2013,7 +2128,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Int"
+                "value": "Float"
               }
             }
           }
@@ -2031,7 +2146,420 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesConnectionEdges"
+                "value": "HomepageConnectionEdges"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyPrivacy_seo_data"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "meta_title"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "meta_description"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "meta_canonical"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyPrivacy_hero"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "hero_heading"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "hero_description"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "hero_button_text"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "Privacy"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "privacy_seo_data"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PrivacyPrivacy_seo_data"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "privacy_hero"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PrivacyPrivacy_hero"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "body"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "JSON"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [
+        {
+          "kind": "NamedType",
+          "name": {
+            "kind": "Name",
+            "value": "Node"
+          }
+        },
+        {
+          "kind": "NamedType",
+          "name": {
+            "kind": "Name",
+            "value": "Document"
+          }
+        }
+      ],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyDocument"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "id"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "ID"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "sys"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "SystemInfo"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "data"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "Privacy"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "form"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "JSON"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "values"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "JSON"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "dataJSON"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "JSON"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyConnectionEdges"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "cursor"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "node"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PrivacyDocument"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "ObjectTypeDefinition",
+      "interfaces": [
+        {
+          "kind": "NamedType",
+          "name": {
+            "kind": "Name",
+            "value": "Connection"
+          }
+        }
+      ],
+      "directives": [],
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyConnection"
+      },
+      "fields": [
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "pageInfo"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PageInfo"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "totalCount"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "Float"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "edges"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "ListType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "PrivacyConnectionEdges"
               }
             }
           }
@@ -2252,7 +2780,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "updatePagesDocument"
+            "value": "updateHomepageDocument"
           },
           "arguments": [
             {
@@ -2284,7 +2812,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PagesMutation"
+                    "value": "HomepageMutation"
                   }
                 }
               }
@@ -2296,7 +2824,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesDocument"
+                "value": "HomepageDocument"
               }
             }
           }
@@ -2305,7 +2833,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "createPagesDocument"
+            "value": "createHomepageDocument"
           },
           "arguments": [
             {
@@ -2337,7 +2865,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PagesMutation"
+                    "value": "HomepageMutation"
                   }
                 }
               }
@@ -2349,7 +2877,113 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesDocument"
+                "value": "HomepageDocument"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "updatePrivacyDocument"
+          },
+          "arguments": [
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "relativePath"
+              },
+              "type": {
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "String"
+                  }
+                }
+              }
+            },
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "params"
+              },
+              "type": {
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "PrivacyMutation"
+                  }
+                }
+              }
+            }
+          ],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "PrivacyDocument"
+              }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "createPrivacyDocument"
+          },
+          "arguments": [
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "relativePath"
+              },
+              "type": {
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "String"
+                  }
+                }
+              }
+            },
+            {
+              "kind": "InputValueDefinition",
+              "name": {
+                "kind": "Name",
+                "value": "params"
+              },
+              "type": {
+                "kind": "NonNullType",
+                "type": {
+                  "kind": "NamedType",
+                  "name": {
+                    "kind": "Name",
+                    "value": "PrivacyMutation"
+                  }
+                }
+              }
+            }
+          ],
+          "type": {
+            "kind": "NonNullType",
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "PrivacyDocument"
               }
             }
           }
@@ -2367,13 +3001,27 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "pages"
+            "value": "homepage"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesMutation"
+              "value": "HomepageMutation"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "privacy"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PrivacyMutation"
             }
           }
         }
@@ -2383,7 +3031,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesSeo_dataMutation"
+        "value": "HomepageSeo_dataMutation"
       },
       "fields": [
         {
@@ -2434,7 +3082,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesHeroMutation"
+        "value": "HomepageHeroMutation"
       },
       "fields": [
         {
@@ -2485,7 +3133,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsCall_to_actionMutation"
+        "value": "HomepageContent_sectionsCall_to_actionMutation"
       },
       "fields": [
         {
@@ -2522,7 +3170,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsMeet_the_teamTeam_membersMutation"
+        "value": "HomepageContent_sectionsMeet_the_teamTeam_membersMutation"
       },
       "fields": [
         {
@@ -2573,7 +3221,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsMeet_the_teamMutation"
+        "value": "HomepageContent_sectionsMeet_the_teamMutation"
       },
       "fields": [
         {
@@ -2616,7 +3264,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsMeet_the_teamTeam_membersMutation"
+                "value": "HomepageContent_sectionsMeet_the_teamTeam_membersMutation"
               }
             }
           }
@@ -2627,7 +3275,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsOur_servicesTeam_membersMutation"
+        "value": "HomepageContent_sectionsOur_servicesTeam_membersMutation"
       },
       "fields": [
         {
@@ -2664,7 +3312,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsOur_servicesMutation"
+        "value": "HomepageContent_sectionsOur_servicesMutation"
       },
       "fields": [
         {
@@ -2707,7 +3355,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsOur_servicesTeam_membersMutation"
+                "value": "HomepageContent_sectionsOur_servicesTeam_membersMutation"
               }
             }
           }
@@ -2718,7 +3366,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsPowered_by_dataMutation"
+        "value": "HomepageContent_sectionsPowered_by_dataMutation"
       },
       "fields": [
         {
@@ -2755,7 +3403,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsWho_we_work_withCharitiesMutation"
+        "value": "HomepageContent_sectionsWho_we_work_withCharitiesMutation"
       },
       "fields": [
         {
@@ -2792,7 +3440,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsWho_we_work_withMutation"
+        "value": "HomepageContent_sectionsWho_we_work_withMutation"
       },
       "fields": [
         {
@@ -2835,7 +3483,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsWho_we_work_withCharitiesMutation"
+                "value": "HomepageContent_sectionsWho_we_work_withCharitiesMutation"
               }
             }
           }
@@ -2846,7 +3494,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsWhy_rgMutation"
+        "value": "HomepageContent_sectionsWhy_rgMutation"
       },
       "fields": [
         {
@@ -2883,7 +3531,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesContent_sectionsMutation"
+        "value": "HomepageContent_sectionsMutation"
       },
       "fields": [
         {
@@ -2896,7 +3544,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesContent_sectionsCall_to_actionMutation"
+              "value": "HomepageContent_sectionsCall_to_actionMutation"
             }
           }
         },
@@ -2910,7 +3558,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesContent_sectionsMeet_the_teamMutation"
+              "value": "HomepageContent_sectionsMeet_the_teamMutation"
             }
           }
         },
@@ -2924,7 +3572,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesContent_sectionsOur_servicesMutation"
+              "value": "HomepageContent_sectionsOur_servicesMutation"
             }
           }
         },
@@ -2938,7 +3586,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesContent_sectionsPowered_by_dataMutation"
+              "value": "HomepageContent_sectionsPowered_by_dataMutation"
             }
           }
         },
@@ -2952,7 +3600,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesContent_sectionsWho_we_work_withMutation"
+              "value": "HomepageContent_sectionsWho_we_work_withMutation"
             }
           }
         },
@@ -2966,7 +3614,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesContent_sectionsWhy_rgMutation"
+              "value": "HomepageContent_sectionsWhy_rgMutation"
             }
           }
         }
@@ -2976,7 +3624,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PagesMutation"
+        "value": "HomepageMutation"
       },
       "fields": [
         {
@@ -2989,7 +3637,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesSeo_dataMutation"
+              "value": "HomepageSeo_dataMutation"
             }
           }
         },
@@ -3003,7 +3651,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PagesHeroMutation"
+              "value": "HomepageHeroMutation"
             }
           }
         },
@@ -3019,8 +3667,161 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PagesContent_sectionsMutation"
+                "value": "HomepageContent_sectionsMutation"
               }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "InputObjectTypeDefinition",
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyPrivacy_seo_dataMutation"
+      },
+      "fields": [
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "meta_title"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "meta_description"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "meta_canonical"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "InputObjectTypeDefinition",
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyPrivacy_heroMutation"
+      },
+      "fields": [
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "hero_heading"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "hero_description"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "hero_button_text"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "InputObjectTypeDefinition",
+      "name": {
+        "kind": "Name",
+        "value": "PrivacyMutation"
+      },
+      "fields": [
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "privacy_seo_data"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PrivacyPrivacy_seo_dataMutation"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "privacy_hero"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "PrivacyPrivacy_heroMutation"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "body"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "JSON"
             }
           }
         }

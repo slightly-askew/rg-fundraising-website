@@ -38,7 +38,7 @@ interface Document {
 
 """A relay-compliant pagination connection"""
 interface Connection {
-  totalCount: Int!
+  totalCount: Float!
 }
 
 type Query {
@@ -46,10 +46,12 @@ type Query {
   getCollections: [Collection!]!
   node(id: String): Node!
   getDocument(collection: String, relativePath: String): DocumentNode!
-  getDocumentList(before: String, after: String, first: Int, last: Int): DocumentConnection!
+  getDocumentList(before: String, after: String, first: Float, last: Float): DocumentConnection!
   getDocumentFields: JSON!
-  getPagesDocument(relativePath: String): PagesDocument!
-  getPagesList(before: String, after: String, first: Int, last: Int): PagesConnection!
+  getHomepageDocument(relativePath: String): HomepageDocument!
+  getHomepageList(before: String, after: String, first: Float, last: Float): HomepageConnection!
+  getPrivacyDocument(relativePath: String): PrivacyDocument!
+  getPrivacyList(before: String, after: String, first: Float, last: Float): PrivacyConnection!
 }
 
 type DocumentConnectionEdges {
@@ -59,7 +61,7 @@ type DocumentConnectionEdges {
 
 type DocumentConnection implements Connection {
   pageInfo: PageInfo
-  totalCount: Int!
+  totalCount: Float!
   edges: [DocumentConnectionEdges]
 }
 
@@ -72,186 +74,245 @@ type Collection {
   matches: String
   templates: [JSON]
   fields: [JSON]
-  documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
+  documents(before: String, after: String, first: Float, last: Float): DocumentConnection!
 }
 
-union DocumentNode = PagesDocument
+union DocumentNode = HomepageDocument | PrivacyDocument
 
-type PagesSeo_data {
+type HomepageSeo_data {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-type PagesHero {
+type HomepageHero {
   hero_heading: String
   hero_description: String
   hero_button_text: String
 }
 
-type PagesContent_sectionsCall_to_action {
+type HomepageContent_sectionsCall_to_action {
   heading: String
   button_text: String
 }
 
-type PagesContent_sectionsMeet_the_teamTeam_members {
+type HomepageContent_sectionsMeet_the_teamTeam_members {
   name: String
   position: String
   avatar: String
 }
 
-type PagesContent_sectionsMeet_the_team {
+type HomepageContent_sectionsMeet_the_team {
   heading: String
   description: String
-  team_members: [PagesContent_sectionsMeet_the_teamTeam_members]
+  team_members: [HomepageContent_sectionsMeet_the_teamTeam_members]
 }
 
-type PagesContent_sectionsOur_servicesTeam_members {
+type HomepageContent_sectionsOur_servicesTeam_members {
   service_title: String
   service_description: String
 }
 
-type PagesContent_sectionsOur_services {
+type HomepageContent_sectionsOur_services {
   heading: String
   description: String
-  team_members: [PagesContent_sectionsOur_servicesTeam_members]
+  team_members: [HomepageContent_sectionsOur_servicesTeam_members]
 }
 
-type PagesContent_sectionsPowered_by_data {
+type HomepageContent_sectionsPowered_by_data {
   heading: String
   content: JSON
 }
 
-type PagesContent_sectionsWho_we_work_withCharities {
+type HomepageContent_sectionsWho_we_work_withCharities {
   charity_name: String
   charity_logo: String
 }
 
-type PagesContent_sectionsWho_we_work_with {
+type HomepageContent_sectionsWho_we_work_with {
   heading: String
   content: JSON
-  charities: [PagesContent_sectionsWho_we_work_withCharities]
+  charities: [HomepageContent_sectionsWho_we_work_withCharities]
 }
 
-type PagesContent_sectionsWhy_rg {
+type HomepageContent_sectionsWhy_rg {
   heading: String
   content: JSON
 }
 
-union PagesContent_sections = PagesContent_sectionsCall_to_action | PagesContent_sectionsMeet_the_team | PagesContent_sectionsOur_services | PagesContent_sectionsPowered_by_data | PagesContent_sectionsWho_we_work_with | PagesContent_sectionsWhy_rg
+union HomepageContent_sections = HomepageContent_sectionsCall_to_action | HomepageContent_sectionsMeet_the_team | HomepageContent_sectionsOur_services | HomepageContent_sectionsPowered_by_data | HomepageContent_sectionsWho_we_work_with | HomepageContent_sectionsWhy_rg
 
-type Pages {
-  seo_data: PagesSeo_data
-  hero: PagesHero
-  content_sections: [PagesContent_sections]
+type Homepage {
+  seo_data: HomepageSeo_data
+  hero: HomepageHero
+  content_sections: [HomepageContent_sections]
 }
 
-type PagesDocument implements Node & Document {
+type HomepageDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
-  data: Pages!
+  data: Homepage!
   form: JSON!
   values: JSON!
   dataJSON: JSON!
 }
 
-type PagesConnectionEdges {
+type HomepageConnectionEdges {
   cursor: String
-  node: PagesDocument
+  node: HomepageDocument
 }
 
-type PagesConnection implements Connection {
+type HomepageConnection implements Connection {
   pageInfo: PageInfo
-  totalCount: Int!
-  edges: [PagesConnectionEdges]
+  totalCount: Float!
+  edges: [HomepageConnectionEdges]
+}
+
+type PrivacyPrivacy_seo_data {
+  meta_title: String
+  meta_description: String
+  meta_canonical: String
+}
+
+type PrivacyPrivacy_hero {
+  hero_heading: String
+  hero_description: String
+  hero_button_text: String
+}
+
+type Privacy {
+  privacy_seo_data: PrivacyPrivacy_seo_data
+  privacy_hero: PrivacyPrivacy_hero
+  body: JSON
+}
+
+type PrivacyDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: Privacy!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type PrivacyConnectionEdges {
+  cursor: String
+  node: PrivacyDocument
+}
+
+type PrivacyConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Float!
+  edges: [PrivacyConnectionEdges]
 }
 
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updatePagesDocument(relativePath: String!, params: PagesMutation!): PagesDocument!
-  createPagesDocument(relativePath: String!, params: PagesMutation!): PagesDocument!
+  updateHomepageDocument(relativePath: String!, params: HomepageMutation!): HomepageDocument!
+  createHomepageDocument(relativePath: String!, params: HomepageMutation!): HomepageDocument!
+  updatePrivacyDocument(relativePath: String!, params: PrivacyMutation!): PrivacyDocument!
+  createPrivacyDocument(relativePath: String!, params: PrivacyMutation!): PrivacyDocument!
 }
 
 input DocumentMutation {
-  pages: PagesMutation
+  homepage: HomepageMutation
+  privacy: PrivacyMutation
 }
 
-input PagesSeo_dataMutation {
+input HomepageSeo_dataMutation {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-input PagesHeroMutation {
+input HomepageHeroMutation {
   hero_heading: String
   hero_description: String
   hero_button_text: String
 }
 
-input PagesContent_sectionsCall_to_actionMutation {
+input HomepageContent_sectionsCall_to_actionMutation {
   heading: String
   button_text: String
 }
 
-input PagesContent_sectionsMeet_the_teamTeam_membersMutation {
+input HomepageContent_sectionsMeet_the_teamTeam_membersMutation {
   name: String
   position: String
   avatar: String
 }
 
-input PagesContent_sectionsMeet_the_teamMutation {
+input HomepageContent_sectionsMeet_the_teamMutation {
   heading: String
   description: String
-  team_members: [PagesContent_sectionsMeet_the_teamTeam_membersMutation]
+  team_members: [HomepageContent_sectionsMeet_the_teamTeam_membersMutation]
 }
 
-input PagesContent_sectionsOur_servicesTeam_membersMutation {
+input HomepageContent_sectionsOur_servicesTeam_membersMutation {
   service_title: String
   service_description: String
 }
 
-input PagesContent_sectionsOur_servicesMutation {
+input HomepageContent_sectionsOur_servicesMutation {
   heading: String
   description: String
-  team_members: [PagesContent_sectionsOur_servicesTeam_membersMutation]
+  team_members: [HomepageContent_sectionsOur_servicesTeam_membersMutation]
 }
 
-input PagesContent_sectionsPowered_by_dataMutation {
+input HomepageContent_sectionsPowered_by_dataMutation {
   heading: String
   content: JSON
 }
 
-input PagesContent_sectionsWho_we_work_withCharitiesMutation {
+input HomepageContent_sectionsWho_we_work_withCharitiesMutation {
   charity_name: String
   charity_logo: String
 }
 
-input PagesContent_sectionsWho_we_work_withMutation {
+input HomepageContent_sectionsWho_we_work_withMutation {
   heading: String
   content: JSON
-  charities: [PagesContent_sectionsWho_we_work_withCharitiesMutation]
+  charities: [HomepageContent_sectionsWho_we_work_withCharitiesMutation]
 }
 
-input PagesContent_sectionsWhy_rgMutation {
+input HomepageContent_sectionsWhy_rgMutation {
   heading: String
   content: JSON
 }
 
-input PagesContent_sectionsMutation {
-  call_to_action: PagesContent_sectionsCall_to_actionMutation
-  meet_the_team: PagesContent_sectionsMeet_the_teamMutation
-  our_services: PagesContent_sectionsOur_servicesMutation
-  powered_by_data: PagesContent_sectionsPowered_by_dataMutation
-  who_we_work_with: PagesContent_sectionsWho_we_work_withMutation
-  why_rg: PagesContent_sectionsWhy_rgMutation
+input HomepageContent_sectionsMutation {
+  call_to_action: HomepageContent_sectionsCall_to_actionMutation
+  meet_the_team: HomepageContent_sectionsMeet_the_teamMutation
+  our_services: HomepageContent_sectionsOur_servicesMutation
+  powered_by_data: HomepageContent_sectionsPowered_by_dataMutation
+  who_we_work_with: HomepageContent_sectionsWho_we_work_withMutation
+  why_rg: HomepageContent_sectionsWhy_rgMutation
 }
 
-input PagesMutation {
-  seo_data: PagesSeo_dataMutation
-  hero: PagesHeroMutation
-  content_sections: [PagesContent_sectionsMutation]
+input HomepageMutation {
+  seo_data: HomepageSeo_dataMutation
+  hero: HomepageHeroMutation
+  content_sections: [HomepageContent_sectionsMutation]
+}
+
+input PrivacyPrivacy_seo_dataMutation {
+  meta_title: String
+  meta_description: String
+  meta_canonical: String
+}
+
+input PrivacyPrivacy_heroMutation {
+  hero_heading: String
+  hero_description: String
+  hero_button_text: String
+}
+
+input PrivacyMutation {
+  privacy_seo_data: PrivacyPrivacy_seo_dataMutation
+  privacy_hero: PrivacyPrivacy_heroMutation
+  body: JSON
 }
 
 schema {

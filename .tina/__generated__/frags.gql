@@ -1,4 +1,4 @@
-fragment PagesParts on Pages {
+fragment HomepageParts on Homepage {
   seo_data {
     __typename
     meta_title
@@ -13,11 +13,11 @@ fragment PagesParts on Pages {
   }
   content_sections {
     __typename
-    ... on PagesContent_sectionsCall_to_action {
+    ... on HomepageContent_sectionsCall_to_action {
       heading
       button_text
     }
-    ... on PagesContent_sectionsMeet_the_team {
+    ... on HomepageContent_sectionsMeet_the_team {
       heading
       description
       team_members {
@@ -27,7 +27,7 @@ fragment PagesParts on Pages {
         avatar
       }
     }
-    ... on PagesContent_sectionsOur_services {
+    ... on HomepageContent_sectionsOur_services {
       heading
       description
       team_members {
@@ -36,11 +36,11 @@ fragment PagesParts on Pages {
         service_description
       }
     }
-    ... on PagesContent_sectionsPowered_by_data {
+    ... on HomepageContent_sectionsPowered_by_data {
       heading
       content
     }
-    ... on PagesContent_sectionsWho_we_work_with {
+    ... on HomepageContent_sectionsWho_we_work_with {
       heading
       content
       charities {
@@ -49,9 +49,25 @@ fragment PagesParts on Pages {
         charity_logo
       }
     }
-    ... on PagesContent_sectionsWhy_rg {
+    ... on HomepageContent_sectionsWhy_rg {
       heading
       content
     }
   }
+}
+
+fragment PrivacyParts on Privacy {
+  privacy_seo_data {
+    __typename
+    meta_title
+    meta_description
+    meta_canonical
+  }
+  privacy_hero {
+    __typename
+    hero_heading
+    hero_description
+    hero_button_text
+  }
+  body
 }
