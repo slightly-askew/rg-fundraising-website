@@ -322,8 +322,8 @@ export type PageInfo = {
 export type Privacy = {
   __typename?: 'Privacy';
   body?: Maybe<Scalars['JSON']>;
-  hero?: Maybe<PrivacyHero>;
-  seo_data?: Maybe<PrivacySeo_Data>;
+  privacy_hero?: Maybe<PrivacyPrivacy_Hero>;
+  privacy_seo_data?: Maybe<PrivacyPrivacy_Seo_Data>;
 };
 
 export type PrivacyConnection = Connection & {
@@ -349,33 +349,33 @@ export type PrivacyDocument = Document & Node & {
   values: Scalars['JSON'];
 };
 
-export type PrivacyHero = {
-  __typename?: 'PrivacyHero';
+export type PrivacyMutation = {
+  body?: InputMaybe<Scalars['JSON']>;
+  privacy_hero?: InputMaybe<PrivacyPrivacy_HeroMutation>;
+  privacy_seo_data?: InputMaybe<PrivacyPrivacy_Seo_DataMutation>;
+};
+
+export type PrivacyPrivacy_Hero = {
+  __typename?: 'PrivacyPrivacy_hero';
   hero_button_text?: Maybe<Scalars['String']>;
   hero_description?: Maybe<Scalars['String']>;
   hero_heading?: Maybe<Scalars['String']>;
 };
 
-export type PrivacyHeroMutation = {
+export type PrivacyPrivacy_HeroMutation = {
   hero_button_text?: InputMaybe<Scalars['String']>;
   hero_description?: InputMaybe<Scalars['String']>;
   hero_heading?: InputMaybe<Scalars['String']>;
 };
 
-export type PrivacyMutation = {
-  body?: InputMaybe<Scalars['JSON']>;
-  hero?: InputMaybe<PrivacyHeroMutation>;
-  seo_data?: InputMaybe<PrivacySeo_DataMutation>;
-};
-
-export type PrivacySeo_Data = {
-  __typename?: 'PrivacySeo_data';
+export type PrivacyPrivacy_Seo_Data = {
+  __typename?: 'PrivacyPrivacy_seo_data';
   meta_canonical?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_title?: Maybe<Scalars['String']>;
 };
 
-export type PrivacySeo_DataMutation = {
+export type PrivacyPrivacy_Seo_DataMutation = {
   meta_canonical?: InputMaybe<Scalars['String']>;
   meta_description?: InputMaybe<Scalars['String']>;
   meta_title?: InputMaybe<Scalars['String']>;
@@ -486,7 +486,7 @@ export type GetPrivacyPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPrivacyPageQuery = { __typename?: 'Query', getPrivacyDocument: { __typename?: 'PrivacyDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Privacy', body?: any | null | undefined, seo_data?: { __typename?: 'PrivacySeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PrivacyHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
+export type GetPrivacyPageQuery = { __typename?: 'Query', getPrivacyDocument: { __typename?: 'PrivacyDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename?: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename?: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
 
 export const MeetTheTeamFragmentDoc = gql`
     fragment MeetTheTeam on HomepageContent_sectionsMeet_the_team {
@@ -573,12 +573,12 @@ export const GetPrivacyPageDocument = gql`
   getPrivacyDocument(relativePath: $relativePath) {
     id
     data {
-      seo_data {
+      privacy_seo_data {
         meta_title
         meta_description
         meta_canonical
       }
-      hero {
+      privacy_hero {
         hero_heading
         hero_description
         hero_button_text

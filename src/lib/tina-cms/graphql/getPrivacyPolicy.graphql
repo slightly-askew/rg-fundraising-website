@@ -2,12 +2,12 @@ query getPrivacyPage($relativePath: String!) {
   getPrivacyDocument(relativePath: $relativePath) {
     id
     data {
-      seo_data {
+      privacy_seo_data {
         meta_title
         meta_description
         meta_canonical
       }
-      hero {
+      privacy_hero {
         hero_heading
         hero_description
         hero_button_text
