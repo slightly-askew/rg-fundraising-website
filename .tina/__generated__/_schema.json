@@ -492,12 +492,12 @@
     },
     {
       "label": "Privacy Policy",
-      "name": "privacy",
+      "name": "privacy_policy",
       "path": "content/legal",
       "fields": [
         {
           "label": "SEO Data",
-          "name": "privacy_seo_data",
+          "name": "seo_data",
           "type": "object",
           "fields": [
             {
@@ -505,8 +505,8 @@
               "label": "Meta Title",
               "name": "meta_title",
               "namespace": [
-                "privacy",
-                "privacy_seo_data",
+                "privacy_policy",
+                "seo_data",
                 "meta_title"
               ]
             },
@@ -515,8 +515,8 @@
               "label": "Meta Description",
               "name": "meta_description",
               "namespace": [
-                "privacy",
-                "privacy_seo_data",
+                "privacy_policy",
+                "seo_data",
                 "meta_description"
               ]
             },
@@ -525,20 +525,20 @@
               "label": "Canonical URL",
               "name": "meta_canonical",
               "namespace": [
-                "privacy",
-                "privacy_seo_data",
+                "privacy_policy",
+                "seo_data",
                 "meta_canonical"
               ]
             }
           ],
           "namespace": [
-            "privacy",
-            "privacy_seo_data"
+            "privacy_policy",
+            "seo_data"
           ]
         },
         {
           "label": "Hero Section",
-          "name": "privacy_hero",
+          "name": "hero",
           "type": "object",
           "fields": [
             {
@@ -546,8 +546,8 @@
               "label": "Heading",
               "name": "hero_heading",
               "namespace": [
-                "privacy",
-                "privacy_hero",
+                "privacy_policy",
+                "hero",
                 "hero_heading"
               ]
             },
@@ -556,8 +556,8 @@
               "label": "Intro text",
               "name": "hero_description",
               "namespace": [
-                "privacy",
-                "privacy_hero",
+                "privacy_policy",
+                "hero",
                 "hero_description"
               ]
             },
@@ -566,15 +566,15 @@
               "label": "Button text",
               "name": "hero_button_text",
               "namespace": [
-                "privacy",
-                "privacy_hero",
+                "privacy_policy",
+                "hero",
                 "hero_button_text"
               ]
             }
           ],
           "namespace": [
-            "privacy",
-            "privacy_hero"
+            "privacy_policy",
+            "hero"
           ]
         },
         {
@@ -583,13 +583,13 @@
           "name": "body",
           "isBody": true,
           "namespace": [
-            "privacy",
+            "privacy_policy",
             "body"
           ]
         }
       ],
       "namespace": [
-        "privacy"
+        "privacy_policy"
       ]
     }
   ]

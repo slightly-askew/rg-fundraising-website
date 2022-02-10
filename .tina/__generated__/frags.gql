@@ -56,14 +56,14 @@ fragment HomepageParts on Homepage {
   }
 }
 
-fragment PrivacyParts on Privacy {
-  privacy_seo_data {
+fragment Privacy_policyParts on Privacy_policy {
+  seo_data {
     __typename
     meta_title
     meta_description
     meta_canonical
   }
-  privacy_hero {
+  hero {
     __typename
     hero_heading
     hero_description

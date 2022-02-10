@@ -69,8 +69,8 @@ export type Query = {
   getDocumentFields: Scalars['JSON'];
   getHomepageDocument: HomepageDocument;
   getHomepageList: HomepageConnection;
-  getPrivacyDocument: PrivacyDocument;
-  getPrivacyList: PrivacyConnection;
+  getPrivacy_policyDocument: Privacy_PolicyDocument;
+  getPrivacy_policyList: Privacy_PolicyConnection;
 };
 
 
@@ -111,12 +111,12 @@ export type QueryGetHomepageListArgs = {
 };
 
 
-export type QueryGetPrivacyDocumentArgs = {
+export type QueryGetPrivacy_PolicyDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetPrivacyListArgs = {
+export type QueryGetPrivacy_PolicyListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
@@ -157,7 +157,7 @@ export type CollectionDocumentsArgs = {
   last?: InputMaybe<Scalars['Float']>;
 };
 
-export type DocumentNode = HomepageDocument | PrivacyDocument;
+export type DocumentNode = HomepageDocument | Privacy_PolicyDocument;
 
 export type HomepageSeo_Data = {
   __typename?: 'HomepageSeo_data';
@@ -263,48 +263,48 @@ export type HomepageConnection = Connection & {
   edges?: Maybe<Array<Maybe<HomepageConnectionEdges>>>;
 };
 
-export type PrivacyPrivacy_Seo_Data = {
-  __typename?: 'PrivacyPrivacy_seo_data';
+export type Privacy_PolicySeo_Data = {
+  __typename?: 'Privacy_policySeo_data';
   meta_title?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_canonical?: Maybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_Hero = {
-  __typename?: 'PrivacyPrivacy_hero';
+export type Privacy_PolicyHero = {
+  __typename?: 'Privacy_policyHero';
   hero_heading?: Maybe<Scalars['String']>;
   hero_description?: Maybe<Scalars['String']>;
   hero_button_text?: Maybe<Scalars['String']>;
 };
 
-export type Privacy = {
-  __typename?: 'Privacy';
-  privacy_seo_data?: Maybe<PrivacyPrivacy_Seo_Data>;
-  privacy_hero?: Maybe<PrivacyPrivacy_Hero>;
+export type Privacy_Policy = {
+  __typename?: 'Privacy_policy';
+  seo_data?: Maybe<Privacy_PolicySeo_Data>;
+  hero?: Maybe<Privacy_PolicyHero>;
   body?: Maybe<Scalars['JSON']>;
 };
 
-export type PrivacyDocument = Node & Document & {
-  __typename?: 'PrivacyDocument';
+export type Privacy_PolicyDocument = Node & Document & {
+  __typename?: 'Privacy_policyDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
-  data: Privacy;
+  data: Privacy_Policy;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
   dataJSON: Scalars['JSON'];
 };
 
-export type PrivacyConnectionEdges = {
-  __typename?: 'PrivacyConnectionEdges';
+export type Privacy_PolicyConnectionEdges = {
+  __typename?: 'Privacy_policyConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PrivacyDocument>;
+  node?: Maybe<Privacy_PolicyDocument>;
 };
 
-export type PrivacyConnection = Connection & {
-  __typename?: 'PrivacyConnection';
+export type Privacy_PolicyConnection = Connection & {
+  __typename?: 'Privacy_policyConnection';
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Float'];
-  edges?: Maybe<Array<Maybe<PrivacyConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<Privacy_PolicyConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -314,8 +314,8 @@ export type Mutation = {
   createDocument: DocumentNode;
   updateHomepageDocument: HomepageDocument;
   createHomepageDocument: HomepageDocument;
-  updatePrivacyDocument: PrivacyDocument;
-  createPrivacyDocument: PrivacyDocument;
+  updatePrivacy_policyDocument: Privacy_PolicyDocument;
+  createPrivacy_policyDocument: Privacy_PolicyDocument;
 };
 
 
@@ -352,20 +352,20 @@ export type MutationCreateHomepageDocumentArgs = {
 };
 
 
-export type MutationUpdatePrivacyDocumentArgs = {
+export type MutationUpdatePrivacy_PolicyDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PrivacyMutation;
+  params: Privacy_PolicyMutation;
 };
 
 
-export type MutationCreatePrivacyDocumentArgs = {
+export type MutationCreatePrivacy_PolicyDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PrivacyMutation;
+  params: Privacy_PolicyMutation;
 };
 
 export type DocumentMutation = {
   homepage?: InputMaybe<HomepageMutation>;
-  privacy?: InputMaybe<PrivacyMutation>;
+  privacy_policy?: InputMaybe<Privacy_PolicyMutation>;
 };
 
 export type HomepageSeo_DataMutation = {
@@ -444,27 +444,27 @@ export type HomepageMutation = {
   content_sections?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsMutation>>>;
 };
 
-export type PrivacyPrivacy_Seo_DataMutation = {
+export type Privacy_PolicySeo_DataMutation = {
   meta_title?: InputMaybe<Scalars['String']>;
   meta_description?: InputMaybe<Scalars['String']>;
   meta_canonical?: InputMaybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_HeroMutation = {
+export type Privacy_PolicyHeroMutation = {
   hero_heading?: InputMaybe<Scalars['String']>;
   hero_description?: InputMaybe<Scalars['String']>;
   hero_button_text?: InputMaybe<Scalars['String']>;
 };
 
-export type PrivacyMutation = {
-  privacy_seo_data?: InputMaybe<PrivacyPrivacy_Seo_DataMutation>;
-  privacy_hero?: InputMaybe<PrivacyPrivacy_HeroMutation>;
+export type Privacy_PolicyMutation = {
+  seo_data?: InputMaybe<Privacy_PolicySeo_DataMutation>;
+  hero?: InputMaybe<Privacy_PolicyHeroMutation>;
   body?: InputMaybe<Scalars['JSON']>;
 };
 
 export type HomepagePartsFragment = { __typename?: 'Homepage', seo_data?: { __typename: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined };
 
-export type PrivacyPartsFragment = { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined };
+export type Privacy_PolicyPartsFragment = { __typename?: 'Privacy_policy', body?: any | null | undefined, seo_data?: { __typename: 'Privacy_policySeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'Privacy_policyHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined };
 
 export type GetHomepageDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -478,17 +478,17 @@ export type GetHomepageListQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetHomepageListQuery = { __typename?: 'Query', getHomepageList: { __typename?: 'HomepageConnection', totalCount: number, edges?: Array<{ __typename?: 'HomepageConnectionEdges', node?: { __typename?: 'HomepageDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Homepage', seo_data?: { __typename: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
-export type GetPrivacyDocumentQueryVariables = Exact<{
+export type GetPrivacy_PolicyDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetPrivacyDocumentQuery = { __typename?: 'Query', getPrivacyDocument: { __typename?: 'PrivacyDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
+export type GetPrivacy_PolicyDocumentQuery = { __typename?: 'Query', getPrivacy_policyDocument: { __typename?: 'Privacy_policyDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Privacy_policy', body?: any | null | undefined, seo_data?: { __typename: 'Privacy_policySeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'Privacy_policyHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
 
-export type GetPrivacyListQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPrivacy_PolicyListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPrivacyListQuery = { __typename?: 'Query', getPrivacyList: { __typename?: 'PrivacyConnection', totalCount: number, edges?: Array<{ __typename?: 'PrivacyConnectionEdges', node?: { __typename?: 'PrivacyDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetPrivacy_PolicyListQuery = { __typename?: 'Query', getPrivacy_policyList: { __typename?: 'Privacy_policyConnection', totalCount: number, edges?: Array<{ __typename?: 'Privacy_policyConnectionEdges', node?: { __typename?: 'Privacy_policyDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Privacy_policy', body?: any | null | undefined, seo_data?: { __typename: 'Privacy_policySeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'Privacy_policyHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export const HomepagePartsFragmentDoc = gql`
     fragment HomepageParts on Homepage {
@@ -549,15 +549,15 @@ export const HomepagePartsFragmentDoc = gql`
   }
 }
     `;
-export const PrivacyPartsFragmentDoc = gql`
-    fragment PrivacyParts on Privacy {
-  privacy_seo_data {
+export const Privacy_PolicyPartsFragmentDoc = gql`
+    fragment Privacy_policyParts on Privacy_policy {
+  seo_data {
     __typename
     meta_title
     meta_description
     meta_canonical
   }
-  privacy_hero {
+  hero {
     __typename
     hero_heading
     hero_description
@@ -607,9 +607,9 @@ export const GetHomepageListDocument = gql`
   }
 }
     ${HomepagePartsFragmentDoc}`;
-export const GetPrivacyDocumentDocument = gql`
-    query getPrivacyDocument($relativePath: String!) {
-  getPrivacyDocument(relativePath: $relativePath) {
+export const GetPrivacy_PolicyDocumentDocument = gql`
+    query getPrivacy_policyDocument($relativePath: String!) {
+  getPrivacy_policyDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -620,14 +620,14 @@ export const GetPrivacyDocumentDocument = gql`
     }
     id
     data {
-      ...PrivacyParts
+      ...Privacy_policyParts
     }
   }
 }
-    ${PrivacyPartsFragmentDoc}`;
-export const GetPrivacyListDocument = gql`
-    query getPrivacyList {
-  getPrivacyList {
+    ${Privacy_PolicyPartsFragmentDoc}`;
+export const GetPrivacy_PolicyListDocument = gql`
+    query getPrivacy_policyList {
+  getPrivacy_policyList {
     totalCount
     edges {
       node {
@@ -641,13 +641,13 @@ export const GetPrivacyListDocument = gql`
           extension
         }
         data {
-          ...PrivacyParts
+          ...Privacy_policyParts
         }
       }
     }
   }
 }
-    ${PrivacyPartsFragmentDoc}`;
+    ${Privacy_PolicyPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -657,11 +657,11 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     getHomepageList(variables?: GetHomepageListQueryVariables, options?: C): Promise<{data: GetHomepageListQuery, variables: GetHomepageListQueryVariables, query: string}> {
         return requester<{data: GetHomepageListQuery, variables: GetHomepageListQueryVariables, query: string}, GetHomepageListQueryVariables>(GetHomepageListDocument, variables, options);
       },
-    getPrivacyDocument(variables: GetPrivacyDocumentQueryVariables, options?: C): Promise<{data: GetPrivacyDocumentQuery, variables: GetPrivacyDocumentQueryVariables, query: string}> {
-        return requester<{data: GetPrivacyDocumentQuery, variables: GetPrivacyDocumentQueryVariables, query: string}, GetPrivacyDocumentQueryVariables>(GetPrivacyDocumentDocument, variables, options);
+    getPrivacy_policyDocument(variables: GetPrivacy_PolicyDocumentQueryVariables, options?: C): Promise<{data: GetPrivacy_PolicyDocumentQuery, variables: GetPrivacy_PolicyDocumentQueryVariables, query: string}> {
+        return requester<{data: GetPrivacy_PolicyDocumentQuery, variables: GetPrivacy_PolicyDocumentQueryVariables, query: string}, GetPrivacy_PolicyDocumentQueryVariables>(GetPrivacy_PolicyDocumentDocument, variables, options);
       },
-    getPrivacyList(variables?: GetPrivacyListQueryVariables, options?: C): Promise<{data: GetPrivacyListQuery, variables: GetPrivacyListQueryVariables, query: string}> {
-        return requester<{data: GetPrivacyListQuery, variables: GetPrivacyListQueryVariables, query: string}, GetPrivacyListQueryVariables>(GetPrivacyListDocument, variables, options);
+    getPrivacy_policyList(variables?: GetPrivacy_PolicyListQueryVariables, options?: C): Promise<{data: GetPrivacy_PolicyListQuery, variables: GetPrivacy_PolicyListQueryVariables, query: string}> {
+        return requester<{data: GetPrivacy_PolicyListQuery, variables: GetPrivacy_PolicyListQueryVariables, query: string}, GetPrivacy_PolicyListQueryVariables>(GetPrivacy_PolicyListDocument, variables, options);
       }
     };
   }

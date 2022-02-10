@@ -1,13 +1,22 @@
-query getPrivacyPage($relativePath: String!) {
-  getPrivacyDocument(relativePath: $relativePath) {
+query getPrivacyPage {
+  getPrivacy_policyDocument(relativePath: "privacy.mdx") {
     id
+    sys {
+      filename
+      basename
+      breadcrumbs(excludeExtension: true)
+      path
+      relativePath
+      extension
+      template
+    }
     data {
-      privacy_seo_data {
+      seo_data {
         meta_title
         meta_description
         meta_canonical
       }
-      privacy_hero {
+      hero {
         hero_heading
         hero_description
         hero_button_text
@@ -16,5 +25,6 @@ query getPrivacyPage($relativePath: String!) {
     }
     values
     dataJSON
+    form
   }
 }

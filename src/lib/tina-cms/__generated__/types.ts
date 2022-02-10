@@ -66,10 +66,10 @@ export type DocumentConnectionEdges = {
 
 export type DocumentMutation = {
   homepage?: InputMaybe<HomepageMutation>;
-  privacy?: InputMaybe<PrivacyMutation>;
+  privacy_policy?: InputMaybe<Privacy_PolicyMutation>;
 };
 
-export type DocumentNode = HomepageDocument | PrivacyDocument;
+export type DocumentNode = HomepageDocument | Privacy_PolicyDocument;
 
 export type Homepage = {
   __typename?: 'Homepage';
@@ -256,10 +256,10 @@ export type Mutation = {
   addPendingDocument: DocumentNode;
   createDocument: DocumentNode;
   createHomepageDocument: HomepageDocument;
-  createPrivacyDocument: PrivacyDocument;
+  createPrivacy_policyDocument: Privacy_PolicyDocument;
   updateDocument: DocumentNode;
   updateHomepageDocument: HomepageDocument;
-  updatePrivacyDocument: PrivacyDocument;
+  updatePrivacy_policyDocument: Privacy_PolicyDocument;
 };
 
 
@@ -283,8 +283,8 @@ export type MutationCreateHomepageDocumentArgs = {
 };
 
 
-export type MutationCreatePrivacyDocumentArgs = {
-  params: PrivacyMutation;
+export type MutationCreatePrivacy_PolicyDocumentArgs = {
+  params: Privacy_PolicyMutation;
   relativePath: Scalars['String'];
 };
 
@@ -302,8 +302,8 @@ export type MutationUpdateHomepageDocumentArgs = {
 };
 
 
-export type MutationUpdatePrivacyDocumentArgs = {
-  params: PrivacyMutation;
+export type MutationUpdatePrivacy_PolicyDocumentArgs = {
+  params: Privacy_PolicyMutation;
   relativePath: Scalars['String'];
 };
 
@@ -319,29 +319,29 @@ export type PageInfo = {
   startCursor: Scalars['String'];
 };
 
-export type Privacy = {
-  __typename?: 'Privacy';
+export type Privacy_Policy = {
+  __typename?: 'Privacy_policy';
   body?: Maybe<Scalars['JSON']>;
-  privacy_hero?: Maybe<PrivacyPrivacy_Hero>;
-  privacy_seo_data?: Maybe<PrivacyPrivacy_Seo_Data>;
+  hero?: Maybe<Privacy_PolicyHero>;
+  seo_data?: Maybe<Privacy_PolicySeo_Data>;
 };
 
-export type PrivacyConnection = Connection & {
-  __typename?: 'PrivacyConnection';
-  edges?: Maybe<Array<Maybe<PrivacyConnectionEdges>>>;
+export type Privacy_PolicyConnection = Connection & {
+  __typename?: 'Privacy_policyConnection';
+  edges?: Maybe<Array<Maybe<Privacy_PolicyConnectionEdges>>>;
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Float'];
 };
 
-export type PrivacyConnectionEdges = {
-  __typename?: 'PrivacyConnectionEdges';
+export type Privacy_PolicyConnectionEdges = {
+  __typename?: 'Privacy_policyConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PrivacyDocument>;
+  node?: Maybe<Privacy_PolicyDocument>;
 };
 
-export type PrivacyDocument = Document & Node & {
-  __typename?: 'PrivacyDocument';
-  data: Privacy;
+export type Privacy_PolicyDocument = Document & Node & {
+  __typename?: 'Privacy_policyDocument';
+  data: Privacy_Policy;
   dataJSON: Scalars['JSON'];
   form: Scalars['JSON'];
   id: Scalars['ID'];
@@ -349,33 +349,33 @@ export type PrivacyDocument = Document & Node & {
   values: Scalars['JSON'];
 };
 
-export type PrivacyMutation = {
-  body?: InputMaybe<Scalars['JSON']>;
-  privacy_hero?: InputMaybe<PrivacyPrivacy_HeroMutation>;
-  privacy_seo_data?: InputMaybe<PrivacyPrivacy_Seo_DataMutation>;
-};
-
-export type PrivacyPrivacy_Hero = {
-  __typename?: 'PrivacyPrivacy_hero';
+export type Privacy_PolicyHero = {
+  __typename?: 'Privacy_policyHero';
   hero_button_text?: Maybe<Scalars['String']>;
   hero_description?: Maybe<Scalars['String']>;
   hero_heading?: Maybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_HeroMutation = {
+export type Privacy_PolicyHeroMutation = {
   hero_button_text?: InputMaybe<Scalars['String']>;
   hero_description?: InputMaybe<Scalars['String']>;
   hero_heading?: InputMaybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_Seo_Data = {
-  __typename?: 'PrivacyPrivacy_seo_data';
+export type Privacy_PolicyMutation = {
+  body?: InputMaybe<Scalars['JSON']>;
+  hero?: InputMaybe<Privacy_PolicyHeroMutation>;
+  seo_data?: InputMaybe<Privacy_PolicySeo_DataMutation>;
+};
+
+export type Privacy_PolicySeo_Data = {
+  __typename?: 'Privacy_policySeo_data';
   meta_canonical?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_title?: Maybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_Seo_DataMutation = {
+export type Privacy_PolicySeo_DataMutation = {
   meta_canonical?: InputMaybe<Scalars['String']>;
   meta_description?: InputMaybe<Scalars['String']>;
   meta_title?: InputMaybe<Scalars['String']>;
@@ -390,8 +390,8 @@ export type Query = {
   getDocumentList: DocumentConnection;
   getHomepageDocument: HomepageDocument;
   getHomepageList: HomepageConnection;
-  getPrivacyDocument: PrivacyDocument;
-  getPrivacyList: PrivacyConnection;
+  getPrivacy_policyDocument: Privacy_PolicyDocument;
+  getPrivacy_policyList: Privacy_PolicyConnection;
   node: Node;
 };
 
@@ -428,12 +428,12 @@ export type QueryGetHomepageListArgs = {
 };
 
 
-export type QueryGetPrivacyDocumentArgs = {
+export type QueryGetPrivacy_PolicyDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetPrivacyListArgs = {
+export type QueryGetPrivacy_PolicyListArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
@@ -481,12 +481,10 @@ export type GetHomepageQueryVariables = Exact<{
 
 export type GetHomepageQuery = { __typename?: 'Query', getHomepageDocument: { __typename?: 'HomepageDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Homepage', seo_data?: { __typename?: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
 
-export type GetPrivacyPageQueryVariables = Exact<{
-  relativePath: Scalars['String'];
-}>;
+export type GetPrivacyPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPrivacyPageQuery = { __typename?: 'Query', getPrivacyDocument: { __typename?: 'PrivacyDocument', id: string, values: any, dataJSON: any, data: { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename?: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename?: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
+export type GetPrivacyPageQuery = { __typename?: 'Query', getPrivacy_policyDocument: { __typename?: 'Privacy_policyDocument', id: string, values: any, dataJSON: any, form: any, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string, template: string }, data: { __typename?: 'Privacy_policy', body?: any | null | undefined, seo_data?: { __typename?: 'Privacy_policySeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'Privacy_policyHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
 
 export const MeetTheTeamFragmentDoc = gql`
     fragment MeetTheTeam on HomepageContent_sectionsMeet_the_team {
@@ -569,16 +567,25 @@ ${PoweredByDataFragmentDoc}
 ${WhyRgFragmentDoc}
 ${CallToActionFragmentDoc}`;
 export const GetPrivacyPageDocument = gql`
-    query getPrivacyPage($relativePath: String!) {
-  getPrivacyDocument(relativePath: $relativePath) {
+    query getPrivacyPage {
+  getPrivacy_policyDocument(relativePath: "privacy.mdx") {
     id
+    sys {
+      filename
+      basename
+      breadcrumbs(excludeExtension: true)
+      path
+      relativePath
+      extension
+      template
+    }
     data {
-      privacy_seo_data {
+      seo_data {
         meta_title
         meta_description
         meta_canonical
       }
-      privacy_hero {
+      hero {
         hero_heading
         hero_description
         hero_button_text
@@ -587,6 +594,7 @@ export const GetPrivacyPageDocument = gql`
     }
     values
     dataJSON
+    form
   }
 }
     `;
@@ -601,7 +609,7 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     getHomepage(variables: GetHomepageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetHomepageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetHomepageQuery>(GetHomepageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getHomepage');
     },
-    getPrivacyPage(variables: GetPrivacyPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPrivacyPageQuery> {
+    getPrivacyPage(variables?: GetPrivacyPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPrivacyPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetPrivacyPageQuery>(GetPrivacyPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPrivacyPage');
     }
   };

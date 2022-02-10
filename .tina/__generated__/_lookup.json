@@ -4,7 +4,7 @@
     "resolveType": "multiCollectionDocumentList",
     "collections": [
       "homepage",
-      "privacy"
+      "privacy_policy"
     ]
   },
   "Node": {
@@ -41,16 +41,16 @@
     "resolveType": "collectionDocumentList",
     "collection": "homepage"
   },
-  "PrivacyDocument": {
-    "type": "PrivacyDocument",
+  "Privacy_policyDocument": {
+    "type": "Privacy_policyDocument",
     "resolveType": "collectionDocument",
-    "collection": "privacy",
-    "createPrivacyDocument": "create",
-    "updatePrivacyDocument": "update"
+    "collection": "privacy_policy",
+    "createPrivacy_policyDocument": "create",
+    "updatePrivacy_policyDocument": "update"
   },
-  "PrivacyConnection": {
-    "type": "PrivacyConnection",
+  "Privacy_policyConnection": {
+    "type": "Privacy_policyConnection",
     "resolveType": "collectionDocumentList",
-    "collection": "privacy"
+    "collection": "privacy_policy"
   }
 }

@@ -785,7 +785,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPrivacyDocument"
+            "value": "getPrivacy_policyDocument"
           },
           "arguments": [
             {
@@ -809,7 +809,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyDocument"
+                "value": "Privacy_policyDocument"
               }
             }
           }
@@ -818,7 +818,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPrivacyList"
+            "value": "getPrivacy_policyList"
           },
           "arguments": [
             {
@@ -884,7 +884,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyConnection"
+                "value": "Privacy_policyConnection"
               }
             }
           }
@@ -1242,7 +1242,7 @@
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PrivacyDocument"
+            "value": "Privacy_policyDocument"
           }
         }
       ]
@@ -2159,7 +2159,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_seo_data"
+        "value": "Privacy_policySeo_data"
       },
       "fields": [
         {
@@ -2215,7 +2215,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_hero"
+        "value": "Privacy_policyHero"
       },
       "fields": [
         {
@@ -2271,21 +2271,21 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "Privacy"
+        "value": "Privacy_policy"
       },
       "fields": [
         {
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_seo_data"
+            "value": "seo_data"
           },
           "arguments": [],
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_seo_data"
+              "value": "Privacy_policySeo_data"
             }
           }
         },
@@ -2293,14 +2293,14 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_hero"
+            "value": "hero"
           },
           "arguments": [],
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_hero"
+              "value": "Privacy_policyHero"
             }
           }
         },
@@ -2342,7 +2342,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyDocument"
+        "value": "Privacy_policyDocument"
       },
       "fields": [
         {
@@ -2394,7 +2394,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Privacy"
+                "value": "Privacy_policy"
               }
             }
           }
@@ -2461,7 +2461,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyConnectionEdges"
+        "value": "Privacy_policyConnectionEdges"
       },
       "fields": [
         {
@@ -2490,7 +2490,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyDocument"
+              "value": "Privacy_policyDocument"
             }
           }
         }
@@ -2510,7 +2510,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyConnection"
+        "value": "Privacy_policyConnection"
       },
       "fields": [
         {
@@ -2559,7 +2559,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyConnectionEdges"
+                "value": "Privacy_policyConnectionEdges"
               }
             }
           }
@@ -2886,7 +2886,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "updatePrivacyDocument"
+            "value": "updatePrivacy_policyDocument"
           },
           "arguments": [
             {
@@ -2918,7 +2918,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PrivacyMutation"
+                    "value": "Privacy_policyMutation"
                   }
                 }
               }
@@ -2930,7 +2930,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyDocument"
+                "value": "Privacy_policyDocument"
               }
             }
           }
@@ -2939,7 +2939,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "createPrivacyDocument"
+            "value": "createPrivacy_policyDocument"
           },
           "arguments": [
             {
@@ -2971,7 +2971,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PrivacyMutation"
+                    "value": "Privacy_policyMutation"
                   }
                 }
               }
@@ -2983,7 +2983,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyDocument"
+                "value": "Privacy_policyDocument"
               }
             }
           }
@@ -3015,13 +3015,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy"
+            "value": "privacy_policy"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyMutation"
+              "value": "Privacy_policyMutation"
             }
           }
         }
@@ -3678,7 +3678,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_seo_dataMutation"
+        "value": "Privacy_policySeo_dataMutation"
       },
       "fields": [
         {
@@ -3729,7 +3729,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_heroMutation"
+        "value": "Privacy_policyHeroMutation"
       },
       "fields": [
         {
@@ -3780,20 +3780,20 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PrivacyMutation"
+        "value": "Privacy_policyMutation"
       },
       "fields": [
         {
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_seo_data"
+            "value": "seo_data"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_seo_dataMutation"
+              "value": "Privacy_policySeo_dataMutation"
             }
           }
         },
@@ -3801,13 +3801,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_hero"
+            "value": "hero"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_heroMutation"
+              "value": "Privacy_policyHeroMutation"
             }
           }
         },

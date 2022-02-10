@@ -50,8 +50,8 @@ type Query {
   getDocumentFields: JSON!
   getHomepageDocument(relativePath: String): HomepageDocument!
   getHomepageList(before: String, after: String, first: Float, last: Float): HomepageConnection!
-  getPrivacyDocument(relativePath: String): PrivacyDocument!
-  getPrivacyList(before: String, after: String, first: Float, last: Float): PrivacyConnection!
+  getPrivacy_policyDocument(relativePath: String): Privacy_policyDocument!
+  getPrivacy_policyList(before: String, after: String, first: Float, last: Float): Privacy_policyConnection!
 }
 
 type DocumentConnectionEdges {
@@ -77,7 +77,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float): DocumentConnection!
 }
 
-union DocumentNode = HomepageDocument | PrivacyDocument
+union DocumentNode = HomepageDocument | Privacy_policyDocument
 
 type HomepageSeo_data {
   meta_title: String
@@ -168,42 +168,42 @@ type HomepageConnection implements Connection {
   edges: [HomepageConnectionEdges]
 }
 
-type PrivacyPrivacy_seo_data {
+type Privacy_policySeo_data {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-type PrivacyPrivacy_hero {
+type Privacy_policyHero {
   hero_heading: String
   hero_description: String
   hero_button_text: String
 }
 
-type Privacy {
-  privacy_seo_data: PrivacyPrivacy_seo_data
-  privacy_hero: PrivacyPrivacy_hero
+type Privacy_policy {
+  seo_data: Privacy_policySeo_data
+  hero: Privacy_policyHero
   body: JSON
 }
 
-type PrivacyDocument implements Node & Document {
+type Privacy_policyDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
-  data: Privacy!
+  data: Privacy_policy!
   form: JSON!
   values: JSON!
   dataJSON: JSON!
 }
 
-type PrivacyConnectionEdges {
+type Privacy_policyConnectionEdges {
   cursor: String
-  node: PrivacyDocument
+  node: Privacy_policyDocument
 }
 
-type PrivacyConnection implements Connection {
+type Privacy_policyConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Float!
-  edges: [PrivacyConnectionEdges]
+  edges: [Privacy_policyConnectionEdges]
 }
 
 type Mutation {
@@ -212,13 +212,13 @@ type Mutation {
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updateHomepageDocument(relativePath: String!, params: HomepageMutation!): HomepageDocument!
   createHomepageDocument(relativePath: String!, params: HomepageMutation!): HomepageDocument!
-  updatePrivacyDocument(relativePath: String!, params: PrivacyMutation!): PrivacyDocument!
-  createPrivacyDocument(relativePath: String!, params: PrivacyMutation!): PrivacyDocument!
+  updatePrivacy_policyDocument(relativePath: String!, params: Privacy_policyMutation!): Privacy_policyDocument!
+  createPrivacy_policyDocument(relativePath: String!, params: Privacy_policyMutation!): Privacy_policyDocument!
 }
 
 input DocumentMutation {
   homepage: HomepageMutation
-  privacy: PrivacyMutation
+  privacy_policy: Privacy_policyMutation
 }
 
 input HomepageSeo_dataMutation {
@@ -297,21 +297,21 @@ input HomepageMutation {
   content_sections: [HomepageContent_sectionsMutation]
 }
 
-input PrivacyPrivacy_seo_dataMutation {
+input Privacy_policySeo_dataMutation {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-input PrivacyPrivacy_heroMutation {
+input Privacy_policyHeroMutation {
   hero_heading: String
   hero_description: String
   hero_button_text: String
 }
 
-input PrivacyMutation {
-  privacy_seo_data: PrivacyPrivacy_seo_dataMutation
-  privacy_hero: PrivacyPrivacy_heroMutation
+input Privacy_policyMutation {
+  seo_data: Privacy_policySeo_dataMutation
+  hero: Privacy_policyHeroMutation
   body: JSON
 }
 

@@ -37,7 +37,8 @@ export async function request<T>({
   const queryString = getGqlString(types[querySymbol])
 
   const sdk = types.getSdk(client)
-  const data = await sdk[query](variables, pageHeaders)
+  const v = variables || { relativePath: 'home.mdx' }
+  const data = await sdk[query](v, pageHeaders)
 
   return {
     //@ts-expect-error unknown

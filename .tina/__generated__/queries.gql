@@ -37,8 +37,8 @@ query getHomepageList {
   }
 }
 
-query getPrivacyDocument($relativePath: String!) {
-  getPrivacyDocument(relativePath: $relativePath) {
+query getPrivacy_policyDocument($relativePath: String!) {
+  getPrivacy_policyDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -49,13 +49,13 @@ query getPrivacyDocument($relativePath: String!) {
     }
     id
     data {
-      ...PrivacyParts
+      ...Privacy_policyParts
     }
   }
 }
 
-query getPrivacyList {
-  getPrivacyList {
+query getPrivacy_policyList {
+  getPrivacy_policyList {
     totalCount
     edges {
       node {
@@ -69,7 +69,7 @@ query getPrivacyList {
           extension
         }
         data {
-          ...PrivacyParts
+          ...Privacy_policyParts
         }
       }
     }

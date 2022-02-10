@@ -10,6 +10,27 @@ import { useTina } from 'tinacms/dist/edit-state'
 
 type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
 
+/*const query = `{
+  getPrivacy_policyDocument(relativePath: "privacy.mdx") {
+    id
+    data {
+      seo_data {
+        meta_title
+        meta_description
+        meta_canonical
+      }
+      hero {
+        hero_heading
+        hero_description
+        hero_button_text
+      }
+      body
+    }
+    values
+    dataJSON
+  }
+}`*/
+
 function PrivacyPage(props: StaticProps) {
   console.log(props.query)
   const { data } = useTina({
@@ -18,7 +39,7 @@ function PrivacyPage(props: StaticProps) {
     data: props.data,
   })
   const {
-    getPrivacyDocument: { data: content },
+    getPrivacy_policyDocument: { data: content },
   } = data
   return (
     <>

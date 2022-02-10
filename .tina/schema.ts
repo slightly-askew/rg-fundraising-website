@@ -44,12 +44,12 @@ export default defineSchema({
     },
     {
       label: 'Privacy Policy',
-      name: 'privacy',
+      name: 'privacy_policy',
       path: 'content/legal',
       fields: [
         {
           label: 'SEO Data',
-          name: 'privacy_seo_data',
+          name: 'seo_data',
           type: 'object',
           fields: [
             {
@@ -72,7 +72,7 @@ export default defineSchema({
 
         {
           label: 'Hero Section',
-          name: 'privacy_hero',
+          name: 'hero',
           type: 'object',
           fields: [
             {
