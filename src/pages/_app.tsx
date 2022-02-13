@@ -10,7 +10,7 @@ const TinaCMS = dynamic(() => import('tinacms'), { ssr: false })
 const App = ({ Component, pageProps }: AppProps) => {
   globalStyles()
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <TinaEditProvider
         editMode={
           <TinaCMS
@@ -32,11 +32,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           </TinaCMS>
         }
       >
-        <LazyMotion features={domAnimation}>
-          <Component {...pageProps} />
-        </LazyMotion>
+        <Component {...pageProps} />
       </TinaEditProvider>
-    </>
+    </LazyMotion>
   )
 }
 

@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import { Awaited } from '@utils/types'
-import request from '@lib/tina-cms'
 import Layout from 'src/layout'
 import Hero from '@templates/hero'
 import BlockRenderer from '@templates/BlockRenderer'
-import { GetHomepageQuery } from '@lib/tina-cms/__generated__/types'
+import request from '@lib/tina-cms'
+import { GetPageQuery } from '@lib/tina-cms/__generated__/types'
 import { useTina } from 'tinacms/dist/edit-state'
+//import { ExperimentalGetTinaClient } from '../../.tina/__generated__/types'
 
 type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
 
@@ -16,18 +17,18 @@ function Home(props: StaticProps) {
     data: props.data,
   })
   const {
-    getHomepageDocument: { data: content },
+    getPageDocument: { data: content },
   } = data
-  console.log(JSON.stringify(content, null, 4))
   return (
     <>
       <Head>
         <title>{content.seo_data?.meta_title}</title>
-        <meta
-          name="description"
-          //@ts-expect-error possible null value
-          content={content.seo_data?.meta_description}
-        />
+        {content.seo_data?.meta_description && (
+          <meta
+            name="description"
+            content={content.seo_data.meta_description}
+          />
+        )}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
@@ -37,7 +38,7 @@ function Home(props: StaticProps) {
           button_text={content.hero?.hero_button_text}
         />
         {/*@ts-expect-error difficult to type property */}
-        <BlockRenderer content_sections={content.content_sections} />
+        <BlockRenderer blocks={content.blocks} />
       </Layout>
     </>
   )
@@ -48,8 +49,8 @@ export const getStaticProps = async () => {
     relativePath: 'home.mdx',
   }
 
-  const pageData = await request<GetHomepageQuery>({
-    query: 'getHomepage',
+  const pageData = await request<GetPageQuery>({
+    query: 'getPage',
     variables,
   })
 
@@ -58,6 +59,14 @@ export const getStaticProps = async () => {
       ...pageData,
     },
   }
+  /* Auto generated GQL client - not recommended for production yet
+  const client = ExperimentalGetTinaClient()
+  const tinaProps = await client.getPageDocument({
+    relativePath: 'home.mdx',
+  })
+
+  return { props: { ...tinaProps } }
+  */
 }
 
 export default Home

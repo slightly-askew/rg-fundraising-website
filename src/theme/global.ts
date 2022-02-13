@@ -7,7 +7,11 @@ export const globalStyles = globalCss({
   },
 
   /* Allow percentage based heights in the application */
-  'html, body': { height: '100%' },
+  'html, body': {
+    height: '100%',
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif',
+  },
 
   /* Remove default margin */
   'body, h1, h2, h3, h4, p, figure, blockquote, dl, dd': {

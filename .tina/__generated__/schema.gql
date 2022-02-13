@@ -48,10 +48,10 @@ type Query {
   getDocument(collection: String, relativePath: String): DocumentNode!
   getDocumentList(before: String, after: String, first: Float, last: Float): DocumentConnection!
   getDocumentFields: JSON!
-  getHomepageDocument(relativePath: String): HomepageDocument!
-  getHomepageList(before: String, after: String, first: Float, last: Float): HomepageConnection!
-  getPrivacy_policyDocument(relativePath: String): Privacy_policyDocument!
-  getPrivacy_policyList(before: String, after: String, first: Float, last: Float): Privacy_policyConnection!
+  getPageDocument(relativePath: String): PageDocument!
+  getPageList(before: String, after: String, first: Float, last: Float): PageConnection!
+  getLegalDocument(relativePath: String): LegalDocument!
+  getLegalList(before: String, after: String, first: Float, last: Float): LegalConnection!
 }
 
 type DocumentConnectionEdges {
@@ -77,241 +77,239 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float): DocumentConnection!
 }
 
-union DocumentNode = HomepageDocument | Privacy_policyDocument
+union DocumentNode = PageDocument | LegalDocument
 
-type HomepageSeo_data {
+type PageSeo_data {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-type HomepageHero {
+type PageHero {
   hero_heading: String
   hero_description: String
   hero_button_text: String
 }
 
-type HomepageContent_sectionsCall_to_action {
+type PageBlocksCall_to_action {
   heading: String
   button_text: String
 }
 
-type HomepageContent_sectionsMeet_the_teamTeam_members {
+type PageBlocksMeet_the_teamTeam_members {
   name: String
   position: String
   avatar: String
 }
 
-type HomepageContent_sectionsMeet_the_team {
+type PageBlocksMeet_the_team {
   heading: String
   description: String
-  team_members: [HomepageContent_sectionsMeet_the_teamTeam_members]
+  team_members: [PageBlocksMeet_the_teamTeam_members]
 }
 
-type HomepageContent_sectionsOur_servicesTeam_members {
+type PageBlocksOur_servicesTeam_members {
   service_title: String
   service_description: String
 }
 
-type HomepageContent_sectionsOur_services {
+type PageBlocksOur_services {
   heading: String
   description: String
-  team_members: [HomepageContent_sectionsOur_servicesTeam_members]
+  team_members: [PageBlocksOur_servicesTeam_members]
 }
 
-type HomepageContent_sectionsPowered_by_data {
+type PageBlocksPowered_by_data {
   heading: String
   content: JSON
 }
 
-type HomepageContent_sectionsWho_we_work_withCharities {
+type PageBlocksWho_we_work_withCharities {
   charity_name: String
   charity_logo: String
 }
 
-type HomepageContent_sectionsWho_we_work_with {
+type PageBlocksWho_we_work_with {
   heading: String
   content: JSON
-  charities: [HomepageContent_sectionsWho_we_work_withCharities]
+  charities: [PageBlocksWho_we_work_withCharities]
 }
 
-type HomepageContent_sectionsWhy_rg {
+type PageBlocksWhy_rg {
   heading: String
   content: JSON
 }
 
-union HomepageContent_sections = HomepageContent_sectionsCall_to_action | HomepageContent_sectionsMeet_the_team | HomepageContent_sectionsOur_services | HomepageContent_sectionsPowered_by_data | HomepageContent_sectionsWho_we_work_with | HomepageContent_sectionsWhy_rg
+union PageBlocks = PageBlocksCall_to_action | PageBlocksMeet_the_team | PageBlocksOur_services | PageBlocksPowered_by_data | PageBlocksWho_we_work_with | PageBlocksWhy_rg
 
-type Homepage {
-  seo_data: HomepageSeo_data
-  hero: HomepageHero
-  content_sections: [HomepageContent_sections]
+type Page {
+  seo_data: PageSeo_data
+  hero: PageHero
+  blocks: [PageBlocks]
 }
 
-type HomepageDocument implements Node & Document {
+type PageDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
-  data: Homepage!
+  data: Page!
   form: JSON!
   values: JSON!
   dataJSON: JSON!
 }
 
-type HomepageConnectionEdges {
+type PageConnectionEdges {
   cursor: String
-  node: HomepageDocument
+  node: PageDocument
 }
 
-type HomepageConnection implements Connection {
+type PageConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Float!
-  edges: [HomepageConnectionEdges]
+  edges: [PageConnectionEdges]
 }
 
-type Privacy_policySeo_data {
+type LegalSeo_data {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-type Privacy_policyHero {
+type LegalHero {
   hero_heading: String
   hero_description: String
-  hero_button_text: String
 }
 
-type Privacy_policy {
-  seo_data: Privacy_policySeo_data
-  hero: Privacy_policyHero
+type Legal {
+  seo_data: LegalSeo_data
+  hero: LegalHero
   body: JSON
 }
 
-type Privacy_policyDocument implements Node & Document {
+type LegalDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
-  data: Privacy_policy!
+  data: Legal!
   form: JSON!
   values: JSON!
   dataJSON: JSON!
 }
 
-type Privacy_policyConnectionEdges {
+type LegalConnectionEdges {
   cursor: String
-  node: Privacy_policyDocument
+  node: LegalDocument
 }
 
-type Privacy_policyConnection implements Connection {
+type LegalConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Float!
-  edges: [Privacy_policyConnectionEdges]
+  edges: [LegalConnectionEdges]
 }
 
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
-  updateHomepageDocument(relativePath: String!, params: HomepageMutation!): HomepageDocument!
-  createHomepageDocument(relativePath: String!, params: HomepageMutation!): HomepageDocument!
-  updatePrivacy_policyDocument(relativePath: String!, params: Privacy_policyMutation!): Privacy_policyDocument!
-  createPrivacy_policyDocument(relativePath: String!, params: Privacy_policyMutation!): Privacy_policyDocument!
+  updatePageDocument(relativePath: String!, params: PageMutation!): PageDocument!
+  createPageDocument(relativePath: String!, params: PageMutation!): PageDocument!
+  updateLegalDocument(relativePath: String!, params: LegalMutation!): LegalDocument!
+  createLegalDocument(relativePath: String!, params: LegalMutation!): LegalDocument!
 }
 
 input DocumentMutation {
-  homepage: HomepageMutation
-  privacy_policy: Privacy_policyMutation
+  page: PageMutation
+  legal: LegalMutation
 }
 
-input HomepageSeo_dataMutation {
+input PageSeo_dataMutation {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-input HomepageHeroMutation {
+input PageHeroMutation {
   hero_heading: String
   hero_description: String
   hero_button_text: String
 }
 
-input HomepageContent_sectionsCall_to_actionMutation {
+input PageBlocksCall_to_actionMutation {
   heading: String
   button_text: String
 }
 
-input HomepageContent_sectionsMeet_the_teamTeam_membersMutation {
+input PageBlocksMeet_the_teamTeam_membersMutation {
   name: String
   position: String
   avatar: String
 }
 
-input HomepageContent_sectionsMeet_the_teamMutation {
+input PageBlocksMeet_the_teamMutation {
   heading: String
   description: String
-  team_members: [HomepageContent_sectionsMeet_the_teamTeam_membersMutation]
+  team_members: [PageBlocksMeet_the_teamTeam_membersMutation]
 }
 
-input HomepageContent_sectionsOur_servicesTeam_membersMutation {
+input PageBlocksOur_servicesTeam_membersMutation {
   service_title: String
   service_description: String
 }
 
-input HomepageContent_sectionsOur_servicesMutation {
+input PageBlocksOur_servicesMutation {
   heading: String
   description: String
-  team_members: [HomepageContent_sectionsOur_servicesTeam_membersMutation]
+  team_members: [PageBlocksOur_servicesTeam_membersMutation]
 }
 
-input HomepageContent_sectionsPowered_by_dataMutation {
+input PageBlocksPowered_by_dataMutation {
   heading: String
   content: JSON
 }
 
-input HomepageContent_sectionsWho_we_work_withCharitiesMutation {
+input PageBlocksWho_we_work_withCharitiesMutation {
   charity_name: String
   charity_logo: String
 }
 
-input HomepageContent_sectionsWho_we_work_withMutation {
+input PageBlocksWho_we_work_withMutation {
   heading: String
   content: JSON
-  charities: [HomepageContent_sectionsWho_we_work_withCharitiesMutation]
+  charities: [PageBlocksWho_we_work_withCharitiesMutation]
 }
 
-input HomepageContent_sectionsWhy_rgMutation {
+input PageBlocksWhy_rgMutation {
   heading: String
   content: JSON
 }
 
-input HomepageContent_sectionsMutation {
-  call_to_action: HomepageContent_sectionsCall_to_actionMutation
-  meet_the_team: HomepageContent_sectionsMeet_the_teamMutation
-  our_services: HomepageContent_sectionsOur_servicesMutation
-  powered_by_data: HomepageContent_sectionsPowered_by_dataMutation
-  who_we_work_with: HomepageContent_sectionsWho_we_work_withMutation
-  why_rg: HomepageContent_sectionsWhy_rgMutation
+input PageBlocksMutation {
+  call_to_action: PageBlocksCall_to_actionMutation
+  meet_the_team: PageBlocksMeet_the_teamMutation
+  our_services: PageBlocksOur_servicesMutation
+  powered_by_data: PageBlocksPowered_by_dataMutation
+  who_we_work_with: PageBlocksWho_we_work_withMutation
+  why_rg: PageBlocksWhy_rgMutation
 }
 
-input HomepageMutation {
-  seo_data: HomepageSeo_dataMutation
-  hero: HomepageHeroMutation
-  content_sections: [HomepageContent_sectionsMutation]
+input PageMutation {
+  seo_data: PageSeo_dataMutation
+  hero: PageHeroMutation
+  blocks: [PageBlocksMutation]
 }
 
-input Privacy_policySeo_dataMutation {
+input LegalSeo_dataMutation {
   meta_title: String
   meta_description: String
   meta_canonical: String
 }
 
-input Privacy_policyHeroMutation {
+input LegalHeroMutation {
   hero_heading: String
   hero_description: String
-  hero_button_text: String
 }
 
-input Privacy_policyMutation {
-  seo_data: Privacy_policySeo_dataMutation
-  hero: Privacy_policyHeroMutation
+input LegalMutation {
+  seo_data: LegalSeo_dataMutation
+  hero: LegalHeroMutation
   body: JSON
 }
 

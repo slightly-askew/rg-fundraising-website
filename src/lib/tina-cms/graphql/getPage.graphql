@@ -1,5 +1,13 @@
-query getHomepage($relativePath: String!) {
-  getHomepageDocument(relativePath: $relativePath) {
+query getPage($relativePath: String!) {
+  getPageDocument(relativePath: $relativePath) {
+    sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
     id
     data {
       seo_data {
@@ -12,7 +20,7 @@ query getHomepage($relativePath: String!) {
         hero_description
         hero_button_text
       }
-      content_sections {
+      blocks {
         __typename
         ...MeetTheTeam
         ...WhoWeWorkWith

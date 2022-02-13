@@ -3,35 +3,15 @@ import { Awaited } from '@utils/types'
 import request from '@lib/tina-cms'
 import Layout from 'src/layout'
 import Hero from '@templates/hero'
-import { GetPrivacyPageQuery } from '@lib/tina-cms/__generated__/types'
+import { GetLegalPageQuery } from '@lib/tina-cms/__generated__/types'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import { useTina } from 'tinacms/dist/edit-state'
+//import { ExperimentalGetTinaClient } from '../../.tina/__generated__/types'
 
-type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
+type PageProps = Awaited<ReturnType<typeof getStaticProps>>['props']
 
-/*const query = `{
-  getPrivacy_policyDocument(relativePath: "privacy.mdx") {
-    id
-    data {
-      seo_data {
-        meta_title
-        meta_description
-        meta_canonical
-      }
-      hero {
-        hero_heading
-        hero_description
-        hero_button_text
-      }
-      body
-    }
-    values
-    dataJSON
-  }
-}`*/
-
-function PrivacyPage(props: StaticProps) {
+function PrivacyPage(props: PageProps) {
   console.log(props.query)
   const { data } = useTina({
     query: props.query,
@@ -39,24 +19,25 @@ function PrivacyPage(props: StaticProps) {
     data: props.data,
   })
   const {
-    getPrivacy_policyDocument: { data: content },
+    getLegalDocument: { data: content },
   } = data
   return (
     <>
       <Head>
         <title>{content.seo_data?.meta_title}</title>
-        <meta
-          name="description"
-          //@ts-expect-error possible null value
-          content={content.seo_data?.meta_description}
-        />
+        {content.seo_data?.meta_description && (
+          <meta
+            name="description"
+            content={content.seo_data.meta_description}
+          />
+        )}
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <Hero
           heading={content.hero?.hero_heading}
           description={content.hero?.hero_description}
-          button_text={content.hero?.hero_button_text}
         />
         <MaxWidthWrapper>
           <TinaMarkdown content={content.body} />
@@ -71,8 +52,8 @@ export const getStaticProps = async () => {
     relativePath: 'privacy.mdx',
   }
 
-  const pageData = await request<GetPrivacyPageQuery>({
-    query: 'getPrivacyPage',
+  const pageData = await request<GetLegalPageQuery>({
+    query: 'getLegalPage',
     variables,
   })
 
@@ -81,6 +62,14 @@ export const getStaticProps = async () => {
       ...pageData,
     },
   }
+  /* Auto generated GQL client - not recommended for production yet
+
+  const client = ExperimentalGetTinaClient()
+  const tinaProps = await client.getLegalDocument({
+    relativePath: 'privacy.mdx',
+  })
+
+  return { props: { ...tinaProps } }*/
 }
 
 export default PrivacyPage

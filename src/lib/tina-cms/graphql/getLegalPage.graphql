@@ -1,5 +1,5 @@
-query getPrivacyPage {
-  getPrivacy_policyDocument(relativePath: "privacy.mdx") {
+query getLegalPage($relativePath: String!) {
+  getLegalDocument(relativePath: $relativePath) {
     id
     sys {
       filename
@@ -19,7 +19,6 @@ query getPrivacyPage {
       hero {
         hero_heading
         hero_description
-        hero_button_text
       }
       body
     }
