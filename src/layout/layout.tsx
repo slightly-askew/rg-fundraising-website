@@ -19,6 +19,7 @@ function Layout({ children }: LayoutProps): JSX.Element {
 }
 
 const Wrapper = styled('div', {
+  display: 'flex',
   minHeight: '100%',
   backgroundColor: '$light',
   flexDirection: 'column',
@@ -26,7 +27,7 @@ const Wrapper = styled('div', {
 })
 
 const Main = styled('main', {
-  flexGrow: '1',
+  flexGrow: 1,
 })
 
 export default Layout

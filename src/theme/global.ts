@@ -69,6 +69,10 @@ export const globalStyles = globalCss({
   '#root, #__next': {
     height: 'inherit',
     isolation: 'isolate',
+    position: 'relative',
+    '& > *': {
+      height: 'inherit',
+    },
   },
 
   /* Avoid text overflows */
