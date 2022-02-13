@@ -12,7 +12,6 @@ import { useTina } from 'tinacms/dist/edit-state'
 type PageProps = Awaited<ReturnType<typeof getStaticProps>>['props']
 
 function PrivacyPage(props: PageProps) {
-  console.log(props.query)
   const { data } = useTina({
     query: props.query,
     variables: props.variables,

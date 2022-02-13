@@ -15,7 +15,6 @@ function BlockRenderer(props: Page) {
     <>
       {blocks
         ? blocks.map((block, i: any) => {
-            console.log(block?.__typename)
             switch (block?.__typename) {
               case 'PageBlocksMeet_the_team':
                 return (
