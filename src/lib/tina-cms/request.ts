@@ -4,7 +4,7 @@ import { type DocumentNode } from 'graphql'
 interface requestQuery {
   preview?: boolean
   query: keyof ReturnType<typeof types.getSdk>
-  variables?: Parameters<
+  variables: Parameters<
     ReturnType<typeof types.getSdk>[requestQuery['query']]
   >[0]
   pageHeaders?: Parameters<
@@ -14,10 +14,9 @@ interface requestQuery {
 
 interface RequestReturn<T> {
   data: T
-  query: string | undefined
+  query: string
   variables:
     | Parameters<ReturnType<typeof types.getSdk>[requestQuery['query']]>[0]
-    | void
 }
 
 export async function request<T>({
@@ -38,8 +37,8 @@ export async function request<T>({
   const queryString = getGqlString(types[querySymbol])
 
   const sdk = types.getSdk(client)
-  //@ts-expect-error need to narrow type to Promise<T>
-  const data = await sdk[query](variables, pageHeaders)
+  const v = variables || { relativePath: 'home.mdx' }
+  const data = await sdk[query](v, pageHeaders)
 
   return {
     //@ts-expect-error unknown
@@ -49,6 +48,6 @@ export async function request<T>({
   }
 }
 
-function getGqlString(doc: DocumentNode) {
-  return doc.loc && doc.loc.source.body
+function getGqlString(doc: DocumentNode): string {
+  return doc?.loc?.source.body || ''
 }

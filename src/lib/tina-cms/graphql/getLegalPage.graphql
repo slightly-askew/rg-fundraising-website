@@ -1,0 +1,29 @@
+query getLegalPage($relativePath: String!) {
+  getLegalDocument(relativePath: $relativePath) {
+    id
+    sys {
+      filename
+      basename
+      breadcrumbs(excludeExtension: true)
+      path
+      relativePath
+      extension
+      template
+    }
+    data {
+      seo_data {
+        meta_title
+        meta_description
+        meta_canonical
+      }
+      hero {
+        hero_heading
+        hero_description
+      }
+      body
+    }
+    values
+    dataJSON
+    form
+  }
+}

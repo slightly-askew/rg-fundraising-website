@@ -8,9 +8,9 @@
   "meta": {},
   "collections": [
     {
-      "label": "Homepage Content",
-      "name": "homepage",
-      "path": "content",
+      "label": "Page Content",
+      "name": "page",
+      "path": "content/page",
       "fields": [
         {
           "label": "SEO Data",
@@ -22,7 +22,7 @@
               "label": "Meta Title",
               "name": "meta_title",
               "namespace": [
-                "homepage",
+                "page",
                 "seo_data",
                 "meta_title"
               ]
@@ -32,7 +32,7 @@
               "label": "Meta Description",
               "name": "meta_description",
               "namespace": [
-                "homepage",
+                "page",
                 "seo_data",
                 "meta_description"
               ]
@@ -42,14 +42,14 @@
               "label": "Canonical URL",
               "name": "meta_canonical",
               "namespace": [
-                "homepage",
+                "page",
                 "seo_data",
                 "meta_canonical"
               ]
             }
           ],
           "namespace": [
-            "homepage",
+            "page",
             "seo_data"
           ]
         },
@@ -63,7 +63,7 @@
               "label": "Heading",
               "name": "hero_heading",
               "namespace": [
-                "homepage",
+                "page",
                 "hero",
                 "hero_heading"
               ]
@@ -73,7 +73,7 @@
               "label": "Intro text",
               "name": "hero_description",
               "namespace": [
-                "homepage",
+                "page",
                 "hero",
                 "hero_description"
               ]
@@ -83,21 +83,21 @@
               "label": "Button text",
               "name": "hero_button_text",
               "namespace": [
-                "homepage",
+                "page",
                 "hero",
                 "hero_button_text"
               ]
             }
           ],
           "namespace": [
-            "homepage",
+            "page",
             "hero"
           ]
         },
         {
           "type": "object",
           "list": true,
-          "name": "content_sections",
+          "name": "blocks",
           "label": "Content Sections",
           "templates": [
             {
@@ -115,8 +115,8 @@
                   "label": "Heading",
                   "name": "heading",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "call_to_action",
                     "heading"
                   ]
@@ -126,16 +126,16 @@
                   "label": "Button Text",
                   "name": "button_text",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "call_to_action",
                     "button_text"
                   ]
                 }
               ],
               "namespace": [
-                "homepage",
-                "content_sections",
+                "page",
+                "blocks",
                 "call_to_action"
               ]
             },
@@ -154,8 +154,8 @@
                   "label": "Heading",
                   "name": "heading",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "meet_the_team",
                     "heading"
                   ]
@@ -165,8 +165,8 @@
                   "label": "Description",
                   "name": "description",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "meet_the_team",
                     "description"
                   ]
@@ -189,8 +189,8 @@
                       "label": "Name",
                       "name": "name",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "meet_the_team",
                         "team_members",
                         "name"
@@ -201,8 +201,8 @@
                       "label": "Position",
                       "name": "position",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "meet_the_team",
                         "team_members",
                         "position"
@@ -213,8 +213,8 @@
                       "type": "image",
                       "label": "Avatar",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "meet_the_team",
                         "team_members",
                         "avatar"
@@ -222,16 +222,16 @@
                     }
                   ],
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "meet_the_team",
                     "team_members"
                   ]
                 }
               ],
               "namespace": [
-                "homepage",
-                "content_sections",
+                "page",
+                "blocks",
                 "meet_the_team"
               ]
             },
@@ -240,6 +240,7 @@
               "label": "Our Services",
               "ui": {
                 "defaultItem": {
+                  "template": "our_services",
                   "heading": "What Services do we provide?",
                   "description": "RG Fundraising provides donor aquisition, donor retention and consultancy services for some of the best brands in the world."
                 }
@@ -250,8 +251,8 @@
                   "label": "Heading",
                   "name": "heading",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "our_services",
                     "heading"
                   ]
@@ -261,8 +262,8 @@
                   "label": "Description",
                   "name": "description",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "our_services",
                     "description"
                   ]
@@ -284,8 +285,8 @@
                       "label": "Service Title",
                       "name": "service_title",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "our_services",
                         "team_members",
                         "service_title"
@@ -296,8 +297,8 @@
                       "label": "Service Description",
                       "name": "service_description",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "our_services",
                         "team_members",
                         "service_description"
@@ -305,16 +306,16 @@
                     }
                   ],
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "our_services",
                     "team_members"
                   ]
                 }
               ],
               "namespace": [
-                "homepage",
-                "content_sections",
+                "page",
+                "blocks",
                 "our_services"
               ]
             },
@@ -333,8 +334,8 @@
                   "label": "Heading",
                   "type": "string",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "powered_by_data",
                     "heading"
                   ]
@@ -344,16 +345,16 @@
                   "label": "Content",
                   "type": "rich-text",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "powered_by_data",
                     "content"
                   ]
                 }
               ],
               "namespace": [
-                "homepage",
-                "content_sections",
+                "page",
+                "blocks",
                 "powered_by_data"
               ]
             },
@@ -372,8 +373,8 @@
                   "label": "Heading",
                   "type": "string",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "who_we_work_with",
                     "heading"
                   ]
@@ -383,8 +384,8 @@
                   "label": "Content",
                   "type": "rich-text",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "who_we_work_with",
                     "content"
                   ]
@@ -406,8 +407,8 @@
                       "label": "Charity Name",
                       "type": "string",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "who_we_work_with",
                         "charities",
                         "charity_name"
@@ -418,8 +419,8 @@
                       "label": "Charity Logo",
                       "type": "image",
                       "namespace": [
-                        "homepage",
-                        "content_sections",
+                        "page",
+                        "blocks",
                         "who_we_work_with",
                         "charities",
                         "charity_logo"
@@ -427,16 +428,16 @@
                     }
                   ],
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "who_we_work_with",
                     "charities"
                   ]
                 }
               ],
               "namespace": [
-                "homepage",
-                "content_sections",
+                "page",
+                "blocks",
                 "who_we_work_with"
               ]
             },
@@ -455,8 +456,8 @@
                   "label": "Heading",
                   "type": "string",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "why_rg",
                     "heading"
                   ]
@@ -466,38 +467,38 @@
                   "label": "Content",
                   "type": "rich-text",
                   "namespace": [
-                    "homepage",
-                    "content_sections",
+                    "page",
+                    "blocks",
                     "why_rg",
                     "content"
                   ]
                 }
               ],
               "namespace": [
-                "homepage",
-                "content_sections",
+                "page",
+                "blocks",
                 "why_rg"
               ]
             }
           ],
           "namespace": [
-            "homepage",
-            "content_sections"
+            "page",
+            "blocks"
           ]
         }
       ],
       "namespace": [
-        "homepage"
+        "page"
       ]
     },
     {
-      "label": "Privacy Policy",
-      "name": "privacy",
+      "label": "Legal Page",
+      "name": "legal",
       "path": "content/legal",
       "fields": [
         {
           "label": "SEO Data",
-          "name": "privacy_seo_data",
+          "name": "seo_data",
           "type": "object",
           "fields": [
             {
@@ -505,8 +506,8 @@
               "label": "Meta Title",
               "name": "meta_title",
               "namespace": [
-                "privacy",
-                "privacy_seo_data",
+                "legal",
+                "seo_data",
                 "meta_title"
               ]
             },
@@ -515,8 +516,8 @@
               "label": "Meta Description",
               "name": "meta_description",
               "namespace": [
-                "privacy",
-                "privacy_seo_data",
+                "legal",
+                "seo_data",
                 "meta_description"
               ]
             },
@@ -525,20 +526,20 @@
               "label": "Canonical URL",
               "name": "meta_canonical",
               "namespace": [
-                "privacy",
-                "privacy_seo_data",
+                "legal",
+                "seo_data",
                 "meta_canonical"
               ]
             }
           ],
           "namespace": [
-            "privacy",
-            "privacy_seo_data"
+            "legal",
+            "seo_data"
           ]
         },
         {
           "label": "Hero Section",
-          "name": "privacy_hero",
+          "name": "hero",
           "type": "object",
           "fields": [
             {
@@ -546,8 +547,8 @@
               "label": "Heading",
               "name": "hero_heading",
               "namespace": [
-                "privacy",
-                "privacy_hero",
+                "legal",
+                "hero",
                 "hero_heading"
               ]
             },
@@ -556,25 +557,15 @@
               "label": "Intro text",
               "name": "hero_description",
               "namespace": [
-                "privacy",
-                "privacy_hero",
+                "legal",
+                "hero",
                 "hero_description"
-              ]
-            },
-            {
-              "type": "string",
-              "label": "Button text",
-              "name": "hero_button_text",
-              "namespace": [
-                "privacy",
-                "privacy_hero",
-                "hero_button_text"
               ]
             }
           ],
           "namespace": [
-            "privacy",
-            "privacy_hero"
+            "legal",
+            "hero"
           ]
         },
         {
@@ -583,13 +574,13 @@
           "name": "body",
           "isBody": true,
           "namespace": [
-            "privacy",
+            "legal",
             "body"
           ]
         }
       ],
       "namespace": [
-        "privacy"
+        "legal"
       ]
     }
   ]

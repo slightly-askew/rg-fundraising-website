@@ -1,5 +1,5 @@
-query getHomepageDocument($relativePath: String!) {
-  getHomepageDocument(relativePath: $relativePath) {
+query getPageDocument($relativePath: String!) {
+  getPageDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -10,13 +10,13 @@ query getHomepageDocument($relativePath: String!) {
     }
     id
     data {
-      ...HomepageParts
+      ...PageParts
     }
   }
 }
 
-query getHomepageList {
-  getHomepageList {
+query getPageList {
+  getPageList {
     totalCount
     edges {
       node {
@@ -30,15 +30,15 @@ query getHomepageList {
           extension
         }
         data {
-          ...HomepageParts
+          ...PageParts
         }
       }
     }
   }
 }
 
-query getPrivacyDocument($relativePath: String!) {
-  getPrivacyDocument(relativePath: $relativePath) {
+query getLegalDocument($relativePath: String!) {
+  getLegalDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -49,13 +49,13 @@ query getPrivacyDocument($relativePath: String!) {
     }
     id
     data {
-      ...PrivacyParts
+      ...LegalParts
     }
   }
 }
 
-query getPrivacyList {
-  getPrivacyList {
+query getLegalList {
+  getLegalList {
     totalCount
     edges {
       node {
@@ -69,7 +69,7 @@ query getPrivacyList {
           extension
         }
         data {
-          ...PrivacyParts
+          ...LegalParts
         }
       }
     }

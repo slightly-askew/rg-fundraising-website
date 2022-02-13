@@ -3,8 +3,8 @@
     "type": "DocumentConnection",
     "resolveType": "multiCollectionDocumentList",
     "collections": [
-      "homepage",
-      "privacy"
+      "page",
+      "legal"
     ]
   },
   "Node": {
@@ -17,40 +17,40 @@
     "createDocument": "create",
     "updateDocument": "update"
   },
-  "HomepageContent_sections": {
-    "type": "HomepageContent_sections",
+  "PageBlocks": {
+    "type": "PageBlocks",
     "resolveType": "unionData",
     "typeMap": {
-      "call_to_action": "HomepageContent_sectionsCall_to_action",
-      "meet_the_team": "HomepageContent_sectionsMeet_the_team",
-      "our_services": "HomepageContent_sectionsOur_services",
-      "powered_by_data": "HomepageContent_sectionsPowered_by_data",
-      "who_we_work_with": "HomepageContent_sectionsWho_we_work_with",
-      "why_rg": "HomepageContent_sectionsWhy_rg"
+      "call_to_action": "PageBlocksCall_to_action",
+      "meet_the_team": "PageBlocksMeet_the_team",
+      "our_services": "PageBlocksOur_services",
+      "powered_by_data": "PageBlocksPowered_by_data",
+      "who_we_work_with": "PageBlocksWho_we_work_with",
+      "why_rg": "PageBlocksWhy_rg"
     }
   },
-  "HomepageDocument": {
-    "type": "HomepageDocument",
+  "PageDocument": {
+    "type": "PageDocument",
     "resolveType": "collectionDocument",
-    "collection": "homepage",
-    "createHomepageDocument": "create",
-    "updateHomepageDocument": "update"
+    "collection": "page",
+    "createPageDocument": "create",
+    "updatePageDocument": "update"
   },
-  "HomepageConnection": {
-    "type": "HomepageConnection",
+  "PageConnection": {
+    "type": "PageConnection",
     "resolveType": "collectionDocumentList",
-    "collection": "homepage"
+    "collection": "page"
   },
-  "PrivacyDocument": {
-    "type": "PrivacyDocument",
+  "LegalDocument": {
+    "type": "LegalDocument",
     "resolveType": "collectionDocument",
-    "collection": "privacy",
-    "createPrivacyDocument": "create",
-    "updatePrivacyDocument": "update"
+    "collection": "legal",
+    "createLegalDocument": "create",
+    "updateLegalDocument": "update"
   },
-  "PrivacyConnection": {
-    "type": "PrivacyConnection",
+  "LegalConnection": {
+    "type": "LegalConnection",
     "resolveType": "collectionDocumentList",
-    "collection": "privacy"
+    "collection": "legal"
   }
 }

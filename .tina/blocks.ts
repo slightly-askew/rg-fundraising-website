@@ -80,6 +80,7 @@ export const ourServicesBlock = {
   label: 'Our Services',
   ui: {
     defaultItem: {
+      template: 'our_services',
       heading: 'What Services do we provide?',
       description:
         'RG Fundraising provides donor aquisition, donor retention and consultancy services for some of the best brands in the world.',

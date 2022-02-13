@@ -10,7 +10,7 @@ const TinaCMS = dynamic(() => import('tinacms'), { ssr: false })
 const App = ({ Component, pageProps }: AppProps) => {
   globalStyles()
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <TinaEditProvider
         editMode={
           <TinaCMS
@@ -26,16 +26,15 @@ const App = ({ Component, pageProps }: AppProps) => {
               })
             }}
             {...pageProps}
+            apiURL="http://localhost:4001/graphql"
           >
             {(livePageProps: any) => <Component {...livePageProps} />}
           </TinaCMS>
         }
       >
-        <LazyMotion features={domAnimation}>
-          <Component {...pageProps} />
-        </LazyMotion>
+        <Component {...pageProps} />
       </TinaEditProvider>
-    </>
+    </LazyMotion>
   )
 }
 

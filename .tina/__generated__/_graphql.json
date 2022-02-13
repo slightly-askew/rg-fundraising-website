@@ -677,7 +677,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getHomepageDocument"
+            "value": "getPageDocument"
           },
           "arguments": [
             {
@@ -701,7 +701,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageDocument"
+                "value": "PageDocument"
               }
             }
           }
@@ -710,7 +710,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getHomepageList"
+            "value": "getPageList"
           },
           "arguments": [
             {
@@ -776,7 +776,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageConnection"
+                "value": "PageConnection"
               }
             }
           }
@@ -785,7 +785,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPrivacyDocument"
+            "value": "getLegalDocument"
           },
           "arguments": [
             {
@@ -809,7 +809,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyDocument"
+                "value": "LegalDocument"
               }
             }
           }
@@ -818,7 +818,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPrivacyList"
+            "value": "getLegalList"
           },
           "arguments": [
             {
@@ -884,7 +884,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyConnection"
+                "value": "LegalConnection"
               }
             }
           }
@@ -1235,14 +1235,14 @@
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageDocument"
+            "value": "PageDocument"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PrivacyDocument"
+            "value": "LegalDocument"
           }
         }
       ]
@@ -1253,7 +1253,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageSeo_data"
+        "value": "PageSeo_data"
       },
       "fields": [
         {
@@ -1309,7 +1309,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageHero"
+        "value": "PageHero"
       },
       "fields": [
         {
@@ -1365,7 +1365,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsCall_to_action"
+        "value": "PageBlocksCall_to_action"
       },
       "fields": [
         {
@@ -1406,7 +1406,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsMeet_the_teamTeam_members"
+        "value": "PageBlocksMeet_the_teamTeam_members"
       },
       "fields": [
         {
@@ -1462,7 +1462,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsMeet_the_team"
+        "value": "PageBlocksMeet_the_team"
       },
       "fields": [
         {
@@ -1508,7 +1508,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsMeet_the_teamTeam_members"
+                "value": "PageBlocksMeet_the_teamTeam_members"
               }
             }
           }
@@ -1521,7 +1521,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsOur_servicesTeam_members"
+        "value": "PageBlocksOur_servicesTeam_members"
       },
       "fields": [
         {
@@ -1562,7 +1562,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsOur_services"
+        "value": "PageBlocksOur_services"
       },
       "fields": [
         {
@@ -1608,7 +1608,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsOur_servicesTeam_members"
+                "value": "PageBlocksOur_servicesTeam_members"
               }
             }
           }
@@ -1621,7 +1621,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsPowered_by_data"
+        "value": "PageBlocksPowered_by_data"
       },
       "fields": [
         {
@@ -1662,7 +1662,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsWho_we_work_withCharities"
+        "value": "PageBlocksWho_we_work_withCharities"
       },
       "fields": [
         {
@@ -1703,7 +1703,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsWho_we_work_with"
+        "value": "PageBlocksWho_we_work_with"
       },
       "fields": [
         {
@@ -1749,7 +1749,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsWho_we_work_withCharities"
+                "value": "PageBlocksWho_we_work_withCharities"
               }
             }
           }
@@ -1762,7 +1762,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsWhy_rg"
+        "value": "PageBlocksWhy_rg"
       },
       "fields": [
         {
@@ -1801,7 +1801,7 @@
       "kind": "UnionTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sections"
+        "value": "PageBlocks"
       },
       "directives": [],
       "types": [
@@ -1809,42 +1809,42 @@
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageContent_sectionsCall_to_action"
+            "value": "PageBlocksCall_to_action"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageContent_sectionsMeet_the_team"
+            "value": "PageBlocksMeet_the_team"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageContent_sectionsOur_services"
+            "value": "PageBlocksOur_services"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageContent_sectionsPowered_by_data"
+            "value": "PageBlocksPowered_by_data"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageContent_sectionsWho_we_work_with"
+            "value": "PageBlocksWho_we_work_with"
           }
         },
         {
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "HomepageContent_sectionsWhy_rg"
+            "value": "PageBlocksWhy_rg"
           }
         }
       ]
@@ -1855,7 +1855,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "Homepage"
+        "value": "Page"
       },
       "fields": [
         {
@@ -1869,7 +1869,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageSeo_data"
+              "value": "PageSeo_data"
             }
           }
         },
@@ -1884,7 +1884,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageHero"
+              "value": "PageHero"
             }
           }
         },
@@ -1892,7 +1892,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "content_sections"
+            "value": "blocks"
           },
           "arguments": [],
           "type": {
@@ -1901,7 +1901,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sections"
+                "value": "PageBlocks"
               }
             }
           }
@@ -1929,7 +1929,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageDocument"
+        "value": "PageDocument"
       },
       "fields": [
         {
@@ -1981,7 +1981,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Homepage"
+                "value": "Page"
               }
             }
           }
@@ -2048,7 +2048,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageConnectionEdges"
+        "value": "PageConnectionEdges"
       },
       "fields": [
         {
@@ -2077,7 +2077,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageDocument"
+              "value": "PageDocument"
             }
           }
         }
@@ -2097,7 +2097,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "HomepageConnection"
+        "value": "PageConnection"
       },
       "fields": [
         {
@@ -2146,7 +2146,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageConnectionEdges"
+                "value": "PageConnectionEdges"
               }
             }
           }
@@ -2159,7 +2159,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_seo_data"
+        "value": "LegalSeo_data"
       },
       "fields": [
         {
@@ -2215,7 +2215,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_hero"
+        "value": "LegalHero"
       },
       "fields": [
         {
@@ -2247,21 +2247,6 @@
               "value": "String"
             }
           }
-        },
-        {
-          "kind": "FieldDefinition",
-          "name": {
-            "kind": "Name",
-            "value": "hero_button_text"
-          },
-          "arguments": [],
-          "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
-            }
-          }
         }
       ]
     },
@@ -2271,21 +2256,21 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "Privacy"
+        "value": "Legal"
       },
       "fields": [
         {
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_seo_data"
+            "value": "seo_data"
           },
           "arguments": [],
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_seo_data"
+              "value": "LegalSeo_data"
             }
           }
         },
@@ -2293,14 +2278,14 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_hero"
+            "value": "hero"
           },
           "arguments": [],
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_hero"
+              "value": "LegalHero"
             }
           }
         },
@@ -2342,7 +2327,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyDocument"
+        "value": "LegalDocument"
       },
       "fields": [
         {
@@ -2394,7 +2379,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Privacy"
+                "value": "Legal"
               }
             }
           }
@@ -2461,7 +2446,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyConnectionEdges"
+        "value": "LegalConnectionEdges"
       },
       "fields": [
         {
@@ -2490,7 +2475,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyDocument"
+              "value": "LegalDocument"
             }
           }
         }
@@ -2510,7 +2495,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PrivacyConnection"
+        "value": "LegalConnection"
       },
       "fields": [
         {
@@ -2559,7 +2544,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyConnectionEdges"
+                "value": "LegalConnectionEdges"
               }
             }
           }
@@ -2780,7 +2765,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "updateHomepageDocument"
+            "value": "updatePageDocument"
           },
           "arguments": [
             {
@@ -2812,7 +2797,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "HomepageMutation"
+                    "value": "PageMutation"
                   }
                 }
               }
@@ -2824,7 +2809,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageDocument"
+                "value": "PageDocument"
               }
             }
           }
@@ -2833,7 +2818,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "createHomepageDocument"
+            "value": "createPageDocument"
           },
           "arguments": [
             {
@@ -2865,7 +2850,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "HomepageMutation"
+                    "value": "PageMutation"
                   }
                 }
               }
@@ -2877,7 +2862,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageDocument"
+                "value": "PageDocument"
               }
             }
           }
@@ -2886,7 +2871,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "updatePrivacyDocument"
+            "value": "updateLegalDocument"
           },
           "arguments": [
             {
@@ -2918,7 +2903,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PrivacyMutation"
+                    "value": "LegalMutation"
                   }
                 }
               }
@@ -2930,7 +2915,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyDocument"
+                "value": "LegalDocument"
               }
             }
           }
@@ -2939,7 +2924,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "createPrivacyDocument"
+            "value": "createLegalDocument"
           },
           "arguments": [
             {
@@ -2971,7 +2956,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PrivacyMutation"
+                    "value": "LegalMutation"
                   }
                 }
               }
@@ -2983,7 +2968,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PrivacyDocument"
+                "value": "LegalDocument"
               }
             }
           }
@@ -3001,13 +2986,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "homepage"
+            "value": "page"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageMutation"
+              "value": "PageMutation"
             }
           }
         },
@@ -3015,13 +3000,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy"
+            "value": "legal"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyMutation"
+              "value": "LegalMutation"
             }
           }
         }
@@ -3031,7 +3016,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageSeo_dataMutation"
+        "value": "PageSeo_dataMutation"
       },
       "fields": [
         {
@@ -3082,7 +3067,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageHeroMutation"
+        "value": "PageHeroMutation"
       },
       "fields": [
         {
@@ -3133,7 +3118,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsCall_to_actionMutation"
+        "value": "PageBlocksCall_to_actionMutation"
       },
       "fields": [
         {
@@ -3170,7 +3155,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsMeet_the_teamTeam_membersMutation"
+        "value": "PageBlocksMeet_the_teamTeam_membersMutation"
       },
       "fields": [
         {
@@ -3221,7 +3206,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsMeet_the_teamMutation"
+        "value": "PageBlocksMeet_the_teamMutation"
       },
       "fields": [
         {
@@ -3264,7 +3249,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsMeet_the_teamTeam_membersMutation"
+                "value": "PageBlocksMeet_the_teamTeam_membersMutation"
               }
             }
           }
@@ -3275,7 +3260,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsOur_servicesTeam_membersMutation"
+        "value": "PageBlocksOur_servicesTeam_membersMutation"
       },
       "fields": [
         {
@@ -3312,7 +3297,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsOur_servicesMutation"
+        "value": "PageBlocksOur_servicesMutation"
       },
       "fields": [
         {
@@ -3355,7 +3340,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsOur_servicesTeam_membersMutation"
+                "value": "PageBlocksOur_servicesTeam_membersMutation"
               }
             }
           }
@@ -3366,7 +3351,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsPowered_by_dataMutation"
+        "value": "PageBlocksPowered_by_dataMutation"
       },
       "fields": [
         {
@@ -3403,7 +3388,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsWho_we_work_withCharitiesMutation"
+        "value": "PageBlocksWho_we_work_withCharitiesMutation"
       },
       "fields": [
         {
@@ -3440,7 +3425,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsWho_we_work_withMutation"
+        "value": "PageBlocksWho_we_work_withMutation"
       },
       "fields": [
         {
@@ -3483,7 +3468,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsWho_we_work_withCharitiesMutation"
+                "value": "PageBlocksWho_we_work_withCharitiesMutation"
               }
             }
           }
@@ -3494,7 +3479,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsWhy_rgMutation"
+        "value": "PageBlocksWhy_rgMutation"
       },
       "fields": [
         {
@@ -3531,7 +3516,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageContent_sectionsMutation"
+        "value": "PageBlocksMutation"
       },
       "fields": [
         {
@@ -3544,7 +3529,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageContent_sectionsCall_to_actionMutation"
+              "value": "PageBlocksCall_to_actionMutation"
             }
           }
         },
@@ -3558,7 +3543,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageContent_sectionsMeet_the_teamMutation"
+              "value": "PageBlocksMeet_the_teamMutation"
             }
           }
         },
@@ -3572,7 +3557,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageContent_sectionsOur_servicesMutation"
+              "value": "PageBlocksOur_servicesMutation"
             }
           }
         },
@@ -3586,7 +3571,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageContent_sectionsPowered_by_dataMutation"
+              "value": "PageBlocksPowered_by_dataMutation"
             }
           }
         },
@@ -3600,7 +3585,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageContent_sectionsWho_we_work_withMutation"
+              "value": "PageBlocksWho_we_work_withMutation"
             }
           }
         },
@@ -3614,7 +3599,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageContent_sectionsWhy_rgMutation"
+              "value": "PageBlocksWhy_rgMutation"
             }
           }
         }
@@ -3624,7 +3609,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "HomepageMutation"
+        "value": "PageMutation"
       },
       "fields": [
         {
@@ -3637,7 +3622,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageSeo_dataMutation"
+              "value": "PageSeo_dataMutation"
             }
           }
         },
@@ -3651,7 +3636,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "HomepageHeroMutation"
+              "value": "PageHeroMutation"
             }
           }
         },
@@ -3659,7 +3644,7 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "content_sections"
+            "value": "blocks"
           },
           "type": {
             "kind": "ListType",
@@ -3667,7 +3652,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "HomepageContent_sectionsMutation"
+                "value": "PageBlocksMutation"
               }
             }
           }
@@ -3678,7 +3663,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_seo_dataMutation"
+        "value": "LegalSeo_dataMutation"
       },
       "fields": [
         {
@@ -3729,7 +3714,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PrivacyPrivacy_heroMutation"
+        "value": "LegalHeroMutation"
       },
       "fields": [
         {
@@ -3759,20 +3744,6 @@
               "value": "String"
             }
           }
-        },
-        {
-          "kind": "InputValueDefinition",
-          "name": {
-            "kind": "Name",
-            "value": "hero_button_text"
-          },
-          "type": {
-            "kind": "NamedType",
-            "name": {
-              "kind": "Name",
-              "value": "String"
-            }
-          }
         }
       ]
     },
@@ -3780,20 +3751,20 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PrivacyMutation"
+        "value": "LegalMutation"
       },
       "fields": [
         {
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_seo_data"
+            "value": "seo_data"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_seo_dataMutation"
+              "value": "LegalSeo_dataMutation"
             }
           }
         },
@@ -3801,13 +3772,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "privacy_hero"
+            "value": "hero"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PrivacyPrivacy_heroMutation"
+              "value": "LegalHeroMutation"
             }
           }
         },

@@ -67,10 +67,10 @@ export type Query = {
   getDocument: DocumentNode;
   getDocumentList: DocumentConnection;
   getDocumentFields: Scalars['JSON'];
-  getHomepageDocument: HomepageDocument;
-  getHomepageList: HomepageConnection;
-  getPrivacyDocument: PrivacyDocument;
-  getPrivacyList: PrivacyConnection;
+  getPageDocument: PageDocument;
+  getPageList: PageConnection;
+  getLegalDocument: LegalDocument;
+  getLegalList: LegalConnection;
 };
 
 
@@ -98,12 +98,12 @@ export type QueryGetDocumentListArgs = {
 };
 
 
-export type QueryGetHomepageDocumentArgs = {
+export type QueryGetPageDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetHomepageListArgs = {
+export type QueryGetPageListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
@@ -111,12 +111,12 @@ export type QueryGetHomepageListArgs = {
 };
 
 
-export type QueryGetPrivacyDocumentArgs = {
+export type QueryGetLegalDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetPrivacyListArgs = {
+export type QueryGetLegalListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
@@ -157,154 +157,153 @@ export type CollectionDocumentsArgs = {
   last?: InputMaybe<Scalars['Float']>;
 };
 
-export type DocumentNode = HomepageDocument | PrivacyDocument;
+export type DocumentNode = PageDocument | LegalDocument;
 
-export type HomepageSeo_Data = {
-  __typename?: 'HomepageSeo_data';
+export type PageSeo_Data = {
+  __typename?: 'PageSeo_data';
   meta_title?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_canonical?: Maybe<Scalars['String']>;
 };
 
-export type HomepageHero = {
-  __typename?: 'HomepageHero';
+export type PageHero = {
+  __typename?: 'PageHero';
   hero_heading?: Maybe<Scalars['String']>;
   hero_description?: Maybe<Scalars['String']>;
   hero_button_text?: Maybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsCall_To_Action = {
-  __typename?: 'HomepageContent_sectionsCall_to_action';
+export type PageBlocksCall_To_Action = {
+  __typename?: 'PageBlocksCall_to_action';
   heading?: Maybe<Scalars['String']>;
   button_text?: Maybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsMeet_The_TeamTeam_Members = {
-  __typename?: 'HomepageContent_sectionsMeet_the_teamTeam_members';
+export type PageBlocksMeet_The_TeamTeam_Members = {
+  __typename?: 'PageBlocksMeet_the_teamTeam_members';
   name?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   avatar?: Maybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsMeet_The_Team = {
-  __typename?: 'HomepageContent_sectionsMeet_the_team';
+export type PageBlocksMeet_The_Team = {
+  __typename?: 'PageBlocksMeet_the_team';
   heading?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  team_members?: Maybe<Array<Maybe<HomepageContent_SectionsMeet_The_TeamTeam_Members>>>;
+  team_members?: Maybe<Array<Maybe<PageBlocksMeet_The_TeamTeam_Members>>>;
 };
 
-export type HomepageContent_SectionsOur_ServicesTeam_Members = {
-  __typename?: 'HomepageContent_sectionsOur_servicesTeam_members';
+export type PageBlocksOur_ServicesTeam_Members = {
+  __typename?: 'PageBlocksOur_servicesTeam_members';
   service_title?: Maybe<Scalars['String']>;
   service_description?: Maybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsOur_Services = {
-  __typename?: 'HomepageContent_sectionsOur_services';
+export type PageBlocksOur_Services = {
+  __typename?: 'PageBlocksOur_services';
   heading?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  team_members?: Maybe<Array<Maybe<HomepageContent_SectionsOur_ServicesTeam_Members>>>;
+  team_members?: Maybe<Array<Maybe<PageBlocksOur_ServicesTeam_Members>>>;
 };
 
-export type HomepageContent_SectionsPowered_By_Data = {
-  __typename?: 'HomepageContent_sectionsPowered_by_data';
+export type PageBlocksPowered_By_Data = {
+  __typename?: 'PageBlocksPowered_by_data';
   heading?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['JSON']>;
 };
 
-export type HomepageContent_SectionsWho_We_Work_WithCharities = {
-  __typename?: 'HomepageContent_sectionsWho_we_work_withCharities';
+export type PageBlocksWho_We_Work_WithCharities = {
+  __typename?: 'PageBlocksWho_we_work_withCharities';
   charity_name?: Maybe<Scalars['String']>;
   charity_logo?: Maybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsWho_We_Work_With = {
-  __typename?: 'HomepageContent_sectionsWho_we_work_with';
+export type PageBlocksWho_We_Work_With = {
+  __typename?: 'PageBlocksWho_we_work_with';
   heading?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['JSON']>;
-  charities?: Maybe<Array<Maybe<HomepageContent_SectionsWho_We_Work_WithCharities>>>;
+  charities?: Maybe<Array<Maybe<PageBlocksWho_We_Work_WithCharities>>>;
 };
 
-export type HomepageContent_SectionsWhy_Rg = {
-  __typename?: 'HomepageContent_sectionsWhy_rg';
+export type PageBlocksWhy_Rg = {
+  __typename?: 'PageBlocksWhy_rg';
   heading?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['JSON']>;
 };
 
-export type HomepageContent_Sections = HomepageContent_SectionsCall_To_Action | HomepageContent_SectionsMeet_The_Team | HomepageContent_SectionsOur_Services | HomepageContent_SectionsPowered_By_Data | HomepageContent_SectionsWho_We_Work_With | HomepageContent_SectionsWhy_Rg;
+export type PageBlocks = PageBlocksCall_To_Action | PageBlocksMeet_The_Team | PageBlocksOur_Services | PageBlocksPowered_By_Data | PageBlocksWho_We_Work_With | PageBlocksWhy_Rg;
 
-export type Homepage = {
-  __typename?: 'Homepage';
-  seo_data?: Maybe<HomepageSeo_Data>;
-  hero?: Maybe<HomepageHero>;
-  content_sections?: Maybe<Array<Maybe<HomepageContent_Sections>>>;
+export type Page = {
+  __typename?: 'Page';
+  seo_data?: Maybe<PageSeo_Data>;
+  hero?: Maybe<PageHero>;
+  blocks?: Maybe<Array<Maybe<PageBlocks>>>;
 };
 
-export type HomepageDocument = Node & Document & {
-  __typename?: 'HomepageDocument';
+export type PageDocument = Node & Document & {
+  __typename?: 'PageDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
-  data: Homepage;
+  data: Page;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
   dataJSON: Scalars['JSON'];
 };
 
-export type HomepageConnectionEdges = {
-  __typename?: 'HomepageConnectionEdges';
+export type PageConnectionEdges = {
+  __typename?: 'PageConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<HomepageDocument>;
+  node?: Maybe<PageDocument>;
 };
 
-export type HomepageConnection = Connection & {
-  __typename?: 'HomepageConnection';
+export type PageConnection = Connection & {
+  __typename?: 'PageConnection';
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Float'];
-  edges?: Maybe<Array<Maybe<HomepageConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
 };
 
-export type PrivacyPrivacy_Seo_Data = {
-  __typename?: 'PrivacyPrivacy_seo_data';
+export type LegalSeo_Data = {
+  __typename?: 'LegalSeo_data';
   meta_title?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_canonical?: Maybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_Hero = {
-  __typename?: 'PrivacyPrivacy_hero';
+export type LegalHero = {
+  __typename?: 'LegalHero';
   hero_heading?: Maybe<Scalars['String']>;
   hero_description?: Maybe<Scalars['String']>;
-  hero_button_text?: Maybe<Scalars['String']>;
 };
 
-export type Privacy = {
-  __typename?: 'Privacy';
-  privacy_seo_data?: Maybe<PrivacyPrivacy_Seo_Data>;
-  privacy_hero?: Maybe<PrivacyPrivacy_Hero>;
+export type Legal = {
+  __typename?: 'Legal';
+  seo_data?: Maybe<LegalSeo_Data>;
+  hero?: Maybe<LegalHero>;
   body?: Maybe<Scalars['JSON']>;
 };
 
-export type PrivacyDocument = Node & Document & {
-  __typename?: 'PrivacyDocument';
+export type LegalDocument = Node & Document & {
+  __typename?: 'LegalDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
-  data: Privacy;
+  data: Legal;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
   dataJSON: Scalars['JSON'];
 };
 
-export type PrivacyConnectionEdges = {
-  __typename?: 'PrivacyConnectionEdges';
+export type LegalConnectionEdges = {
+  __typename?: 'LegalConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PrivacyDocument>;
+  node?: Maybe<LegalDocument>;
 };
 
-export type PrivacyConnection = Connection & {
-  __typename?: 'PrivacyConnection';
+export type LegalConnection = Connection & {
+  __typename?: 'LegalConnection';
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Float'];
-  edges?: Maybe<Array<Maybe<PrivacyConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<LegalConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -312,10 +311,10 @@ export type Mutation = {
   addPendingDocument: DocumentNode;
   updateDocument: DocumentNode;
   createDocument: DocumentNode;
-  updateHomepageDocument: HomepageDocument;
-  createHomepageDocument: HomepageDocument;
-  updatePrivacyDocument: PrivacyDocument;
-  createPrivacyDocument: PrivacyDocument;
+  updatePageDocument: PageDocument;
+  createPageDocument: PageDocument;
+  updateLegalDocument: LegalDocument;
+  createLegalDocument: LegalDocument;
 };
 
 
@@ -340,158 +339,157 @@ export type MutationCreateDocumentArgs = {
 };
 
 
-export type MutationUpdateHomepageDocumentArgs = {
+export type MutationUpdatePageDocumentArgs = {
   relativePath: Scalars['String'];
-  params: HomepageMutation;
+  params: PageMutation;
 };
 
 
-export type MutationCreateHomepageDocumentArgs = {
+export type MutationCreatePageDocumentArgs = {
   relativePath: Scalars['String'];
-  params: HomepageMutation;
+  params: PageMutation;
 };
 
 
-export type MutationUpdatePrivacyDocumentArgs = {
+export type MutationUpdateLegalDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PrivacyMutation;
+  params: LegalMutation;
 };
 
 
-export type MutationCreatePrivacyDocumentArgs = {
+export type MutationCreateLegalDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PrivacyMutation;
+  params: LegalMutation;
 };
 
 export type DocumentMutation = {
-  homepage?: InputMaybe<HomepageMutation>;
-  privacy?: InputMaybe<PrivacyMutation>;
+  page?: InputMaybe<PageMutation>;
+  legal?: InputMaybe<LegalMutation>;
 };
 
-export type HomepageSeo_DataMutation = {
+export type PageSeo_DataMutation = {
   meta_title?: InputMaybe<Scalars['String']>;
   meta_description?: InputMaybe<Scalars['String']>;
   meta_canonical?: InputMaybe<Scalars['String']>;
 };
 
-export type HomepageHeroMutation = {
+export type PageHeroMutation = {
   hero_heading?: InputMaybe<Scalars['String']>;
   hero_description?: InputMaybe<Scalars['String']>;
   hero_button_text?: InputMaybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsCall_To_ActionMutation = {
+export type PageBlocksCall_To_ActionMutation = {
   heading?: InputMaybe<Scalars['String']>;
   button_text?: InputMaybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsMeet_The_TeamTeam_MembersMutation = {
+export type PageBlocksMeet_The_TeamTeam_MembersMutation = {
   name?: InputMaybe<Scalars['String']>;
   position?: InputMaybe<Scalars['String']>;
   avatar?: InputMaybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsMeet_The_TeamMutation = {
+export type PageBlocksMeet_The_TeamMutation = {
   heading?: InputMaybe<Scalars['String']>;
   description?: InputMaybe<Scalars['String']>;
-  team_members?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsMeet_The_TeamTeam_MembersMutation>>>;
+  team_members?: InputMaybe<Array<InputMaybe<PageBlocksMeet_The_TeamTeam_MembersMutation>>>;
 };
 
-export type HomepageContent_SectionsOur_ServicesTeam_MembersMutation = {
+export type PageBlocksOur_ServicesTeam_MembersMutation = {
   service_title?: InputMaybe<Scalars['String']>;
   service_description?: InputMaybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsOur_ServicesMutation = {
+export type PageBlocksOur_ServicesMutation = {
   heading?: InputMaybe<Scalars['String']>;
   description?: InputMaybe<Scalars['String']>;
-  team_members?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsOur_ServicesTeam_MembersMutation>>>;
+  team_members?: InputMaybe<Array<InputMaybe<PageBlocksOur_ServicesTeam_MembersMutation>>>;
 };
 
-export type HomepageContent_SectionsPowered_By_DataMutation = {
+export type PageBlocksPowered_By_DataMutation = {
   heading?: InputMaybe<Scalars['String']>;
   content?: InputMaybe<Scalars['JSON']>;
 };
 
-export type HomepageContent_SectionsWho_We_Work_WithCharitiesMutation = {
+export type PageBlocksWho_We_Work_WithCharitiesMutation = {
   charity_name?: InputMaybe<Scalars['String']>;
   charity_logo?: InputMaybe<Scalars['String']>;
 };
 
-export type HomepageContent_SectionsWho_We_Work_WithMutation = {
+export type PageBlocksWho_We_Work_WithMutation = {
   heading?: InputMaybe<Scalars['String']>;
   content?: InputMaybe<Scalars['JSON']>;
-  charities?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsWho_We_Work_WithCharitiesMutation>>>;
+  charities?: InputMaybe<Array<InputMaybe<PageBlocksWho_We_Work_WithCharitiesMutation>>>;
 };
 
-export type HomepageContent_SectionsWhy_RgMutation = {
+export type PageBlocksWhy_RgMutation = {
   heading?: InputMaybe<Scalars['String']>;
   content?: InputMaybe<Scalars['JSON']>;
 };
 
-export type HomepageContent_SectionsMutation = {
-  call_to_action?: InputMaybe<HomepageContent_SectionsCall_To_ActionMutation>;
-  meet_the_team?: InputMaybe<HomepageContent_SectionsMeet_The_TeamMutation>;
-  our_services?: InputMaybe<HomepageContent_SectionsOur_ServicesMutation>;
-  powered_by_data?: InputMaybe<HomepageContent_SectionsPowered_By_DataMutation>;
-  who_we_work_with?: InputMaybe<HomepageContent_SectionsWho_We_Work_WithMutation>;
-  why_rg?: InputMaybe<HomepageContent_SectionsWhy_RgMutation>;
+export type PageBlocksMutation = {
+  call_to_action?: InputMaybe<PageBlocksCall_To_ActionMutation>;
+  meet_the_team?: InputMaybe<PageBlocksMeet_The_TeamMutation>;
+  our_services?: InputMaybe<PageBlocksOur_ServicesMutation>;
+  powered_by_data?: InputMaybe<PageBlocksPowered_By_DataMutation>;
+  who_we_work_with?: InputMaybe<PageBlocksWho_We_Work_WithMutation>;
+  why_rg?: InputMaybe<PageBlocksWhy_RgMutation>;
 };
 
-export type HomepageMutation = {
-  seo_data?: InputMaybe<HomepageSeo_DataMutation>;
-  hero?: InputMaybe<HomepageHeroMutation>;
-  content_sections?: InputMaybe<Array<InputMaybe<HomepageContent_SectionsMutation>>>;
+export type PageMutation = {
+  seo_data?: InputMaybe<PageSeo_DataMutation>;
+  hero?: InputMaybe<PageHeroMutation>;
+  blocks?: InputMaybe<Array<InputMaybe<PageBlocksMutation>>>;
 };
 
-export type PrivacyPrivacy_Seo_DataMutation = {
+export type LegalSeo_DataMutation = {
   meta_title?: InputMaybe<Scalars['String']>;
   meta_description?: InputMaybe<Scalars['String']>;
   meta_canonical?: InputMaybe<Scalars['String']>;
 };
 
-export type PrivacyPrivacy_HeroMutation = {
+export type LegalHeroMutation = {
   hero_heading?: InputMaybe<Scalars['String']>;
   hero_description?: InputMaybe<Scalars['String']>;
-  hero_button_text?: InputMaybe<Scalars['String']>;
 };
 
-export type PrivacyMutation = {
-  privacy_seo_data?: InputMaybe<PrivacyPrivacy_Seo_DataMutation>;
-  privacy_hero?: InputMaybe<PrivacyPrivacy_HeroMutation>;
+export type LegalMutation = {
+  seo_data?: InputMaybe<LegalSeo_DataMutation>;
+  hero?: InputMaybe<LegalHeroMutation>;
   body?: InputMaybe<Scalars['JSON']>;
 };
 
-export type HomepagePartsFragment = { __typename?: 'Homepage', seo_data?: { __typename: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined };
+export type PagePartsFragment = { __typename?: 'Page', seo_data?: { __typename: 'PageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, blocks?: Array<{ __typename: 'PageBlocksCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PageBlocksMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PageBlocksMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PageBlocksOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PageBlocksWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'PageBlocksWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined };
 
-export type PrivacyPartsFragment = { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined };
+export type LegalPartsFragment = { __typename?: 'Legal', body?: any | null | undefined, seo_data?: { __typename: 'LegalSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'LegalHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined } | null | undefined };
 
-export type GetHomepageDocumentQueryVariables = Exact<{
+export type GetPageDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetHomepageDocumentQuery = { __typename?: 'Query', getHomepageDocument: { __typename?: 'HomepageDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Homepage', seo_data?: { __typename: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
+export type GetPageDocumentQuery = { __typename?: 'Query', getPageDocument: { __typename?: 'PageDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Page', seo_data?: { __typename: 'PageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, blocks?: Array<{ __typename: 'PageBlocksCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PageBlocksMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PageBlocksMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PageBlocksOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PageBlocksWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'PageBlocksWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
 
-export type GetHomepageListQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPageListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomepageListQuery = { __typename?: 'Query', getHomepageList: { __typename?: 'HomepageConnection', totalCount: number, edges?: Array<{ __typename?: 'HomepageConnectionEdges', node?: { __typename?: 'HomepageDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Homepage', seo_data?: { __typename: 'HomepageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'HomepageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, content_sections?: Array<{ __typename: 'HomepageContent_sectionsCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'HomepageContent_sectionsMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'HomepageContent_sectionsOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'HomepageContent_sectionsWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'HomepageContent_sectionsWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'HomepageContent_sectionsWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetPageListQuery = { __typename?: 'Query', getPageList: { __typename?: 'PageConnection', totalCount: number, edges?: Array<{ __typename?: 'PageConnectionEdges', node?: { __typename?: 'PageDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Page', seo_data?: { __typename: 'PageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'PageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, blocks?: Array<{ __typename: 'PageBlocksCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PageBlocksMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PageBlocksMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksOur_services', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename: 'PageBlocksOur_servicesTeam_members', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PageBlocksWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename: 'PageBlocksWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
-export type GetPrivacyDocumentQueryVariables = Exact<{
+export type GetLegalDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetPrivacyDocumentQuery = { __typename?: 'Query', getPrivacyDocument: { __typename?: 'PrivacyDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } };
+export type GetLegalDocumentQuery = { __typename?: 'Query', getLegalDocument: { __typename?: 'LegalDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Legal', body?: any | null | undefined, seo_data?: { __typename: 'LegalSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'LegalHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined } | null | undefined } } };
 
-export type GetPrivacyListQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetLegalListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPrivacyListQuery = { __typename?: 'Query', getPrivacyList: { __typename?: 'PrivacyConnection', totalCount: number, edges?: Array<{ __typename?: 'PrivacyConnectionEdges', node?: { __typename?: 'PrivacyDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Privacy', body?: any | null | undefined, privacy_seo_data?: { __typename: 'PrivacyPrivacy_seo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, privacy_hero?: { __typename: 'PrivacyPrivacy_hero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetLegalListQuery = { __typename?: 'Query', getLegalList: { __typename?: 'LegalConnection', totalCount: number, edges?: Array<{ __typename?: 'LegalConnectionEdges', node?: { __typename?: 'LegalDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Legal', body?: any | null | undefined, seo_data?: { __typename: 'LegalSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename: 'LegalHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined } | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
-export const HomepagePartsFragmentDoc = gql`
-    fragment HomepageParts on Homepage {
+export const PagePartsFragmentDoc = gql`
+    fragment PageParts on Page {
   seo_data {
     __typename
     meta_title
@@ -504,13 +502,13 @@ export const HomepagePartsFragmentDoc = gql`
     hero_description
     hero_button_text
   }
-  content_sections {
+  blocks {
     __typename
-    ... on HomepageContent_sectionsCall_to_action {
+    ... on PageBlocksCall_to_action {
       heading
       button_text
     }
-    ... on HomepageContent_sectionsMeet_the_team {
+    ... on PageBlocksMeet_the_team {
       heading
       description
       team_members {
@@ -520,7 +518,7 @@ export const HomepagePartsFragmentDoc = gql`
         avatar
       }
     }
-    ... on HomepageContent_sectionsOur_services {
+    ... on PageBlocksOur_services {
       heading
       description
       team_members {
@@ -529,11 +527,11 @@ export const HomepagePartsFragmentDoc = gql`
         service_description
       }
     }
-    ... on HomepageContent_sectionsPowered_by_data {
+    ... on PageBlocksPowered_by_data {
       heading
       content
     }
-    ... on HomepageContent_sectionsWho_we_work_with {
+    ... on PageBlocksWho_we_work_with {
       heading
       content
       charities {
@@ -542,33 +540,32 @@ export const HomepagePartsFragmentDoc = gql`
         charity_logo
       }
     }
-    ... on HomepageContent_sectionsWhy_rg {
+    ... on PageBlocksWhy_rg {
       heading
       content
     }
   }
 }
     `;
-export const PrivacyPartsFragmentDoc = gql`
-    fragment PrivacyParts on Privacy {
-  privacy_seo_data {
+export const LegalPartsFragmentDoc = gql`
+    fragment LegalParts on Legal {
+  seo_data {
     __typename
     meta_title
     meta_description
     meta_canonical
   }
-  privacy_hero {
+  hero {
     __typename
     hero_heading
     hero_description
-    hero_button_text
   }
   body
 }
     `;
-export const GetHomepageDocumentDocument = gql`
-    query getHomepageDocument($relativePath: String!) {
-  getHomepageDocument(relativePath: $relativePath) {
+export const GetPageDocumentDocument = gql`
+    query getPageDocument($relativePath: String!) {
+  getPageDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -579,14 +576,14 @@ export const GetHomepageDocumentDocument = gql`
     }
     id
     data {
-      ...HomepageParts
+      ...PageParts
     }
   }
 }
-    ${HomepagePartsFragmentDoc}`;
-export const GetHomepageListDocument = gql`
-    query getHomepageList {
-  getHomepageList {
+    ${PagePartsFragmentDoc}`;
+export const GetPageListDocument = gql`
+    query getPageList {
+  getPageList {
     totalCount
     edges {
       node {
@@ -600,16 +597,16 @@ export const GetHomepageListDocument = gql`
           extension
         }
         data {
-          ...HomepageParts
+          ...PageParts
         }
       }
     }
   }
 }
-    ${HomepagePartsFragmentDoc}`;
-export const GetPrivacyDocumentDocument = gql`
-    query getPrivacyDocument($relativePath: String!) {
-  getPrivacyDocument(relativePath: $relativePath) {
+    ${PagePartsFragmentDoc}`;
+export const GetLegalDocumentDocument = gql`
+    query getLegalDocument($relativePath: String!) {
+  getLegalDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -620,14 +617,14 @@ export const GetPrivacyDocumentDocument = gql`
     }
     id
     data {
-      ...PrivacyParts
+      ...LegalParts
     }
   }
 }
-    ${PrivacyPartsFragmentDoc}`;
-export const GetPrivacyListDocument = gql`
-    query getPrivacyList {
-  getPrivacyList {
+    ${LegalPartsFragmentDoc}`;
+export const GetLegalListDocument = gql`
+    query getLegalList {
+  getLegalList {
     totalCount
     edges {
       node {
@@ -641,27 +638,27 @@ export const GetPrivacyListDocument = gql`
           extension
         }
         data {
-          ...PrivacyParts
+          ...LegalParts
         }
       }
     }
   }
 }
-    ${PrivacyPartsFragmentDoc}`;
+    ${LegalPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      getHomepageDocument(variables: GetHomepageDocumentQueryVariables, options?: C): Promise<{data: GetHomepageDocumentQuery, variables: GetHomepageDocumentQueryVariables, query: string}> {
-        return requester<{data: GetHomepageDocumentQuery, variables: GetHomepageDocumentQueryVariables, query: string}, GetHomepageDocumentQueryVariables>(GetHomepageDocumentDocument, variables, options);
+      getPageDocument(variables: GetPageDocumentQueryVariables, options?: C): Promise<{data: GetPageDocumentQuery, variables: GetPageDocumentQueryVariables, query: string}> {
+        return requester<{data: GetPageDocumentQuery, variables: GetPageDocumentQueryVariables, query: string}, GetPageDocumentQueryVariables>(GetPageDocumentDocument, variables, options);
       },
-    getHomepageList(variables?: GetHomepageListQueryVariables, options?: C): Promise<{data: GetHomepageListQuery, variables: GetHomepageListQueryVariables, query: string}> {
-        return requester<{data: GetHomepageListQuery, variables: GetHomepageListQueryVariables, query: string}, GetHomepageListQueryVariables>(GetHomepageListDocument, variables, options);
+    getPageList(variables?: GetPageListQueryVariables, options?: C): Promise<{data: GetPageListQuery, variables: GetPageListQueryVariables, query: string}> {
+        return requester<{data: GetPageListQuery, variables: GetPageListQueryVariables, query: string}, GetPageListQueryVariables>(GetPageListDocument, variables, options);
       },
-    getPrivacyDocument(variables: GetPrivacyDocumentQueryVariables, options?: C): Promise<{data: GetPrivacyDocumentQuery, variables: GetPrivacyDocumentQueryVariables, query: string}> {
-        return requester<{data: GetPrivacyDocumentQuery, variables: GetPrivacyDocumentQueryVariables, query: string}, GetPrivacyDocumentQueryVariables>(GetPrivacyDocumentDocument, variables, options);
+    getLegalDocument(variables: GetLegalDocumentQueryVariables, options?: C): Promise<{data: GetLegalDocumentQuery, variables: GetLegalDocumentQueryVariables, query: string}> {
+        return requester<{data: GetLegalDocumentQuery, variables: GetLegalDocumentQueryVariables, query: string}, GetLegalDocumentQueryVariables>(GetLegalDocumentDocument, variables, options);
       },
-    getPrivacyList(variables?: GetPrivacyListQueryVariables, options?: C): Promise<{data: GetPrivacyListQuery, variables: GetPrivacyListQueryVariables, query: string}> {
-        return requester<{data: GetPrivacyListQuery, variables: GetPrivacyListQueryVariables, query: string}, GetPrivacyListQueryVariables>(GetPrivacyListDocument, variables, options);
+    getLegalList(variables?: GetLegalListQueryVariables, options?: C): Promise<{data: GetLegalListQuery, variables: GetLegalListQueryVariables, query: string}> {
+        return requester<{data: GetLegalListQuery, variables: GetLegalListQueryVariables, query: string}, GetLegalListQueryVariables>(GetLegalListDocument, variables, options);
       }
     };
   }
