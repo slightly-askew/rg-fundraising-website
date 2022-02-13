@@ -1,5 +1,6 @@
-import MaxWidthWrapper from '@components/max-width-wrapper'
 import Image from 'next/image'
+import MaxWidthWrapper from '@components/max-width-wrapper'
+import TextGreenify, { Green } from '@components/text-greenify'
 
 export interface MeetTheTeamProps {
   heading?: string | null | undefined
@@ -17,15 +18,21 @@ function MeetTheTeam({ heading, description, team_members }: MeetTheTeamProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>{heading}</h1>
-        <p>{description}</p>
+        <h1>
+          <TextGreenify>{heading || ''}</TextGreenify>
+        </h1>
+        <p>
+          <TextGreenify>{description || ''}</TextGreenify>
+        </p>
         <ul>
           {team_members?.map(
             (m, i) =>
               m?.name && (
                 <li key={m?.name + i}>
                   <article>
-                    <h2>{m.name}</h2>
+                    <h2>
+                      <Green>{m.name}</Green>
+                    </h2>
                     <p>{m.position}</p>
                     {m?.avatar && (
                       <Image

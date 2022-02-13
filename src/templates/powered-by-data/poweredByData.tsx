@@ -1,17 +1,20 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
-import { TinaMarkdown, type TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import styled from '@theme'
+import TextGreenify from '@components/text-greenify'
 
 export interface PoweredByDataProps {
   heading: string | null | undefined
-  content: TinaMarkdownContent
+  content?: React.ReactNode
 }
 
 function PoweredByData({ heading, content }: PoweredByDataProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>{heading}</h1>
-        <TinaMarkdown content={content} />
+        <h1>
+          <TextGreenify>{heading || ''}</TextGreenify>
+        </h1>
+        {content}
       </MaxWidthWrapper>
     </section>
   )

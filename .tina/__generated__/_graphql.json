@@ -1338,7 +1338,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "String"
+              "value": "JSON"
             }
           }
         },
@@ -1521,7 +1521,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PageBlocksOur_servicesTeam_members"
+        "value": "PageBlocksOur_servicesServices"
       },
       "fields": [
         {
@@ -1584,14 +1584,14 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "description"
+            "value": "services_description"
           },
           "arguments": [],
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "String"
+              "value": "JSON"
             }
           }
         },
@@ -1599,7 +1599,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "team_members"
+            "value": "services"
           },
           "arguments": [],
           "type": {
@@ -1608,8 +1608,23 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PageBlocksOur_servicesTeam_members"
+                "value": "PageBlocksOur_servicesServices"
               }
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "services_mission"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
             }
           }
         }
@@ -3094,7 +3109,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "String"
+              "value": "JSON"
             }
           }
         },
@@ -3260,7 +3275,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PageBlocksOur_servicesTeam_membersMutation"
+        "value": "PageBlocksOur_servicesServicesMutation"
       },
       "fields": [
         {
@@ -3318,13 +3333,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "description"
+            "value": "services_description"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "String"
+              "value": "JSON"
             }
           }
         },
@@ -3332,7 +3347,7 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "team_members"
+            "value": "services"
           },
           "type": {
             "kind": "ListType",
@@ -3340,8 +3355,22 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PageBlocksOur_servicesTeam_membersMutation"
+                "value": "PageBlocksOur_servicesServicesMutation"
               }
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "services_mission"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
             }
           }
         }

@@ -1,5 +1,7 @@
 import { createStitches, PropertyValue } from '@stitches/react'
-import { space, sizes } from './space'
+import space from './space'
+import sizes from './sizes'
+import colors from './colors'
 
 export const {
   styled,
@@ -12,15 +14,14 @@ export const {
   config,
 } = createStitches({
   theme: {
-    colors: {
-      gray400: 'gainsboro',
-      gray500: 'lightgray',
-      black: '#202020',
-      white: '#ffffff',
-      light: '#f8f8f8',
-    },
+    colors,
     space,
     sizes,
+    radii: {
+      small: '2px',
+      medium: '4px',
+      large: '8px',
+    },
   },
   media: {
     tablet: '(min-width: 500px)',

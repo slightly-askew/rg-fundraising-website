@@ -6,6 +6,7 @@ import BlockRenderer from '@templates/BlockRenderer'
 import request from '@lib/tina-cms'
 import { GetPageQuery } from '@lib/tina-cms/__generated__/types'
 import { useTina } from 'tinacms/dist/edit-state'
+import TinaMarkdown from '@components/tina-markdown/TinaMarkdown'
 //import { ExperimentalGetTinaClient } from '../../.tina/__generated__/types'
 
 type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
@@ -33,8 +34,13 @@ function Home(props: StaticProps) {
       </Head>
       <Layout>
         <Hero
-          heading={content.hero?.hero_heading}
-          description={content.hero?.hero_description}
+          heading={content.hero?.hero_heading || ''}
+          description={
+            content.hero?.hero_description && (
+              //@ts-expect-error Markdown type
+              <TinaMarkdown>{content.hero?.hero_description}</TinaMarkdown>
+            )
+          }
           button_text={content.hero?.hero_button_text}
         />
         {/*@ts-expect-error difficult to type property */}
@@ -59,12 +65,12 @@ export const getStaticProps = async () => {
       ...pageData,
     },
   }
-  /* Auto generated GQL client - not recommended for production yet
+  /*
+  // Auto generated GQL client - not recommended for production yet
   const client = ExperimentalGetTinaClient()
   const tinaProps = await client.getPageDocument({
     relativePath: 'home.mdx',
   })
-
   return { props: { ...tinaProps } }
   */
 }

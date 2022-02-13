@@ -248,24 +248,26 @@ export type PageBlocksMutation = {
 
 export type PageBlocksOur_Services = {
   __typename?: 'PageBlocksOur_services';
-  description?: Maybe<Scalars['String']>;
   heading?: Maybe<Scalars['String']>;
-  team_members?: Maybe<Array<Maybe<PageBlocksOur_ServicesTeam_Members>>>;
+  services?: Maybe<Array<Maybe<PageBlocksOur_ServicesServices>>>;
+  services_description?: Maybe<Scalars['JSON']>;
+  services_mission?: Maybe<Scalars['String']>;
 };
 
 export type PageBlocksOur_ServicesMutation = {
-  description?: InputMaybe<Scalars['String']>;
   heading?: InputMaybe<Scalars['String']>;
-  team_members?: InputMaybe<Array<InputMaybe<PageBlocksOur_ServicesTeam_MembersMutation>>>;
+  services?: InputMaybe<Array<InputMaybe<PageBlocksOur_ServicesServicesMutation>>>;
+  services_description?: InputMaybe<Scalars['JSON']>;
+  services_mission?: InputMaybe<Scalars['String']>;
 };
 
-export type PageBlocksOur_ServicesTeam_Members = {
-  __typename?: 'PageBlocksOur_servicesTeam_members';
+export type PageBlocksOur_ServicesServices = {
+  __typename?: 'PageBlocksOur_servicesServices';
   service_description?: Maybe<Scalars['String']>;
   service_title?: Maybe<Scalars['String']>;
 };
 
-export type PageBlocksOur_ServicesTeam_MembersMutation = {
+export type PageBlocksOur_ServicesServicesMutation = {
   service_description?: InputMaybe<Scalars['String']>;
   service_title?: InputMaybe<Scalars['String']>;
 };
@@ -342,13 +344,13 @@ export type PageDocument = Document & Node & {
 export type PageHero = {
   __typename?: 'PageHero';
   hero_button_text?: Maybe<Scalars['String']>;
-  hero_description?: Maybe<Scalars['String']>;
+  hero_description?: Maybe<Scalars['JSON']>;
   hero_heading?: Maybe<Scalars['String']>;
 };
 
 export type PageHeroMutation = {
   hero_button_text?: InputMaybe<Scalars['String']>;
-  hero_description?: InputMaybe<Scalars['String']>;
+  hero_description?: InputMaybe<Scalars['JSON']>;
   hero_heading?: InputMaybe<Scalars['String']>;
 };
 
@@ -464,7 +466,7 @@ export type MeetTheTeamFragment = { __typename?: 'PageBlocksMeet_the_team', head
 
 export type WhoWeWorkWithFragment = { __typename?: 'PageBlocksWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PageBlocksWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined };
 
-export type OurServicesFragment = { __typename?: 'PageBlocksOur_services', heading?: string | null | undefined, description?: string | null | undefined };
+export type OurServicesFragment = { __typename?: 'PageBlocksOur_services', heading?: string | null | undefined, services_description?: any | null | undefined, services_mission?: string | null | undefined, services?: Array<{ __typename?: 'PageBlocksOur_servicesServices', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined };
 
 export type PoweredByDataFragment = { __typename?: 'PageBlocksPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined };
 
@@ -484,7 +486,7 @@ export type GetPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPageQuery = { __typename?: 'Query', getPageDocument: { __typename?: 'PageDocument', id: string, values: any, dataJSON: any, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Page', seo_data?: { __typename?: 'PageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PageHero', hero_heading?: string | null | undefined, hero_description?: string | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, blocks?: Array<{ __typename: 'PageBlocksCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PageBlocksMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'PageBlocksMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksOur_services', heading?: string | null | undefined, description?: string | null | undefined } | { __typename: 'PageBlocksPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PageBlocksWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PageBlocksWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
+export type GetPageQuery = { __typename?: 'Query', getPageDocument: { __typename?: 'PageDocument', id: string, values: any, dataJSON: any, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Page', seo_data?: { __typename?: 'PageSeo_data', meta_title?: string | null | undefined, meta_description?: string | null | undefined, meta_canonical?: string | null | undefined } | null | undefined, hero?: { __typename?: 'PageHero', hero_heading?: string | null | undefined, hero_description?: any | null | undefined, hero_button_text?: string | null | undefined } | null | undefined, blocks?: Array<{ __typename: 'PageBlocksCall_to_action', heading?: string | null | undefined, button_text?: string | null | undefined } | { __typename: 'PageBlocksMeet_the_team', heading?: string | null | undefined, description?: string | null | undefined, team_members?: Array<{ __typename?: 'PageBlocksMeet_the_teamTeam_members', name?: string | null | undefined, position?: string | null | undefined, avatar?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksOur_services', heading?: string | null | undefined, services_description?: any | null | undefined, services_mission?: string | null | undefined, services?: Array<{ __typename?: 'PageBlocksOur_servicesServices', service_title?: string | null | undefined, service_description?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksPowered_by_data', heading?: string | null | undefined, content?: any | null | undefined } | { __typename: 'PageBlocksWho_we_work_with', heading?: string | null | undefined, content?: any | null | undefined, charities?: Array<{ __typename?: 'PageBlocksWho_we_work_withCharities', charity_name?: string | null | undefined, charity_logo?: string | null | undefined } | null | undefined> | null | undefined } | { __typename: 'PageBlocksWhy_rg', heading?: string | null | undefined, content?: any | null | undefined } | null | undefined> | null | undefined } } };
 
 export const MeetTheTeamFragmentDoc = gql`
     fragment MeetTheTeam on PageBlocksMeet_the_team {
@@ -510,7 +512,12 @@ export const WhoWeWorkWithFragmentDoc = gql`
 export const OurServicesFragmentDoc = gql`
     fragment OurServices on PageBlocksOur_services {
   heading
-  description
+  services_description
+  services {
+    service_title
+    service_description
+  }
+  services_mission
 }
     `;
 export const PoweredByDataFragmentDoc = gql`

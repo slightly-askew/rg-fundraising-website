@@ -1,17 +1,19 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
-import { TinaMarkdown, type TinaMarkdownContent } from 'tinacms/dist/rich-text'
-
+import TinaMarkdown from '@components/tina-markdown'
+import TextGreenify from '@components/text-greenify'
 export interface WhyRgProps {
-  heading: string | null | undefined
-  content: TinaMarkdownContent
+  heading?: string
+  content?: React.ReactNode
 }
 
 function WhyRg({ heading, content }: WhyRgProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>{heading}</h1>
-        <TinaMarkdown content={content} />
+        <h1>
+          <TextGreenify>{heading || ''}</TextGreenify>
+        </h1>
+        {content}
       </MaxWidthWrapper>
     </section>
   )

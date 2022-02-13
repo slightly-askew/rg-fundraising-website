@@ -49,7 +49,7 @@ export default defineSchema({
               name: 'hero_heading',
             },
             {
-              type: 'string',
+              type: 'rich-text',
               label: 'Intro text',
               name: 'hero_description',
             },

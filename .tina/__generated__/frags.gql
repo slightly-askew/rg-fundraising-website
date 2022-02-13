@@ -29,12 +29,13 @@ fragment PageParts on Page {
     }
     ... on PageBlocksOur_services {
       heading
-      description
-      team_members {
+      services_description
+      services {
         __typename
         service_title
         service_description
       }
+      services_mission
     }
     ... on PageBlocksPowered_by_data {
       heading

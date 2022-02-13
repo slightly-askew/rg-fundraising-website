@@ -1,40 +1,50 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
+import TextGreenify, { Green } from '@components/text-greenify'
 
 export interface OurServicesProps {
-  heading: string | null | undefined
+  heading?: string
+  description?: React.ReactNode
+  services?: Service[]
+  mission?: string
 }
 
-function OurServices({ heading }: OurServicesProps) {
+type Service = {
+  service_title?: string | null
+  service_description?: string | null
+} | null
+
+function OurServices({
+  heading,
+  description,
+  services,
+  mission,
+}: OurServicesProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>{heading}</h1>
-        <p>
-          RG Fundraising providers donor aquisition, donor retention and
-          consultancy services for some of the best brands in the world.
-        </p>
+        <h1>
+          <TextGreenify>{heading || ''}</TextGreenify>
+        </h1>
+        {description}
         <ul>
-          <li>
-            <h2>Donor Aquisition</h2>
-            <p>Face-to-Face</p>
-          </li>
-          <li>
-            <h2>Donor Aquisition</h2>
-            <p>Telemarketing</p>
-          </li>
-          <li>
-            <h2>Donor Retention</h2>
-            <p>Omni-channel</p>
-          </li>
-          <li>
-            <h2>Consultancy</h2>
-            <p>Industry-wide</p>
-          </li>
+          {services?.map((service, i) => (
+            <li
+              key={
+                (service?.service_title || '') +
+                (service?.service_description || '') +
+                i
+              }
+            >
+              <h2>
+                <Green>{service?.service_title}</Green>
+              </h2>
+              <p>{service?.service_description}</p>
+            </li>
+          ))}
         </ul>
         <figure>
           <blockquote>
-            Our Aim is simple; to become the best-quality, sustainable
-            findraising programme in Australia.
+            <TextGreenify>{mission}</TextGreenify>
           </blockquote>
         </figure>
       </MaxWidthWrapper>

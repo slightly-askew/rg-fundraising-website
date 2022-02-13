@@ -93,13 +93,13 @@ export const ourServicesBlock = {
       name: 'heading',
     },
     {
-      type: 'string',
+      type: 'rich-text',
       label: 'Description',
-      name: 'description',
+      name: 'services_description',
     },
     {
-      label: 'Team Members',
-      name: 'team_members',
+      label: 'Services',
+      name: 'services',
       type: 'object',
       list: true,
       ui: {
@@ -120,6 +120,11 @@ export const ourServicesBlock = {
           name: 'service_description',
         },
       ],
+    },
+    {
+      type: 'string',
+      label: 'Mission',
+      name: 'services_mission',
     },
   ],
 }

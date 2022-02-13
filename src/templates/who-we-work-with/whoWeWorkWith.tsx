@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import VisuallyHidden from '@components/visually-hidden'
-import { TinaMarkdown, type TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import TinaMarkdown from '@components/tina-markdown'
+import TextGreenify, { Green } from '@components/text-greenify'
 
 export interface WhoWeWorkWithProps {
   heading: string | null | undefined
-  content: TinaMarkdownContent
+  content: React.ReactNode
   charities: (Charity | null | undefined)[] | null | undefined
 }
 
@@ -18,8 +19,10 @@ function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
   return (
     <section>
       <MaxWidthWrapper>
-        <h1>{heading}</h1>
-        <TinaMarkdown content={content} />
+        <h1>
+          <TextGreenify>{heading || ''}</TextGreenify>
+        </h1>
+        {content}
         <ul>
           {charities?.map(
             (c, i) =>
