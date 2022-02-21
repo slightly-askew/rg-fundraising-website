@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import VisuallyHidden from '@components/visually-hidden'
-import TinaMarkdown from '@components/tina-markdown'
+import styled from '@theme'
 import TextGreenify, { Green } from '@components/text-greenify'
 
 export interface WhoWeWorkWithProps {
@@ -30,13 +30,14 @@ function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
                 <li key={c.charity_logo + i}>
                   <article>
                     <VisuallyHidden as="h2">{c.charity_name}</VisuallyHidden>
-                    <Image
-                      alt={`The logo of ${c.charity_name}`}
-                      src={c.charity_logo}
-                      height={100}
-                      width={100}
-                      objectFit="contain"
-                    ></Image>
+                    <ImageWrapper>
+                      <Image
+                        alt={`The logo of ${c.charity_name}`}
+                        src={c.charity_logo}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </ImageWrapper>
                   </article>
                 </li>
               )
@@ -46,5 +47,10 @@ function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
     </section>
   )
 }
+
+const ImageWrapper = styled('div', {
+  position: 'relative',
+  size: '$10',
+})
 
 export default WhoWeWorkWith

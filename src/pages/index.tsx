@@ -37,7 +37,6 @@ function Home(props: StaticProps) {
           heading={content.hero?.hero_heading || ''}
           description={
             content.hero?.hero_description && (
-              //@ts-expect-error Markdown type
               <TinaMarkdown>{content.hero?.hero_description}</TinaMarkdown>
             )
           }
@@ -60,19 +59,18 @@ export const getStaticProps = async () => {
     variables,
   })
 
+  const images = await import('@lib/tina-cms/cloudinary').then((c) =>
+    c.buildImageMap(pageData.data.getPageDocument.data)
+  )
+
+  console.log(JSON.stringify(images))
+
   return {
     props: {
       ...pageData,
+      cloudinary: images,
     },
   }
-  /*
-  // Auto generated GQL client - not recommended for production yet
-  const client = ExperimentalGetTinaClient()
-  const tinaProps = await client.getPageDocument({
-    relativePath: 'home.mdx',
-  })
-  return { props: { ...tinaProps } }
-  */
 }
 
 export default Home

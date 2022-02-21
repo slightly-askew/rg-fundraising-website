@@ -1,25 +1,24 @@
-import styled from '@theme'
-import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import { Paragraph } from '@components/typography'
+import { Green } from '@components/text-greenify'
+import {
+  Components,
+  TinaMarkdown,
+  TinaMarkdownContent,
+} from 'tinacms/dist/rich-text'
 
 interface Props {
   children: TinaMarkdownContent | TinaMarkdownContent[]
 }
 
-//overrride italics as Green text
-const Green = styled('span', { color: '$primaryGreen' })
-
-const components = {
+const components: Components<{}> = {
+  //@ts-expect-error
   italic: Green,
+  //@ts-expect-error
+  p: Paragraph,
 }
 
 function ConfiguredMarkdown({ children }: Props) {
-  return (
-    <TinaMarkdown
-      content={children}
-      //@ts-expect-error possibly undefined issues
-      components={components}
-    />
-  )
+  return <TinaMarkdown content={children} components={components} />
 }
 
 export default ConfiguredMarkdown

@@ -37,7 +37,7 @@ export const meetTheTeamBlock = {
       name: 'heading',
     },
     {
-      type: 'string',
+      type: 'rich-text',
       label: 'Description',
       name: 'description',
     },

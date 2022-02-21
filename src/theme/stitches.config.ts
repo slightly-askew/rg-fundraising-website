@@ -2,6 +2,7 @@ import { createStitches, PropertyValue } from '@stitches/react'
 import space from './space'
 import sizes from './sizes'
 import colors from './colors'
+import BREAKPOINTS from './breakpoints'
 
 export const {
   styled,
@@ -24,8 +25,12 @@ export const {
     },
   },
   media: {
-    tablet: '(min-width: 500px)',
-    desktop: '(min-width: 1200px)',
+    tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+    laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+    desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+    supportsHover: `(hover: hover) and (pointer: fine)`,
+    prefersMotion: `(prefers-reduced-motion: no-preference)`,
+    tapOnly: `(pointer: coarse)`,
   },
   utils: {
     m: (value: PropertyValue<'margin'>) => ({
@@ -79,9 +84,14 @@ export const {
         '-webkit-text-fill-color': 'transparent',
       }
     },
-    moz: (value: any) => {
+    mozOnly: ({ ...values }: any) => {
       return {
-        '@supports (-moz-appearance:none)': value,
+        '@supports (-moz-appearance:none)': { ...values },
+      }
+    },
+    supportsAspectRatio: ({ ...values }: any) => {
+      return {
+        '@supports (aspect-ratio: 1 / 1)': { ...values },
       }
     },
   },

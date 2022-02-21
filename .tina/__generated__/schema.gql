@@ -104,7 +104,7 @@ type PageBlocksMeet_the_teamTeam_members {
 
 type PageBlocksMeet_the_team {
   heading: String
-  description: String
+  description: JSON
   team_members: [PageBlocksMeet_the_teamTeam_members]
 }
 
@@ -246,7 +246,7 @@ input PageBlocksMeet_the_teamTeam_membersMutation {
 
 input PageBlocksMeet_the_teamMutation {
   heading: String
-  description: String
+  description: JSON
   team_members: [PageBlocksMeet_the_teamTeam_membersMutation]
 }
 

@@ -7,12 +7,16 @@ interface TextGreenifyProps {
 
 function TextGreenify({ children }: TextGreenifyProps) {
   if (children) {
-    const _children = children.split(/_([^_]+)_/gi)
+    //split out _underscored_ text into capture groups
+    const _children_ = children.split(/_([^_]+)_/gi)
     return (
       <>
-        {_children.map((part, i) => (
+        {_children_.map((part, i) => (
           <React.Fragment key={part}>
-            {i % 2 === 0 ? part : <Green>{part}</Green>}
+            {
+              //odd entries in the array will match the capture group above
+              i % 2 === 0 ? part : <Green>{part}</Green>
+            }
           </React.Fragment>
         ))}
       </>
@@ -22,4 +26,5 @@ function TextGreenify({ children }: TextGreenifyProps) {
 }
 
 export const Green = styled('span', { color: '$primaryGreen' })
+
 export default TextGreenify

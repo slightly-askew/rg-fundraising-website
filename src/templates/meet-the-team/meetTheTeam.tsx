@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import TextGreenify, { Green } from '@components/text-greenify'
+import { Paragraph } from '@components/typography'
 
 export interface MeetTheTeamProps {
   heading?: string | null | undefined
-  description?: string | null | undefined
+  description?: React.ReactNode
   team_members?: (TeamMember | null | undefined)[] | null | undefined
 }
 
@@ -21,9 +22,7 @@ function MeetTheTeam({ heading, description, team_members }: MeetTheTeamProps) {
         <h1>
           <TextGreenify>{heading || ''}</TextGreenify>
         </h1>
-        <p>
-          <TextGreenify>{description || ''}</TextGreenify>
-        </p>
+        {description}
         <ul>
           {team_members?.map(
             (m, i) =>
@@ -33,7 +32,7 @@ function MeetTheTeam({ heading, description, team_members }: MeetTheTeamProps) {
                     <h2>
                       <Green>{m.name}</Green>
                     </h2>
-                    <p>{m.position}</p>
+                    <Paragraph>{m.position}</Paragraph>
                     {m?.avatar && (
                       <Image
                         src={m.avatar}

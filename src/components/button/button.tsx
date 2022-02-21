@@ -1,4 +1,5 @@
 import styled from '@theme'
+import { Text } from '@components/typography'
 
 export interface ButtonProps {
   children: React.ReactNode
@@ -8,7 +9,7 @@ function Button({ children }: ButtonProps) {
   return <BtnWrapper>{children}</BtnWrapper>
 }
 
-const BtnWrapper = styled('button', {
+const BtnWrapper = styled('button', Text, {
   outline: 'none',
   border: 'none',
   width: 'max-content',
@@ -17,8 +18,8 @@ const BtnWrapper = styled('button', {
   fontWeight: 600,
   borderRadius: '$medium',
   position: 'relative',
-
-  py: '$1',
+  lineHeight: '24px',
+  py: '$2',
   px: '$3',
   '@tablet': {
     py: '$2',

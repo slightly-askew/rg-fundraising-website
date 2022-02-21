@@ -4,7 +4,7 @@ const Button = dynamic(() => import('@components/button'))
 import TextGreenify from '@components/text-greenify'
 
 export interface HeroProps {
-  heading?: string
+  heading?: string | null
   description?: React.ReactNode
   button_text?: string | null | undefined
 }

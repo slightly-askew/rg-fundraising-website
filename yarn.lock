@@ -914,6 +914,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cld-apis/utils@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@cld-apis/utils@npm:0.2.0"
+  dependencies:
+    snake-case: ^3.0.4
+  checksum: 528c3517e5d300021b4f41582314ae913de7b12e8819beee6f2d66f6f87700675a272460261d39fbb3ea0af166a13febd225c31a3dddc6069c44bee6432e04eb
+  languageName: node
+  linkType: hard
+
 "@cnakazawa/watch@npm:^1.0.3":
   version: 1.0.4
   resolution: "@cnakazawa/watch@npm:1.0.4"
@@ -2620,9 +2629,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tinacms/toolkit@npm:0.56.13":
-  version: 0.56.13
-  resolution: "@tinacms/toolkit@npm:0.56.13"
+"@tinacms/toolkit@npm:0.56.14":
+  version: 0.56.14
+  resolution: "@tinacms/toolkit@npm:0.56.14"
   dependencies:
     "@floating-ui/dom": ^0.1.7
     "@floating-ui/react-dom": ^0.3.3
@@ -2691,7 +2700,7 @@ __metadata:
     react-dom: ">=16.14"
     react-is: ">=16.14.0"
     styled-components: ">=4.1"
-  checksum: 5da440202037b7ff12564780f181b7ef6bf2bc512164224cdb9b14f829fd512aa589741c2fc1bc29893f0cbd6b08e15fe86b5a4ba78273eb9d2b79cb680d1d45
+  checksum: e2dce4bce054b06a7edd111c93c0a78ae4220f3fddb2315a54792518ce8d24e98189601bb3a8019f5a642c0032b62a6f680fb4e1693137138be98b354cde89c9
   languageName: node
   linkType: hard
 
@@ -6456,6 +6465,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cloudinary-build-url@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "cloudinary-build-url@npm:0.2.4"
+  dependencies:
+    "@cld-apis/utils": ^0.2.0
+  checksum: e861a29c32fc1c75174811564b6e8c2ca4763ed3c51d3f03dedab7677c678dcd397d30637d3cd74a009f54f86d7b02171803e81c416bfccbcc000032f9510baa
+  languageName: node
+  linkType: hard
+
 "cloudinary-core@npm:^2.10.2":
   version: 2.12.3
   resolution: "cloudinary-core@npm:2.12.3"
@@ -7075,6 +7093,13 @@ __metadata:
   version: 3.0.1
   resolution: "data-uri-to-buffer@npm:3.0.1"
   checksum: c59c3009686a78c071806b72f4810856ec28222f0f4e252aa495ec027ed9732298ceea99c50328cf59b151dd34cbc3ad6150bbb43e41fc56fa19f48c99e9fc30
+  languageName: node
+  linkType: hard
+
+"data-uri-to-buffer@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "data-uri-to-buffer@npm:4.0.0"
+  checksum: a010653869abe8bb51259432894ac62c52bf79ad761d418d94396f48c346f2ae739c46b254e8bb5987bded8a653d467db1968db3a69bab1d33aa5567baa5cfc7
   languageName: node
   linkType: hard
 
@@ -8473,6 +8498,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fetch-blob@npm:^3.1.2, fetch-blob@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "fetch-blob@npm:3.1.4"
+  dependencies:
+    node-domexception: ^1.0.0
+    web-streams-polyfill: ^3.0.3
+  checksum: 81b074f38a2dbfd546dd58e482cefe14e605abd609e272804bf089d588d84f39e3e95b35640bfb376f71d5038c123d4d41be49d9cdf87e5ec8939d37738df0b6
+  languageName: node
+  linkType: hard
+
 "figures@npm:^1.7.0":
   version: 1.7.0
   resolution: "figures@npm:1.7.0"
@@ -8710,6 +8745,15 @@ __metadata:
     node-domexception: 1.0.0
     web-streams-polyfill: 4.0.0-beta.1
   checksum: e1d7aae7d579775b813ddc8ea4511fee613552715e81b36afb188d3a65b3d4df2ef69017106079ba52d9ab1e3367fea0206862d8ae64c02008ababdb341d2c3d
+  languageName: node
+  linkType: hard
+
+"formdata-polyfill@npm:^4.0.10":
+  version: 4.0.10
+  resolution: "formdata-polyfill@npm:4.0.10"
+  dependencies:
+    fetch-blob: ^3.1.2
+  checksum: 82a34df292afadd82b43d4a740ce387bc08541e0a534358425193017bf9fb3567875dc5f69564984b1da979979b70703aa73dee715a17b6c229752ae736dd9db
   languageName: node
   linkType: hard
 
@@ -12840,7 +12884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-domexception@npm:1.0.0":
+"node-domexception@npm:1.0.0, node-domexception@npm:^1.0.0":
   version: 1.0.0
   resolution: "node-domexception@npm:1.0.0"
   checksum: ee1d37dd2a4eb26a8a92cd6b64dfc29caec72bff5e1ed9aba80c294f57a31ba4895a60fd48347cf17dd6e766da0ae87d75657dfd1f384ebfa60462c2283f5c7f
@@ -12874,6 +12918,17 @@ __metadata:
   dependencies:
     whatwg-url: ^5.0.0
   checksum: ee8290626bdb73629c59722b75dcf4b9b6a67c1ed7eb9102e368479c4a13b56a48c2bb3ad71571e378e98c8b2c64c820e11f9cd39e4b8557dd138ad571ef9a42
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "node-fetch@npm:3.2.0"
+  dependencies:
+    data-uri-to-buffer: ^4.0.0
+    fetch-blob: ^3.1.4
+    formdata-polyfill: ^4.0.10
+  checksum: 1c809a0f64dd11cc18b49f990440e22c471da47da2a6d6b3388a83beba9d23ba7eaca1b9bf706a792bd283b824cf1a76777910859b9c28ad33a59f2ae4e44f8e
   languageName: node
   linkType: hard
 
@@ -13747,6 +13802,7 @@ __metadata:
     "@tinacms/cli": ^0.60.5
     "@types/node": 17.0.5
     "@types/react": 17.0.38
+    cloudinary-build-url: ^0.2.4
     eslint: 8.5.0
     eslint-config-next: 12.0.7
     eslint-plugin-prettier: ^4.0.0
@@ -13754,11 +13810,12 @@ __metadata:
     graphql-tag: ^2.12.6
     next: 12.0.7
     next-tinacms-cloudinary: ^3.5.3
+    node-fetch: ^3.2.0
     react: 17.0.2
     react-dom: 17.0.2
     react-tinacms-editor: ^0.53.0
     styled-components: ^5.3.3
-    tinacms: ^0.66.3
+    tinacms: ^0.66.4
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -16474,14 +16531,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinacms@npm:^0.66.3":
-  version: 0.66.3
-  resolution: "tinacms@npm:0.66.3"
+"tinacms@npm:^0.66.4":
+  version: 0.66.4
+  resolution: "tinacms@npm:0.66.4"
   dependencies:
     "@headlessui/react": ^1.4.1
     "@heroicons/react": ^1.0.4
     "@tinacms/sharedctx": 0.1.0
-    "@tinacms/toolkit": 0.56.13
+    "@tinacms/toolkit": 0.56.14
     crypto-js: ^4.0.0
     final-form: 4.20.1
     graphql: ^15.1.0
@@ -16496,7 +16553,7 @@ __metadata:
     react-dom: ">=16.14.0"
     react-is: ^16.13.1 || <18.0.0
     styled-components: "*"
-  checksum: a83e023c6b6ca81794bab6aaed12745567c675aa17afddd1ed93025d342902f13415797952b76b6c1b0848856cd597bc128e37e22b797cc05a24a486096bd281
+  checksum: 81437e6f358a05fb70fe117ce80710a05d5288b3c8fbb2d9a1c94fca4f09c8cc5de87b4fe25cafad2b19742542fe124829b38ea38a3c17ef67626028476f3755
   languageName: node
   linkType: hard
 
@@ -17581,7 +17638,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web-streams-polyfill@npm:^3.2.0":
+"web-streams-polyfill@npm:^3.0.3, web-streams-polyfill@npm:^3.2.0":
   version: 3.2.0
   resolution: "web-streams-polyfill@npm:3.2.0"
   checksum: e23ad0649392fa0159dbfc6bb27474c308c3f332d9078cfef3c06c154165bef18732c5814126147c6c712f604216ddc950c171c854e3821f020e0d2d721a5958

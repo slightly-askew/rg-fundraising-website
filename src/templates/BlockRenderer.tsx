@@ -24,7 +24,12 @@ function BlockRenderer(props: Page) {
                   <React.Fragment key={block.__typename + i}>
                     <MeetTheTeam
                       heading={block.heading}
-                      description={block.description}
+                      description={
+                        block.description && (
+                          //@ts-expect-error
+                          <TinaMarkdown>{block.description}</TinaMarkdown>
+                        )
+                      }
                       team_members={block.team_members}
                     />
                   </React.Fragment>
