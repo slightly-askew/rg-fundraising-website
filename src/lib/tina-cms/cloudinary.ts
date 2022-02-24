@@ -1,35 +1,21 @@
-import fs from 'fs'
 import fetch from 'node-fetch'
 import { buildUrl } from 'cloudinary-build-url'
-import internal from 'stream'
 
 const IS_CLOUDINARY_URL = /^https:\/\/res\.cloudinary\.com/
+const REGEX_FILENAME = /\/([^\/]+)$/gi
 
-// function to encode file data to base64 encoded string
-function base64_encode(file: fs.PathOrFileDescriptor): string {
-  // read binary data
-  var bitmap = fs.readFileSync(file)
-  // convert binary data to base64 encoded string
-  return Buffer.from(bitmap).toString('base64')
+interface File {
+  [fileName: string]: string
 }
 
-function downloadImg(uri: string, fileName: string) {
-  return new Promise(async function (resolve) {
-    const writeStream = fs.createWriteStream(fileName)
-    const data = await fetch(uri)
-    const blob = data
-      .blob()
-      .pipe()
-      .on('close', () => {
-        console.log(
-          'wrote all data to file ' + writeStream.bytesWritten + ' bytes'
-        )
-      })
-  })
+async function downloadImg(uri: string): Promise<string> {
+  const response = await fetch(uri)
+  const buffer = Buffer.from(await response.arrayBuffer()).toString('base64')
+  return buffer
 }
 
-export async function buildCloudinaryImage(url: string) {
-  const lqip = buildUrl(url, {
+const lqip = (url: string) =>
+  buildUrl(url, {
     cloud: {
       cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
     },
@@ -39,41 +25,53 @@ export async function buildCloudinaryImage(url: string) {
       format: 'jpg',
     },
   })
-  const rx = /\/([^\/]+)$/gi
-  const fileName = rx.exec(lqip)?.[1]
 
-  console.log('filename is ' + fileName)
-  if (fileName) {
-    const b64 = await downloadImg(lqip, fileName).then((res) => res)
-
-    return b64
+function buildCloudinaryImages() {
+  let files: File = {}
+  return async function (url: string): Promise<string | undefined> {
+    const fileName = REGEX_FILENAME.exec(url)?.[1]
+    REGEX_FILENAME.lastIndex = 0
+    if (!!fileName) {
+      if (Object.keys(files).includes(fileName)) {
+        console.log(`${fileName} already exists`)
+        return 'cache'
+      }
+      const newFile = await downloadImg(lqip(url))
+      files[fileName] = newFile
+      return 'new'
+    }
+    console.error('could not determine filename for ' + url)
+    return 'poo'
   }
-  console.error('could not generate filename from ' + lqip)
 }
 
-export function buildImageMap(data: any): any {
-  if (Array.isArray(data)) {
-    return data.reduce((acc, d) => acc.concat(buildImageMap(d)), [])
-  }
-  if (!!data && typeof data === 'object') {
-    return Object.entries(data).reduce((acc, [key, val]) => {
-      const newMap = buildImageMap(val)
-      if (newMap) {
-        return { ...acc, [key]: buildImageMap(val) }
+export function buildImageMap(): any {
+  const buildWithImageCache = buildCloudinaryImages()
+  return async function mapData(data: unknown): Promise<unknown> {
+    if (Array.isArray(data)) {
+      for (const d in data) {
+        await mapData(d)
       }
-      return acc
-    }, {})
-  }
-  if (typeof data === 'string') {
-    if (data.match(IS_CLOUDINARY_URL)) {
-      const base64 = buildCloudinaryImage(data).then((res) => {
+      return data
+    }
+    if (!!data && typeof data === 'object') {
+      return Object.entries(data).reduce((acc, [key, d]) => {
+        return mapData(d).then((val) => (val ? { ...acc, [key]: val } : acc))
+      }, {})
+    }
+    if (typeof data === 'string') {
+      console.log(data)
+      if (data.match(IS_CLOUDINARY_URL)) {
+        console.log('go')
+        const base64 = await buildWithImageCache(data)
+        console.log('done')
         return {
           src: data,
-          base64: res,
+          base64,
         }
-      })
+      }
+      return null
     }
     return null
   }
-  return null
 }

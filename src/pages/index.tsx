@@ -7,6 +7,7 @@ import request from '@lib/tina-cms'
 import { GetPageQuery } from '@lib/tina-cms/__generated__/types'
 import { useTina } from 'tinacms/dist/edit-state'
 import TinaMarkdown from '@components/tina-markdown/TinaMarkdown'
+import { buildImageMap } from '@lib/tina-cms/cloudinary'
 //import { ExperimentalGetTinaClient } from '../../.tina/__generated__/types'
 
 type StaticProps = Awaited<ReturnType<typeof getStaticProps>>['props']
@@ -58,17 +59,9 @@ export const getStaticProps = async () => {
     query: 'getPage',
     variables,
   })
-
-  const images = await import('@lib/tina-cms/cloudinary').then((c) =>
-    c.buildImageMap(pageData.data.getPageDocument.data)
-  )
-
-  console.log(JSON.stringify(images))
-
   return {
     props: {
       ...pageData,
-      cloudinary: images,
     },
   }
 }

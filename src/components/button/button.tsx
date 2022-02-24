@@ -25,7 +25,7 @@ const BtnWrapper = styled('button', Text, {
     py: '$2',
     px: '$4',
   },
-  '@desktop': {
+  '@laptop': {
     py: '$3',
     px: '$5',
   },

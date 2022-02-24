@@ -87,6 +87,26 @@
                 "hero",
                 "hero_button_text"
               ]
+            },
+            {
+              "name": "hero_image",
+              "type": "image",
+              "label": "Hero Image",
+              "namespace": [
+                "page",
+                "hero",
+                "hero_image"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Hero Image Alt Tag",
+              "name": "hero_image_alt",
+              "namespace": [
+                "page",
+                "hero",
+                "hero_image_alt"
+              ]
             }
           ],
           "namespace": [

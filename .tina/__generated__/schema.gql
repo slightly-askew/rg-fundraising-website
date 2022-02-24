@@ -89,6 +89,8 @@ type PageHero {
   hero_heading: String
   hero_description: JSON
   hero_button_text: String
+  hero_image: String
+  hero_image_alt: String
 }
 
 type PageBlocksCall_to_action {
@@ -231,6 +233,8 @@ input PageHeroMutation {
   hero_heading: String
   hero_description: JSON
   hero_button_text: String
+  hero_image: String
+  hero_image_alt: String
 }
 
 input PageBlocksCall_to_actionMutation {

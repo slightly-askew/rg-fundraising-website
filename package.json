@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@stitches/react": "^1.2.6",
-    "@tinacms/auth": "^0.50.2",
-    "@tinacms/cli": "^0.60.5",
+    "@tinacms/auth": "latest",
+    "@tinacms/cli": "latest",
     "cloudinary-build-url": "^0.2.4",
     "framer-motion": "^5.5.5",
     "graphql-tag": "^2.12.6",
@@ -26,7 +26,7 @@
     "react-dom": "17.0.2",
     "react-tinacms-editor": "^0.53.0",
     "styled-components": "^5.3.3",
-    "tinacms": "^0.66.4"
+    "tinacms": "latest"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.4.0",

@@ -24,6 +24,7 @@
       "@lib": ["src/lib"],
       "@lib/*": ["src/lib/*"],
       "@components/*": ["src/components/*"],
+      "@svg/*": ["src/svg/*"],
       "@utils/*": ["src/utils/*"]
     }
   },

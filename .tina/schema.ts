@@ -58,6 +58,16 @@ export default defineSchema({
               label: 'Button text',
               name: 'hero_button_text',
             },
+            {
+              name: 'hero_image',
+              type: 'image',
+              label: 'Hero Image',
+            },
+            {
+              type: 'string',
+              label: 'Hero Image Alt Tag',
+              name: 'hero_image_alt',
+            },
           ],
         },
         {

@@ -25,9 +25,9 @@ export const {
     },
   },
   media: {
-    tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
-    laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
-    desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+    tablet: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+    laptop: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+    desktop: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
     supportsHover: `(hover: hover) and (pointer: fine)`,
     prefersMotion: `(prefers-reduced-motion: no-preference)`,
     tapOnly: `(pointer: coarse)`,
