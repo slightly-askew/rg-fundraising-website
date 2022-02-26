@@ -83,6 +83,7 @@ const MissionFigure = styled('figure', {
 })
 
 const ServiceListWrapper = styled('ul', {
+  alignSelf: 'stretch',
   listStyle: 'none',
   p: 0,
   display: 'flex',
