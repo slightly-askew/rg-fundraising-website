@@ -38,13 +38,13 @@ const ContentWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '$4',
-  maxWidth: '640px',
+  maxWidth: '720px',
   pb: '$6',
-})
-
-const Heading = styled('h1', {
-  fontSize: '48px',
-  lineHeight: '56px',
+  '@tablet': {
+    '& h1': {
+      pr: '80px',
+    },
+  },
 })
 
 export default Hero

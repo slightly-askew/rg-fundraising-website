@@ -5,9 +5,15 @@ export function Paragraph({ childrenRaw, ...props }: any) {
   return <ParagraphStyle {...props} />
 }
 
-const ParagraphStyle = styled('p', Text, {
+export const ParagraphStyle = styled('p', Text, {
   lineHeight: 1 + 1 / 2,
   variants: {
-    size: { large: { fontSize: '1.5rem' } },
+    size: {
+      large: {
+        fontSize: '1.5rem',
+        fontWeight: '500',
+        letterSpacing: '-0.0125em',
+      },
+    },
   },
 })

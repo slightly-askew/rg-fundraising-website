@@ -38,7 +38,9 @@ function Home(props: StaticProps) {
           heading={content.hero?.hero_heading || ''}
           description={
             content.hero?.hero_description && (
-              <TinaMarkdown>{content.hero?.hero_description}</TinaMarkdown>
+              <TinaMarkdown paragraphSize="large">
+                {content.hero?.hero_description}
+              </TinaMarkdown>
             )
           }
           button_text={content.hero?.hero_button_text}
