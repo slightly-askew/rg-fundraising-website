@@ -7,4 +7,7 @@ export function Paragraph({ childrenRaw, ...props }: any) {
 
 const ParagraphStyle = styled('p', Text, {
   lineHeight: 1 + 1 / 2,
+  variants: {
+    size: { large: { fontSize: '1.5rem' } },
+  },
 })

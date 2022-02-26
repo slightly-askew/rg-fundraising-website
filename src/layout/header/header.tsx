@@ -44,6 +44,7 @@ const Background = styled('span', {
   position: 'absolute',
   tlbr: 0,
   background: '$white',
+  borderBottom: '1px solid $gray200',
 })
 
 const ImageWrapper = styled('a', {

@@ -6,6 +6,7 @@ const SectionWrapper = styled('section', {
   background: '$gray100',
   display: 'flex',
   alignItems: 'center',
+  //when I'm listed in a Main Component I alternate my bg color
   [`${Main} &:nth-child(even)`]: {
     background: '$white',
   },
