@@ -26,7 +26,6 @@ function BlockRenderer(props: Page) {
                       heading={block.heading}
                       description={
                         block.description && (
-                          //@ts-expect-error
                           <TinaMarkdown>{block.description}</TinaMarkdown>
                         )
                       }

@@ -1,4 +1,4 @@
-import { Paragraph } from '@components/typography'
+import { Paragraph } from '@typography'
 import { Green } from '@components/text-greenify'
 import {
   Components,
@@ -13,7 +13,6 @@ interface Props {
 const components: Components<{}> = {
   //@ts-expect-error
   italic: Green,
-  //@ts-expect-error
   p: Paragraph,
 }
 

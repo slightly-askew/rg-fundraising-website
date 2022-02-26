@@ -1,6 +1,7 @@
+import SectionWrapper from '@components/section-wrapper'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import TextGreenify, { Green } from '@components/text-greenify'
-import { Paragraph } from '@components/typography'
+import { Paragraph } from '@typography'
 
 export interface OurServicesProps {
   heading?: string
@@ -21,7 +22,7 @@ function OurServices({
   mission,
 }: OurServicesProps) {
   return (
-    <section>
+    <SectionWrapper>
       <MaxWidthWrapper>
         <h1>
           <TextGreenify>{heading || ''}</TextGreenify>
@@ -49,7 +50,7 @@ function OurServices({
           </Paragraph>
         </figure>
       </MaxWidthWrapper>
-    </section>
+    </SectionWrapper>
   )
 }
 

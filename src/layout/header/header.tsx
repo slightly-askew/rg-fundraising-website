@@ -9,25 +9,41 @@ export interface HeaderProps {}
 function Header({}: HeaderProps): JSX.Element {
   return (
     <Wrapper>
-      <Link href="/" passHref>
-        <ImageWrapper>
-          <RgLogo />
-        </ImageWrapper>
-      </Link>
-      <Button>Get in touch</Button>
+      <Background />
+      <NavigationWrapper>
+        <Link href="/" passHref>
+          <ImageWrapper>
+            <RgLogo />
+          </ImageWrapper>
+        </Link>
+        <Button>Get in touch</Button>
+      </NavigationWrapper>
     </Wrapper>
   )
 }
 
-const Wrapper = styled('header', MaxWidthWrapper, {
+const Wrapper = styled('header', {
   position: 'fixed',
   left: 0,
   right: 0,
+  zIndex: 1,
+})
+
+const NavigationWrapper = styled(MaxWidthWrapper, {
+  isolation: 'isolate',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   pt: '$4',
-  pb: '$3',
+  pb: '$4',
+  //transform: 'translateY(32px)',
+})
+
+const Background = styled('span', {
+  display: 'block',
+  position: 'absolute',
+  tlbr: 0,
+  background: '$white',
 })
 
 const ImageWrapper = styled('a', {

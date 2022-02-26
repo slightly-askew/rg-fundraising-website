@@ -1,5 +1,5 @@
 import MaxWidthWrapper from '@components/max-width-wrapper'
-import TinaMarkdown from '@components/tina-markdown'
+import SectionWrapper from '@components/section-wrapper'
 import TextGreenify from '@components/text-greenify'
 export interface WhyRgProps {
   heading?: string
@@ -8,14 +8,14 @@ export interface WhyRgProps {
 
 function WhyRg({ heading, content }: WhyRgProps) {
   return (
-    <section>
+    <SectionWrapper>
       <MaxWidthWrapper>
         <h1>
           <TextGreenify>{heading || ''}</TextGreenify>
         </h1>
         {content}
       </MaxWidthWrapper>
-    </section>
+    </SectionWrapper>
   )
 }
 

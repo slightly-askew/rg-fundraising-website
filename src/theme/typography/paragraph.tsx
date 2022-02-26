@@ -2,11 +2,9 @@ import styled from '@theme'
 import Text from './text'
 
 export function Paragraph({ childrenRaw, ...props }: any) {
-  return <P {...props} />
+  return <ParagraphStyle {...props} />
 }
 
-const P = styled('p', Text, {
+const ParagraphStyle = styled('p', Text, {
   lineHeight: 1 + 1 / 2,
 })
-
-export default Paragraph

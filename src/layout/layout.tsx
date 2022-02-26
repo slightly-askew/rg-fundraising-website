@@ -20,13 +20,14 @@ function Layout({ children }: LayoutProps): JSX.Element {
 const Wrapper = styled('div', {
   display: 'flex',
   minHeight: '100%',
-  backgroundColor: '$light',
+  backgroundColor: '$white',
   flexDirection: 'column',
   justifyContent: 'stretch',
 })
 
-const Main = styled('main', {
+export const Main = styled('main', {
   flexGrow: 1,
+  isolation: 'isolate',
 })
 
 export default Layout

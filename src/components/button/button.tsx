@@ -1,5 +1,5 @@
 import styled from '@theme'
-import { Text } from '@components/typography'
+import { Text } from '@typography'
 
 export interface ButtonProps {
   children: React.ReactNode

@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import SectionWrapper from '@components/section-wrapper'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import VisuallyHidden from '@components/visually-hidden'
 import styled from '@theme'
-import TextGreenify, { Green } from '@components/text-greenify'
+import TextGreenify from '@components/text-greenify'
 
 export interface WhoWeWorkWithProps {
   heading: string | null | undefined
@@ -17,7 +18,7 @@ interface Charity {
 
 function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
   return (
-    <section>
+    <SectionWrapper>
       <MaxWidthWrapper>
         <h1>
           <TextGreenify>{heading || ''}</TextGreenify>
@@ -44,7 +45,7 @@ function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
           )}
         </ul>
       </MaxWidthWrapper>
-    </section>
+    </SectionWrapper>
   )
 }
 
