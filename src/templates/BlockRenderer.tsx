@@ -69,6 +69,8 @@ function BlockRenderer(props: Page) {
                   <React.Fragment key={block.__typename + i}>
                     <PoweredByData
                       heading={block.heading}
+                      imageSrc={block.image}
+                      imageAlt={block.image_alt}
                       content={
                         block.content && (
                           <TinaMarkdown>{block.content}</TinaMarkdown>

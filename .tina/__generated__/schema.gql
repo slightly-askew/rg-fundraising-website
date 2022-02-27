@@ -125,6 +125,8 @@ type PageBlocksOur_services {
 type PageBlocksPowered_by_data {
   heading: String
   content: JSON
+  image: String
+  image_alt: String
 }
 
 type PageBlocksWho_we_work_withCharities {
@@ -269,6 +271,8 @@ input PageBlocksOur_servicesMutation {
 input PageBlocksPowered_by_dataMutation {
   heading: String
   content: JSON
+  image: String
+  image_alt: String
 }
 
 input PageBlocksWho_we_work_withCharitiesMutation {

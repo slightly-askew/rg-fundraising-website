@@ -10,5 +10,5 @@ export const Heading1 = styled('h1', Text, {
 export const Heading2 = styled('h2', Text, {
   fontSize: '40px',
   lineHeight: '48px',
-  letterSpacing: '-0.04em',
+  letterSpacing: '-0.025em',
 })

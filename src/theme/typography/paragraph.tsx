@@ -12,7 +12,7 @@ export const ParagraphStyle = styled('p', Text, {
       large: {
         fontSize: '1.5rem',
         fontWeight: '500',
-        letterSpacing: '-0.0125em',
+        letterSpacing: '-0.0075em',
       },
     },
   },

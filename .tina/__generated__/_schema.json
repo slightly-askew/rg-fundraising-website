@@ -1,9 +1,9 @@
 {
   "version": {
-    "fullVersion": "0.59.6",
+    "fullVersion": "0.59.7",
     "major": "0",
     "minor": "59",
-    "patch": "6"
+    "patch": "7"
   },
   "meta": {},
   "collections": [
@@ -380,6 +380,28 @@
                     "blocks",
                     "powered_by_data",
                     "content"
+                  ]
+                },
+                {
+                  "name": "image",
+                  "type": "image",
+                  "label": "Background Image",
+                  "namespace": [
+                    "page",
+                    "blocks",
+                    "powered_by_data",
+                    "image"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Image Alt Tag",
+                  "name": "image_alt",
+                  "namespace": [
+                    "page",
+                    "blocks",
+                    "powered_by_data",
+                    "image_alt"
                   ]
                 }
               ],

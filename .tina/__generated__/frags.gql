@@ -42,6 +42,8 @@ fragment PageParts on Page {
     ... on PageBlocksPowered_by_data {
       heading
       content
+      image
+      image_alt
     }
     ... on PageBlocksWho_we_work_with {
       heading

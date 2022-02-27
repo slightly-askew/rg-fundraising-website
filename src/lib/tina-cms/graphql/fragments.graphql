@@ -30,6 +30,8 @@ fragment OurServices on PageBlocksOur_services {
 fragment PoweredByData on PageBlocksPowered_by_data {
   heading
   content
+  image
+  image_alt
 }
 
 fragment WhyRg on PageBlocksWhy_rg {

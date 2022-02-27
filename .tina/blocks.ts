@@ -149,6 +149,16 @@ export const poweredByDataBlock = {
       label: 'Content',
       type: 'rich-text',
     },
+    {
+      name: 'image',
+      type: 'image',
+      label: 'Background Image',
+    },
+    {
+      type: 'string',
+      label: 'Image Alt Tag',
+      name: 'image_alt',
+    },
   ],
 }
 

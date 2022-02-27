@@ -41,8 +41,8 @@ export const {
       marginRight: value,
     }),
     my: (value: PropertyValue<'marginTop'>) => ({
-      marginLeft: value,
-      marginRight: value,
+      marginTop: value,
+      marginBottom: value,
     }),
     mt: (value: PropertyValue<'marginTop'>) => ({ marginTop: value }),
     mr: (value: PropertyValue<'marginRight'>) => ({ marginRight: value }),
