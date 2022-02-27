@@ -1,11 +1,14 @@
+import styled from '@theme'
 import Image from 'next/image'
+import SectionWrapper from '@components/section-wrapper'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import VisuallyHidden from '@components/visually-hidden'
-import { TinaMarkdown, type TinaMarkdownContent } from 'tinacms/dist/rich-text'
+import TextGreenify from '@components/text-greenify'
+import { Heading2 } from '@theme/typography'
 
 export interface WhoWeWorkWithProps {
   heading: string | null | undefined
-  content: TinaMarkdownContent
+  content: React.ReactNode
   charities: (Charity | null | undefined)[] | null | undefined
 }
 
@@ -16,32 +19,80 @@ interface Charity {
 
 function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
   return (
-    <section>
-      <MaxWidthWrapper>
-        <h1>{heading}</h1>
-        <TinaMarkdown content={content} />
-        <ul>
+    <SectionWrapper>
+      <WhoWeWorkWithMaxWidthWrapper>
+        <ContentWrapper>
+          <Heading2>
+            <TextGreenify>{heading || ''}</TextGreenify>
+          </Heading2>
+          {content}
+        </ContentWrapper>
+        <WhoWeWorkWithListWrapper>
           {charities?.map(
             (c, i) =>
               c?.charity_logo && (
                 <li key={c.charity_logo + i}>
                   <article>
                     <VisuallyHidden as="h2">{c.charity_name}</VisuallyHidden>
-                    <Image
-                      alt={`The logo of ${c.charity_name}`}
-                      src={c.charity_logo}
-                      height={100}
-                      width={100}
-                      objectFit="contain"
-                    ></Image>
+                    <ImageWrapper
+                      size={{ '@initial': 'normal', '@laptop': 'large' }}
+                    >
+                      <Image
+                        alt={`The logo of ${c.charity_name}`}
+                        src={c.charity_logo}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </ImageWrapper>
                   </article>
                 </li>
               )
           )}
-        </ul>
-      </MaxWidthWrapper>
-    </section>
+        </WhoWeWorkWithListWrapper>
+      </WhoWeWorkWithMaxWidthWrapper>
+    </SectionWrapper>
   )
 }
+
+const WhoWeWorkWithMaxWidthWrapper = styled(MaxWidthWrapper, {
+  alignItems: 'center',
+  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$4',
+  py: '$6',
+})
+
+const ContentWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$3',
+  maxWidth: '640px',
+})
+
+const WhoWeWorkWithListWrapper = styled('ul', {
+  alignSelf: 'stretch',
+  listStyle: 'none',
+  p: 0,
+  display: 'flex',
+  justifyContent: 'space-around',
+  flexWrap: 'wrap',
+  gap: '$6',
+})
+
+const ImageWrapper = styled('div', {
+  position: 'relative',
+  aspectRatio: 16 / 9,
+  variants: {
+    size: {
+      normal: {
+        height: '$9',
+      },
+      large: {
+        height: '$10',
+      },
+    },
+  },
+})
 
 export default WhoWeWorkWith

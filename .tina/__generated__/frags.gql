@@ -10,6 +10,8 @@ fragment PageParts on Page {
     hero_heading
     hero_description
     hero_button_text
+    hero_image
+    hero_image_alt
   }
   blocks {
     __typename
@@ -29,16 +31,19 @@ fragment PageParts on Page {
     }
     ... on PageBlocksOur_services {
       heading
-      description
-      team_members {
+      services_description
+      services {
         __typename
         service_title
         service_description
       }
+      services_mission
     }
     ... on PageBlocksPowered_by_data {
       heading
       content
+      image
+      image_alt
     }
     ... on PageBlocksWho_we_work_with {
       heading

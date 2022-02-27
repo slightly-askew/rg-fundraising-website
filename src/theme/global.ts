@@ -9,6 +9,7 @@ export const globalStyles = globalCss({
   /* Allow percentage based heights in the application */
   'html, body': {
     height: '100%',
+    color: '$black',
     fontFamily:
       '-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif',
   },
@@ -69,6 +70,10 @@ export const globalStyles = globalCss({
   '#root, #__next': {
     height: 'inherit',
     isolation: 'isolate',
+    position: 'relative',
+    '& > *': {
+      height: 'inherit',
+    },
   },
 
   /* Avoid text overflows */

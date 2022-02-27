@@ -19,12 +19,19 @@ fragment WhoWeWorkWith on PageBlocksWho_we_work_with {
 
 fragment OurServices on PageBlocksOur_services {
   heading
-  description
+  services_description
+  services {
+    service_title
+    service_description
+  }
+  services_mission
 }
 
 fragment PoweredByData on PageBlocksPowered_by_data {
   heading
   content
+  image
+  image_alt
 }
 
 fragment WhyRg on PageBlocksWhy_rg {

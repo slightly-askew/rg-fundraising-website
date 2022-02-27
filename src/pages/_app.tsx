@@ -27,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             }}
             {...pageProps}
             apiURL="http://localhost:4001/graphql"
+            className="meh"
           >
             {(livePageProps: any) => <Component {...livePageProps} />}
           </TinaCMS>

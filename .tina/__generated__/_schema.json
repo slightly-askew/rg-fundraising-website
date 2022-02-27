@@ -1,9 +1,9 @@
 {
   "version": {
-    "fullVersion": "0.59.6",
+    "fullVersion": "0.59.7",
     "major": "0",
     "minor": "59",
-    "patch": "6"
+    "patch": "7"
   },
   "meta": {},
   "collections": [
@@ -69,7 +69,7 @@
               ]
             },
             {
-              "type": "string",
+              "type": "rich-text",
               "label": "Intro text",
               "name": "hero_description",
               "namespace": [
@@ -86,6 +86,26 @@
                 "page",
                 "hero",
                 "hero_button_text"
+              ]
+            },
+            {
+              "name": "hero_image",
+              "type": "image",
+              "label": "Hero Image",
+              "namespace": [
+                "page",
+                "hero",
+                "hero_image"
+              ]
+            },
+            {
+              "type": "string",
+              "label": "Hero Image Alt Tag",
+              "name": "hero_image_alt",
+              "namespace": [
+                "page",
+                "hero",
+                "hero_image_alt"
               ]
             }
           ],
@@ -161,7 +181,7 @@
                   ]
                 },
                 {
-                  "type": "string",
+                  "type": "rich-text",
                   "label": "Description",
                   "name": "description",
                   "namespace": [
@@ -258,19 +278,19 @@
                   ]
                 },
                 {
-                  "type": "string",
+                  "type": "rich-text",
                   "label": "Description",
-                  "name": "description",
+                  "name": "services_description",
                   "namespace": [
                     "page",
                     "blocks",
                     "our_services",
-                    "description"
+                    "services_description"
                   ]
                 },
                 {
-                  "label": "Team Members",
-                  "name": "team_members",
+                  "label": "Services",
+                  "name": "services",
                   "type": "object",
                   "list": true,
                   "ui": {
@@ -288,7 +308,7 @@
                         "page",
                         "blocks",
                         "our_services",
-                        "team_members",
+                        "services",
                         "service_title"
                       ]
                     },
@@ -300,7 +320,7 @@
                         "page",
                         "blocks",
                         "our_services",
-                        "team_members",
+                        "services",
                         "service_description"
                       ]
                     }
@@ -309,7 +329,18 @@
                     "page",
                     "blocks",
                     "our_services",
-                    "team_members"
+                    "services"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Mission",
+                  "name": "services_mission",
+                  "namespace": [
+                    "page",
+                    "blocks",
+                    "our_services",
+                    "services_mission"
                   ]
                 }
               ],
@@ -349,6 +380,28 @@
                     "blocks",
                     "powered_by_data",
                     "content"
+                  ]
+                },
+                {
+                  "name": "image",
+                  "type": "image",
+                  "label": "Background Image",
+                  "namespace": [
+                    "page",
+                    "blocks",
+                    "powered_by_data",
+                    "image"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "label": "Image Alt Tag",
+                  "name": "image_alt",
+                  "namespace": [
+                    "page",
+                    "blocks",
+                    "powered_by_data",
+                    "image_alt"
                   ]
                 }
               ],

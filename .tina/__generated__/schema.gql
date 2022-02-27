@@ -87,8 +87,10 @@ type PageSeo_data {
 
 type PageHero {
   hero_heading: String
-  hero_description: String
+  hero_description: JSON
   hero_button_text: String
+  hero_image: String
+  hero_image_alt: String
 }
 
 type PageBlocksCall_to_action {
@@ -104,24 +106,27 @@ type PageBlocksMeet_the_teamTeam_members {
 
 type PageBlocksMeet_the_team {
   heading: String
-  description: String
+  description: JSON
   team_members: [PageBlocksMeet_the_teamTeam_members]
 }
 
-type PageBlocksOur_servicesTeam_members {
+type PageBlocksOur_servicesServices {
   service_title: String
   service_description: String
 }
 
 type PageBlocksOur_services {
   heading: String
-  description: String
-  team_members: [PageBlocksOur_servicesTeam_members]
+  services_description: JSON
+  services: [PageBlocksOur_servicesServices]
+  services_mission: String
 }
 
 type PageBlocksPowered_by_data {
   heading: String
   content: JSON
+  image: String
+  image_alt: String
 }
 
 type PageBlocksWho_we_work_withCharities {
@@ -228,8 +233,10 @@ input PageSeo_dataMutation {
 
 input PageHeroMutation {
   hero_heading: String
-  hero_description: String
+  hero_description: JSON
   hero_button_text: String
+  hero_image: String
+  hero_image_alt: String
 }
 
 input PageBlocksCall_to_actionMutation {
@@ -245,24 +252,27 @@ input PageBlocksMeet_the_teamTeam_membersMutation {
 
 input PageBlocksMeet_the_teamMutation {
   heading: String
-  description: String
+  description: JSON
   team_members: [PageBlocksMeet_the_teamTeam_membersMutation]
 }
 
-input PageBlocksOur_servicesTeam_membersMutation {
+input PageBlocksOur_servicesServicesMutation {
   service_title: String
   service_description: String
 }
 
 input PageBlocksOur_servicesMutation {
   heading: String
-  description: String
-  team_members: [PageBlocksOur_servicesTeam_membersMutation]
+  services_description: JSON
+  services: [PageBlocksOur_servicesServicesMutation]
+  services_mission: String
 }
 
 input PageBlocksPowered_by_dataMutation {
   heading: String
   content: JSON
+  image: String
+  image_alt: String
 }
 
 input PageBlocksWho_we_work_withCharitiesMutation {

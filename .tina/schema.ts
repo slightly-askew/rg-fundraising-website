@@ -49,7 +49,7 @@ export default defineSchema({
               name: 'hero_heading',
             },
             {
-              type: 'string',
+              type: 'rich-text',
               label: 'Intro text',
               name: 'hero_description',
             },
@@ -57,6 +57,16 @@ export default defineSchema({
               type: 'string',
               label: 'Button text',
               name: 'hero_button_text',
+            },
+            {
+              name: 'hero_image',
+              type: 'image',
+              label: 'Hero Image',
+            },
+            {
+              type: 'string',
+              label: 'Hero Image Alt Tag',
+              name: 'hero_image_alt',
             },
           ],
         },

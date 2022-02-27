@@ -18,12 +18,15 @@
     "paths": {
       "@theme": ["src/theme"],
       "@theme/*": ["src/theme/*"],
+      "@typography": ["src/theme/typography"],
+      "@typography/*": ["src/theme/typography/*"],
       "@templates/*": ["src/templates/*"],
       "@layout": ["src/layout"],
       "@layout/*": ["src/layout/*"],
       "@lib": ["src/lib"],
       "@lib/*": ["src/lib/*"],
       "@components/*": ["src/components/*"],
+      "@svg/*": ["src/svg/*"],
       "@utils/*": ["src/utils/*"]
     }
   },

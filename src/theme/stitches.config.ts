@@ -1,5 +1,8 @@
 import { createStitches, PropertyValue } from '@stitches/react'
-import { space, sizes } from './space'
+import space from './space'
+import sizes from './sizes'
+import colors from './colors'
+import BREAKPOINTS from './breakpoints'
 
 export const {
   styled,
@@ -12,19 +15,22 @@ export const {
   config,
 } = createStitches({
   theme: {
-    colors: {
-      gray400: 'gainsboro',
-      gray500: 'lightgray',
-      black: '#202020',
-      white: '#ffffff',
-      light: '#f8f8f8',
-    },
+    colors,
     space,
     sizes,
+    radii: {
+      small: '2px',
+      medium: '4px',
+      large: '8px',
+    },
   },
   media: {
-    tablet: '(min-width: 500px)',
-    desktop: '(min-width: 1200px)',
+    tablet: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+    laptop: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+    desktop: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+    supportsHover: `(hover: hover) and (pointer: fine)`,
+    prefersMotion: `(prefers-reduced-motion: no-preference)`,
+    tapOnly: `(pointer: coarse)`,
   },
   utils: {
     m: (value: PropertyValue<'margin'>) => ({
@@ -35,8 +41,8 @@ export const {
       marginRight: value,
     }),
     my: (value: PropertyValue<'marginTop'>) => ({
-      marginLeft: value,
-      marginRight: value,
+      marginTop: value,
+      marginBottom: value,
     }),
     mt: (value: PropertyValue<'marginTop'>) => ({ marginTop: value }),
     mr: (value: PropertyValue<'marginRight'>) => ({ marginRight: value }),
@@ -78,9 +84,14 @@ export const {
         '-webkit-text-fill-color': 'transparent',
       }
     },
-    moz: (value: any) => {
+    mozOnly: ({ ...values }: any) => {
       return {
-        '@supports (-moz-appearance:none)': value,
+        '@supports (-moz-appearance:none)': { ...values },
+      }
+    },
+    supportsAspectRatio: ({ ...values }: any) => {
+      return {
+        '@supports (aspect-ratio: 1 / 1)': { ...values },
       }
     },
   },

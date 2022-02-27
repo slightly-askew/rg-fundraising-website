@@ -19,6 +19,8 @@ query getPage($relativePath: String!) {
         hero_heading
         hero_description
         hero_button_text
+        hero_image
+        hero_image_alt
       }
       blocks {
         __typename

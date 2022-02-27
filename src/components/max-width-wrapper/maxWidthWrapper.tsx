@@ -6,7 +6,7 @@ const MaxWidthWrapper = styled('div', {
   mx: 'auto',
   px: '$4',
   '@tablet': { px: '$5' },
-  '@desktop': { px: '$6' },
+  '@laptop': { px: '$6' },
 })
 
 export default MaxWidthWrapper

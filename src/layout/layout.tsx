@@ -1,8 +1,7 @@
 import { styled } from '@theme'
 import React from 'react'
-import Header from '@templates/header'
-import Footer from '@templates/footer'
-import MaxWidthWrapper from '@components/max-width-wrapper'
+import Header from '@layout/header'
+import Footer from '@layout/footer'
 
 export interface LayoutProps {
   children: React.ReactNode
@@ -19,14 +18,19 @@ function Layout({ children }: LayoutProps): JSX.Element {
 }
 
 const Wrapper = styled('div', {
+  display: 'flex',
   minHeight: '100%',
-  backgroundColor: '$light',
+  backgroundColor: '$white',
   flexDirection: 'column',
   justifyContent: 'stretch',
 })
 
-const Main = styled('main', {
-  flexGrow: '1',
+export const Main = styled('main', {
+  flexGrow: 1,
+  isolation: 'isolate',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'stretch',
 })
 
 export default Layout
