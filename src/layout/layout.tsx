@@ -28,6 +28,9 @@ const Wrapper = styled('div', {
 export const Main = styled('main', {
   flexGrow: 1,
   isolation: 'isolate',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'stretch',
 })
 
 export default Layout

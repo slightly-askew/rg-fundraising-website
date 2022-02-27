@@ -34,7 +34,9 @@ function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
                 <li key={c.charity_logo + i}>
                   <article>
                     <VisuallyHidden as="h2">{c.charity_name}</VisuallyHidden>
-                    <ImageWrapper>
+                    <ImageWrapper
+                      size={{ '@initial': 'normal', '@laptop': 'large' }}
+                    >
                       <Image
                         alt={`The logo of ${c.charity_name}`}
                         src={c.charity_logo}
@@ -75,13 +77,22 @@ const WhoWeWorkWithListWrapper = styled('ul', {
   display: 'flex',
   justifyContent: 'space-around',
   flexWrap: 'wrap',
-  gap: '$4',
+  gap: '$6',
 })
 
 const ImageWrapper = styled('div', {
   position: 'relative',
-  height: '$10',
   aspectRatio: 16 / 9,
+  variants: {
+    size: {
+      normal: {
+        height: '$9',
+      },
+      large: {
+        height: '$10',
+      },
+    },
+  },
 })
 
 export default WhoWeWorkWith

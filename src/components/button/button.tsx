@@ -1,15 +1,18 @@
+import React from 'react'
 import styled from '@theme'
 import { Text } from '@typography'
 
 export interface ButtonProps {
   children: React.ReactNode
 }
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  { children },
+  ref
+) {
+  return <BtnWrapper ref={ref}>{children}</BtnWrapper>
+})
 
-function Button({ children }: ButtonProps) {
-  return <BtnWrapper>{children}</BtnWrapper>
-}
-
-const BtnWrapper = styled('button', Text, {
+export const BtnWrapper = styled('button', Text, {
   outline: 'none',
   border: 'none',
   width: 'max-content',

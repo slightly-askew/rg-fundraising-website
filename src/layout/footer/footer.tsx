@@ -14,12 +14,16 @@ function Footer({}: FooterProps): JSX.Element {
         <FooterRgLogo theme="dark" size="small" />
         <nav>
           <FooterNavItemWrapper>
-            <Link href="/" passHref>
-              <NavLinkButton>Home</NavLinkButton>
-            </Link>
-            <Link href="/privacy" passHref>
-              <NavLinkButton>Privacy Policy</NavLinkButton>
-            </Link>
+            <li>
+              <Link href="/" passHref>
+                <NavLinkButton>Home</NavLinkButton>
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" passHref>
+                <NavLinkButton>Privacy Policy</NavLinkButton>
+              </Link>
+            </li>
           </FooterNavItemWrapper>
         </nav>
         <Copyright>© RG Fundraising. All rights reserved.</Copyright>

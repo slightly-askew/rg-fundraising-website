@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import * as Stitches from '@stitches/react'
 import SectionWrapper from '@components/section-wrapper'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 const Button = dynamic(() => import('@components/button'))
@@ -13,6 +14,7 @@ export interface HeroProps {
   button_text?: string | null | undefined
   imageSrc?: string | null
   imageAlt?: string | null
+  fillHeight?: Stitches.VariantProps<typeof HeroSectionWrapper>['fillHeight']
 }
 
 function Hero({
@@ -21,9 +23,10 @@ function Hero({
   button_text,
   imageAlt,
   imageSrc,
+  fillHeight,
 }: HeroProps) {
   return (
-    <HeroSectionWrapper>
+    <HeroSectionWrapper fillHeight={fillHeight}>
       <MaxWidthWrapper>
         {imageSrc && (
           <ImageWrapper>
@@ -52,6 +55,15 @@ function Hero({
 
 const HeroSectionWrapper = styled(SectionWrapper, {
   minHeight: 'min(768px,66vh)',
+  pt: '$8',
+  variants: {
+    fillHeight: {
+      true: {
+        height: '100%',
+        flex: 1,
+      },
+    },
+  },
 })
 
 const ImageWrapper = styled('div', {
