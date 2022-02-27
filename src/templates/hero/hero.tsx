@@ -69,7 +69,7 @@ const ContentWrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '$4',
-  maxWidth: '720px',
+  maxWidth: '590px',
   pb: '$6',
   '@tablet': {
     '& h1': {
