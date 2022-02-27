@@ -12,9 +12,13 @@ function Header({}: HeaderProps): JSX.Element {
       <Background />
       <NavigationWrapper>
         <Link href="/" passHref>
-          <ImageWrapper>
-            <RgLogo />
-          </ImageWrapper>
+          <RgLogo
+            size={{
+              '@initial': 'small',
+              '@tablet': 'medium',
+              '@desktop': 'large',
+            }}
+          />
         </Link>
         <Button>Get in touch</Button>
       </NavigationWrapper>

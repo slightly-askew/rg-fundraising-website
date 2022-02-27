@@ -1,9 +1,10 @@
+import styled from '@theme'
 import Image from 'next/image'
 import SectionWrapper from '@components/section-wrapper'
 import MaxWidthWrapper from '@components/max-width-wrapper'
 import VisuallyHidden from '@components/visually-hidden'
-import styled from '@theme'
 import TextGreenify from '@components/text-greenify'
+import { Heading2 } from '@theme/typography'
 
 export interface WhoWeWorkWithProps {
   heading: string | null | undefined
@@ -19,12 +20,14 @@ interface Charity {
 function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
   return (
     <SectionWrapper>
-      <MaxWidthWrapper>
-        <h1>
-          <TextGreenify>{heading || ''}</TextGreenify>
-        </h1>
-        {content}
-        <ul>
+      <WhoWeWorkWithMaxWidthWrapper>
+        <ContentWrapper>
+          <Heading2>
+            <TextGreenify>{heading || ''}</TextGreenify>
+          </Heading2>
+          {content}
+        </ContentWrapper>
+        <WhoWeWorkWithListWrapper>
           {charities?.map(
             (c, i) =>
               c?.charity_logo && (
@@ -43,15 +46,42 @@ function WhoWeWorkWith({ heading, content, charities }: WhoWeWorkWithProps) {
                 </li>
               )
           )}
-        </ul>
-      </MaxWidthWrapper>
+        </WhoWeWorkWithListWrapper>
+      </WhoWeWorkWithMaxWidthWrapper>
     </SectionWrapper>
   )
 }
 
+const WhoWeWorkWithMaxWidthWrapper = styled(MaxWidthWrapper, {
+  alignItems: 'center',
+  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$4',
+  py: '$6',
+})
+
+const ContentWrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$3',
+  maxWidth: '640px',
+})
+
+const WhoWeWorkWithListWrapper = styled('ul', {
+  alignSelf: 'stretch',
+  listStyle: 'none',
+  p: 0,
+  display: 'flex',
+  justifyContent: 'space-around',
+  flexWrap: 'wrap',
+  gap: '$4',
+})
+
 const ImageWrapper = styled('div', {
   position: 'relative',
-  size: '$10',
+  height: '$10',
+  aspectRatio: 16 / 9,
 })
 
 export default WhoWeWorkWith

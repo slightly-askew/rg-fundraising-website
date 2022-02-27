@@ -1,1 +1,1 @@
-export { default as default, Green } from './textGreenify'
+export { default, Green } from './textGreenify'
